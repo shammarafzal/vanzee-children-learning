@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:vanzee/Screens/Auth/change_password.dart';
 import 'package:vanzee/Screens/Auth/forgot_password.dart';
 import 'package:vanzee/Screens/Auth/otp_verify.dart';
 import 'package:vanzee/Screens/Auth/sign_in.dart';
@@ -21,6 +22,10 @@ class Routes{
     GetPage(
       name: '/verifyOtp',
       page: () => const OtpVerify(),
+    ),
+    GetPage(
+      name: '/changePassword',
+      page: () => const ChangePassword(),
     ),
   ];
 }
