@@ -82,9 +82,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                             //   _timer?.cancel();
                             //   await EasyLoading.showSuccess(
                             //       response['message']);
-                            //   Navigator.of(context).pushReplacementNamed(
-                            //       '/verify_code',
-                            //       arguments: {'token': _email.text});
+                              Navigator.of(context).pushReplacementNamed(
+                                  '/verifyOtp',
+                                  arguments: {'token': _email.text});
                             // }
                           }
                           catch(e){

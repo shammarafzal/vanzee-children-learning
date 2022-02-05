@@ -113,9 +113,10 @@ class _OtpVerifyState extends State<OtpVerify> {
                             //   _timer?.cancel();
                             //   await EasyLoading.showSuccess(
                             //       response['message']);
-                            //   Navigator.of(context).pushReplacementNamed(
-                            //       '/verify_code',
-                            //       arguments: {'token': _email.text});
+                              Navigator.of(context).pushReplacementNamed(
+                                  '/changePassword',
+                                  // arguments: {'token': _email.text}
+                                  );
                             // }
                           }
                           catch(e){

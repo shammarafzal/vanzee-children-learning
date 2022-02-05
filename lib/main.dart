@@ -10,7 +10,7 @@ Future<void> main() async {
     GetMaterialApp(
         builder: EasyLoading.init(),
         debugShowCheckedModeBanner: false,
-        initialRoute: '/changePassword',
+        initialRoute: '/home',
         getPages: Routes.routes),
   );
   configLoading();
