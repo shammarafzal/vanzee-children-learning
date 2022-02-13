@@ -129,7 +129,7 @@ class _SignInState extends State<SignIn> {
               ),
             ),
             Image.asset(
-              'Assets/dino1.png',
+              'Assets/logo.png',
               width: SizeConfig.screenWidth * 1,
               height: 130,
             ),

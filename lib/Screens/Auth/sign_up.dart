@@ -127,7 +127,7 @@ class _SignUpState extends State<SignUp> {
               ),
             ),
             Image.asset(
-              'Assets/dino1.png',
+              'Assets/logo.png',
               width: SizeConfig.screenWidth * 1,
               height: 130,
             ),

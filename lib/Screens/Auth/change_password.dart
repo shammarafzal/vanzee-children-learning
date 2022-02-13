@@ -94,7 +94,7 @@ class _ChangePasswordState extends State<ChangePassword> {
               ),
             ),
             Image.asset(
-              'Assets/dino1.png',
+              'Assets/logo.png',
               width: SizeConfig.screenWidth * 1,
               height: 130,
             ),

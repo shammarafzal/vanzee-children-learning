@@ -132,7 +132,7 @@ class _OtpVerifyState extends State<OtpVerify> {
               ),
             ),
             Image.asset(
-              'Assets/dino1.png',
+              'Assets/logo.png',
               width: SizeConfig.screenWidth * 1,
               height: 130,
             ),

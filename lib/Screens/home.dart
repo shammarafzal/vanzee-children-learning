@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vanzee/Screens/search.dart';
+import 'package:vanzee/Screens/settings.dart';
 import 'package:vanzee/Screens/story.dart';
 
 
@@ -14,7 +15,7 @@ class Home_State extends State<Home>{
   List<Widget> _widgetOptions = <Widget>[
     StoryList(),
     Search(),
-    StoryList(),
+    SettingsPage(),
   ];
   void _OnItemTap(int index){
     setState(() {

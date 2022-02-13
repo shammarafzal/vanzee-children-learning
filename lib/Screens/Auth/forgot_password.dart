@@ -100,7 +100,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               ),
             ),
             Image.asset(
-              'Assets/dino1.png',
+              'Assets/logo.png',
               width: SizeConfig.screenWidth * 1,
               height: 130,
             ),
