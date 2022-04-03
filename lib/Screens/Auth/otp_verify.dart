@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:vanzee/API/api.dart';
 import 'package:vanzee/Screens/Components/customButton.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
@@ -25,7 +26,7 @@ class _OtpVerifyState extends State<OtpVerify> {
   }
   @override
   Widget build(BuildContext context) {
-    // final arguments = ModalRoute.of(context)!.settings.arguments as Map;
+    final arguments = ModalRoute.of(context)!.settings.arguments as Map;
     SizeConfig().init(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -94,30 +95,26 @@ class _OtpVerifyState extends State<OtpVerify> {
                       child: CustomButton(
                         title: 'Verify OTP',
                         onPress: () async {
-                          try {
-                            // await EasyLoading.show(
-                            //   status: 'loading...',
-                            //   maskType: EasyLoadingMaskType.black,
-                            // );
-                            // var response = await API().register(
-                            //     _name.text,
-                            //     _email.text,
-                            //     _password.text,
-                            //     _passwordConfirm.text);
-                            //
-                            // if (response['status'] == false) {
-                            //   _timer?.cancel();
-                            //   await EasyLoading.showError(
-                            //       response['message']);
-                            // } else {
-                            //   _timer?.cancel();
-                            //   await EasyLoading.showSuccess(
-                            //       response['message']);
-                              Navigator.of(context).pushReplacementNamed(
-                                  '/changePassword',
-                                  // arguments: {'token': _email.text}
-                                  );
-                            // }
+                          try{
+                            await EasyLoading.show(
+                              status: 'loading...',
+                              maskType: EasyLoadingMaskType.black,
+                            );
+                            var response = await API().verifyEmailToken(
+                                _otp.text, arguments['token']);
+                            print(arguments['token']);
+                            if (response['status'] == false) {
+                              _timer?.cancel();
+                              await EasyLoading.showError(
+                                  response['message']);
+                            }
+                            else {
+                              _timer?.cancel();
+                              await EasyLoading.showSuccess(
+                                  response['message']);
+                              Navigator.of(context)
+                                  .pushReplacementNamed('/login');
+                            }
                           }
                           catch(e){
                             _timer?.cancel();

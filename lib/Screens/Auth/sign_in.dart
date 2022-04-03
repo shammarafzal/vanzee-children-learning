@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vanzee/API/api.dart';
 import 'package:vanzee/Screens/Components/customButton.dart';
 import 'package:vanzee/Screens/Components/customTextField.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
@@ -51,53 +53,46 @@ class _SignInState extends State<SignIn> {
                       isPassword: true,
                       hintText: 'Password',
                     ),
-                     Align(
-                      alignment: Alignment.centerRight,
-                      child: Padding(
-                          padding: const EdgeInsets.fromLTRB(0,10,0,20),
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.of(context).pushNamed('/forgotPassword');
-                            },
-                            child: const Text(
-                              'Forgot Password?',
-                              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                            ),
-                          )),
-                    ),
+                    //  Align(
+                    //   alignment: Alignment.centerRight,
+                    //   child: Padding(
+                    //       padding: const EdgeInsets.fromLTRB(0,10,0,20),
+                    //       child: InkWell(
+                    //         onTap: () {
+                    //           Navigator.of(context).pushNamed('/forgotPassword');
+                    //         },
+                    //         child: const Text(
+                    //           'Forgot Password?',
+                    //           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                    //         ),
+                    //       )),
+                    // ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                       child: CustomButton(
                         title: 'Sign In',
                         onPress: () async {
-                          try {
-                            // await EasyLoading.show(
-                            //   status: 'loading...',
-                            //   maskType: EasyLoadingMaskType.black,
-                            // );
-                            // var response = await API().register(
-                            //     _name.text,
-                            //     _email.text,
-                            //     _password.text,
-                            //     _passwordConfirm.text);
-                            //
-                            // if (response['status'] == false) {
-                            //   _timer?.cancel();
-                            //   await EasyLoading.showError(
-                            //       response['message']);
-                            // } else {
-                            //   _timer?.cancel();
-                            //   await EasyLoading.showSuccess(
-                            //       response['message']);
-                              Navigator.of(context).pushReplacementNamed(
-                                  '/home',
-                                  );
-                            // }
-                          }
-                          catch(e){
+                          final SharedPreferences prefs =
+                          await SharedPreferences.getInstance();
+                          await EasyLoading.show(
+                            status: 'loading...',
+                            maskType: EasyLoadingMaskType.black,
+                          );
+                          var response = await API()
+                              .login(_email.text, _password.text);
+                          if (response['status'] == true) {
+                            prefs.setBool('isLoggedIn', true);
+                            prefs.setString('token', response['token']);
+                            prefs.setInt('id', response['user']['id']);
+                            _timer?.cancel();
+                            await EasyLoading.showSuccess(
+                                response['message']);
+                            Navigator.of(context)
+                                .pushReplacementNamed('/home');
+                          } else {
                             _timer?.cancel();
                             await EasyLoading.showError(
-                                'Something Went Wrong');
+                                response['message']);
                           }
                         },
                       ),

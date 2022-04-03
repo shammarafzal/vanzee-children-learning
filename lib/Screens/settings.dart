@@ -1,7 +1,17 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vanzee/API/api.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
+class SettingsPage extends StatefulWidget {
+  @override
+  State<SettingsPage> createState() => _SettingsPageState();
+}
 
-class SettingsPage extends StatelessWidget {
+class _SettingsPageState extends State<SettingsPage> {
+  Timer? _timer;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +48,7 @@ class SettingsPage extends StatelessWidget {
                     Text('Settings', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),),
                     Padding(padding: EdgeInsets.all(10)),
                     ListTile(
-                      title: Text('About Us', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                      title: Text('About the App', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
                       leading:  Container(
                           width: 55,
                           height: 55,
@@ -60,7 +70,7 @@ class SettingsPage extends StatelessWidget {
                     ),
                     Padding(padding: EdgeInsets.all(8.0)),
                     ListTile(
-                      title: Text('Contact Us', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                      title: Text('About Talk Tales', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
                       leading:  Container(
                           width: 55,
                           height: 55,
@@ -68,7 +78,7 @@ class SettingsPage extends StatelessWidget {
                               color:Color.fromRGBO(231,247,255,1),
                               borderRadius: BorderRadius.all(Radius.circular(25))
                           ),
-                          child: Icon(Icons.local_phone_outlined, size: 35,color: Color.fromRGBO(30,163,238,1),)),
+                          child: Icon(Icons.help, size: 35,color: Color.fromRGBO(30,163,238,1),)),
                       trailing:  Container(
                           decoration: BoxDecoration(
                               color:Color.fromRGBO(246,245,248,1),
@@ -82,7 +92,7 @@ class SettingsPage extends StatelessWidget {
                     ),
                     Padding(padding: EdgeInsets.all(8.0)),
                     ListTile(
-                      title: Text('Help', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                      title: Text('Download Target Words', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
                       leading:  Container(
                           width: 55,
                           height: 55,
@@ -90,7 +100,7 @@ class SettingsPage extends StatelessWidget {
                               color:Color.fromRGBO(236,235,254,1),
                               borderRadius: BorderRadius.all(Radius.circular(25))
                           ),
-                          child: Icon(Icons.help, size: 35,color: Color.fromRGBO(87,49,250,1),)),
+                          child: Icon(Icons.download, size: 35,color: Color.fromRGBO(87,49,250,1),)),
                       trailing:  Container(
                           decoration: BoxDecoration(
                               color:Color.fromRGBO(246,245,248,1),
@@ -122,7 +132,31 @@ class SettingsPage extends StatelessWidget {
                             padding: const EdgeInsets.all(8.0),
                             child: Icon(Icons.logout),
                           )),
-                      onTap: () => {},
+                      onTap: () async {
+                      SharedPreferences prefs = await SharedPreferences
+                          .getInstance();
+                        try {
+                                var response =
+                                await API().logout();
+
+                                if (response['status'] == true) {
+                                  _timer?.cancel();
+                                  await EasyLoading.showSuccess(
+                                      response['message']);
+                                  prefs.remove("token");
+                                  Navigator.of(context).pushReplacementNamed('/signin');
+                                } else {
+                                  _timer?.cancel();
+                                  await EasyLoading.showError(
+                                      response['message']);
+                                }
+                              }
+                        catch (e) {
+                          _timer?.cancel();
+                          await EasyLoading.showError(
+                          e.toString());
+                          }
+                      },
                     ),
 
                   ],

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:vanzee/API/api.dart';
 import 'package:vanzee/Screens/Components/customButton.dart';
 import 'package:vanzee/Screens/Components/customTextField.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
@@ -17,7 +18,6 @@ class _SignUpState extends State<SignUp> {
   final _name = TextEditingController();
   final _email = TextEditingController();
   final _password = TextEditingController();
-  final _passwordConfirm = TextEditingController();
   final _age = TextEditingController();
 
   @override
@@ -34,8 +34,8 @@ class _SignUpState extends State<SignUp> {
               padding: const EdgeInsets.all(15.0),
               child: SizedBox(
                 height: SizeConfig.screenHeight * 0.75,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                child: ListView(
+                  // mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
                       'Assets/child.png',
@@ -69,28 +69,26 @@ class _SignUpState extends State<SignUp> {
                         title: 'Continue',
                         onPress: () async {
                           try {
-                            // await EasyLoading.show(
-                            //   status: 'loading...',
-                            //   maskType: EasyLoadingMaskType.black,
-                            // );
-                            // var response = await API().register(
-                            //     _name.text,
-                            //     _email.text,
-                            //     _password.text,
-                            //     _passwordConfirm.text);
-                            //
-                            // if (response['status'] == false) {
-                            //   _timer?.cancel();
-                            //   await EasyLoading.showError(
-                            //       response['message']);
-                            // } else {
-                            //   _timer?.cancel();
-                            //   await EasyLoading.showSuccess(
-                            //       response['message']);
+                            await EasyLoading.show(
+                              status: 'loading...',
+                              maskType: EasyLoadingMaskType.black,
+                            );
+                            var response = await API().register(
+                                _name.text,
+                                _email.text,
+                                _password.text,
+                                _age.text);
+                            if (response['status'] == true) {
+                              _timer?.cancel();
+                              await EasyLoading.showSuccess(
+                                  response['message']);
                               Navigator.of(context).pushReplacementNamed(
-                                  '/verifyOtp',
-                                  arguments: {'token': _email.text});
-                            // }
+                                  '/signin');
+                            } else {
+                              _timer?.cancel();
+                              await EasyLoading.showError(
+                                  response['message']);
+                            }
                           }
                           catch(e){
                             _timer?.cancel();

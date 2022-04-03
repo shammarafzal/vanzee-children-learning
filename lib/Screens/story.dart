@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vanzee/Screens/Components/customButton.dart';
+import 'package:vanzee/Screens/Components/story_page.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
 
 class StoryList extends StatelessWidget {
@@ -42,16 +44,54 @@ class _StoryCardState extends State<StoryCard> {
               width: SizeConfig.screenWidth * 0.9,
               height: SizeConfig.screenHeight * 0.29,
               decoration: BoxDecoration(
-                color: const Color.fromRGBO(241,229,225, 0.3),
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                      image: NetworkImage('https://m.media-amazon.com/images/I/514+shTlBLL.jpg'),
-                      fit: BoxFit.fill)),
+                image: DecorationImage(
+                  image: AssetImage("Assets/story1.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text('Moo Baa Laa Laaa', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
-            )
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: MaterialButton(
+                    onPressed: () {},
+                    color: Color.fromRGBO(235,159,73, 1),
+                    textColor: Colors.white,
+                    child: Text('About', style: TextStyle(fontSize: 14),),
+                    padding: EdgeInsets.all(16),
+                    shape: CircleBorder(),
+                  )
+                ),
+                Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: MaterialButton(
+                      onPressed: () {},
+                      color: Color.fromRGBO(235,159,73, 1),
+                      textColor: Colors.white,
+                      child: Text('Read', style: TextStyle(fontSize: 14),),
+                      padding: EdgeInsets.all(16),
+                      shape: CircleBorder(),
+                    )
+                ),
+                Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: MaterialButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) => StoryPage()));
+                      },
+                      color: Color.fromRGBO(235,159,73, 1),
+                      textColor: Colors.white,
+                      child: Text('Play', style: TextStyle(fontSize: 14),),
+                      padding: EdgeInsets.all(16),
+                      shape: CircleBorder(),
+                    )
+                ),
+              ],
+            ),
           ],
         ),
       ),
