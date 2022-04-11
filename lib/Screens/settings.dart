@@ -1,16 +1,46 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vanzee/API/api.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-
+import 'package:url_launcher/url_launcher.dart';
+import 'package:vanzee/Controller/me_controller.dart';
 class SettingsPage extends StatefulWidget {
   @override
   State<SettingsPage> createState() => _SettingsPageState();
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  final MeController meController = Get.put(MeController());
+  _aboutapp() async {
+    const url =
+        "https://www.talktalesbooks.com/simple-sounds";
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+  _abouttalktales() async {
+    const url =
+        "https://www.talktalesbooks.com";
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+  _downloadwords() async {
+    const url =
+        "https://www.talktalesbooks.com/download-target-words";
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
   Timer? _timer;
   @override
   Widget build(BuildContext context) {
@@ -23,7 +53,14 @@ class _SettingsPageState extends State<SettingsPage> {
                     Text('Account', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),),
                    Padding(padding: EdgeInsets.all(10)),
                     ListTile(
-                      title: Text('Ammar Afzal', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+                      title:  Obx(() {
+                        return ListView.builder(
+                            itemCount: meController.meList.length,
+                            shrinkWrap: true,
+                            itemBuilder: (BuildContext context, index) {
+                              return Text(meController.meList[index].name, style: TextStyle(color: Colors.black),);
+                            });
+                      }),
                       leading:  Container(
                         width: 55,
                           height: 55,
@@ -66,7 +103,9 @@ class _SettingsPageState extends State<SettingsPage> {
                             padding: const EdgeInsets.all(8.0),
                             child: Icon(Icons.arrow_forward),
                           )),
-                      onTap: () => {},
+                      onTap: () => {
+                        _aboutapp()
+                      },
                     ),
                     Padding(padding: EdgeInsets.all(8.0)),
                     ListTile(
@@ -88,7 +127,9 @@ class _SettingsPageState extends State<SettingsPage> {
                             padding: const EdgeInsets.all(8.0),
                             child: Icon(Icons.arrow_forward),
                           )),
-                      onTap: () => {},
+                      onTap: () => {
+                        _abouttalktales()
+                      },
                     ),
                     Padding(padding: EdgeInsets.all(8.0)),
                     ListTile(
@@ -110,7 +151,9 @@ class _SettingsPageState extends State<SettingsPage> {
                             padding: const EdgeInsets.all(8.0),
                             child: Icon(Icons.arrow_forward),
                           )),
-                      onTap: () => {},
+                      onTap: () => {
+                        _downloadwords()
+                      },
                     ),
                     Padding(padding: EdgeInsets.all(8.0)),
                     ListTile(

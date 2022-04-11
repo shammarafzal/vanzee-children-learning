@@ -12,10 +12,11 @@ class StoryPage extends StatefulWidget {
 class _StoryPageState extends State<StoryPage> {
   @override
   Widget build(BuildContext context) {
+    final arguments = ModalRoute.of(context)!.settings.arguments as Map;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Story name here'),
-        backgroundColor:const Color.fromRGBO(235,159,73, 1),
+        title: Text(arguments['title']),
+        backgroundColor: const Color.fromRGBO(235, 159, 73, 1),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -31,7 +32,9 @@ class _StoryPageState extends State<StoryPage> {
                   //   BoxShadow(color: Colors.green, spreadRadius: 3),
                   // ],
                 ),
-                child: VideosViewer(videoLink: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',)),
+                child: VideosViewer(
+                  videoLink: arguments['childVideo'],
+                )),
             Container(
                 height: 330,
                 decoration: BoxDecoration(
@@ -41,7 +44,9 @@ class _StoryPageState extends State<StoryPage> {
                   //   BoxShadow(color: Colors.green, spreadRadius: 3),
                   // ],
                 ),
-                child: VideosViewer(videoLink: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',)),
+                child: VideosViewer(
+                  videoLink: arguments['mouthVideo'],
+                )),
           ],
         ),
       ),

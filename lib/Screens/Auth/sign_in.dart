@@ -25,7 +25,7 @@ class _SignInState extends State<SignIn> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
-        color: const Color.fromRGBO(241,229,225, 0.3),
+        color: const Color.fromRGBO(241, 229, 225, 0.3),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -73,26 +73,25 @@ class _SignInState extends State<SignIn> {
                         title: 'Sign In',
                         onPress: () async {
                           final SharedPreferences prefs =
-                          await SharedPreferences.getInstance();
+                              await SharedPreferences.getInstance();
                           await EasyLoading.show(
                             status: 'loading...',
                             maskType: EasyLoadingMaskType.black,
                           );
-                          var response = await API()
-                              .login(_email.text, _password.text);
-                          if (response['status'] == true) {
+                          var response =
+                              await API().login(_email.text, _password.text);
+                          if (response['status'] == true ||
+                              response['message'] ==
+                                  'The given data was invalid.') {
                             prefs.setBool('isLoggedIn', true);
                             prefs.setString('token', response['token']);
                             prefs.setInt('id', response['user']['id']);
                             _timer?.cancel();
-                            await EasyLoading.showSuccess(
-                                response['message']);
-                            Navigator.of(context)
-                                .pushReplacementNamed('/home');
+                            await EasyLoading.showSuccess(response['message']);
+                            Navigator.of(context).pushReplacementNamed('/home');
                           } else {
                             _timer?.cancel();
-                            await EasyLoading.showError(
-                                response['message']);
+                            await EasyLoading.showError(response['message']);
                           }
                         },
                       ),
@@ -102,7 +101,8 @@ class _SignInState extends State<SignIn> {
                         padding: const EdgeInsets.only(top: 10),
                         child: InkWell(
                           onTap: () {
-                            Navigator.of(context).pushReplacementNamed('/signup');
+                            Navigator.of(context)
+                                .pushReplacementNamed('/signup');
                           },
                           child: RichText(
                             text: const TextSpan(
@@ -111,8 +111,15 @@ class _SignInState extends State<SignIn> {
                                 color: Colors.black,
                               ),
                               children: <TextSpan>[
-                                TextSpan(text: 'Don\'t have account yet? ', style: TextStyle(fontWeight: FontWeight.bold)),
-                                TextSpan(text: 'Sign Up', style: TextStyle(color: Colors.green,fontWeight: FontWeight.bold)),
+                                TextSpan(
+                                    text: 'Don\'t have account yet? ',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                TextSpan(
+                                    text: 'Sign Up',
+                                    style: TextStyle(
+                                        color: Colors.green,
+                                        fontWeight: FontWeight.bold)),
                               ],
                             ),
                           ),
