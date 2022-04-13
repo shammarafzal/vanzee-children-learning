@@ -17,6 +17,11 @@ class _StoryPageState extends State<StoryPage> {
       appBar: AppBar(
         title: Text(arguments['title']),
         backgroundColor: const Color.fromRGBO(235, 159, 73, 1),
+        leading: InkWell(
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            child: Icon(Icons.arrow_back)),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

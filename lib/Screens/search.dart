@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:vanzee/API/api.dart';
+import 'package:vanzee/Controller/search_controller.dart';
+import 'package:vanzee/Model/get_books.dart';
+import 'package:vanzee/Screens/story.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
 
 class Search extends StatefulWidget {
@@ -7,9 +12,10 @@ class Search extends StatefulWidget {
 }
 
 class _SearchState extends State<Search> {
+  SearchController searchController =
+      Get.put(SearchController(searchValue: 'a'));
 
   final _searchProduct = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -31,12 +37,11 @@ class _SearchState extends State<Search> {
                   cursorColor: Colors.black,
                   controller: _searchProduct,
                   textInputAction: TextInputAction.search,
-                  onSubmitted: (value) async {
-
-                  },
+                  onSubmitted: (value) async {},
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
-                      borderSide:  BorderSide(color: Color.fromRGBO(235,159,73, 1)),
+                      borderSide:
+                          BorderSide(color: Color.fromRGBO(235, 159, 73, 1)),
                       borderRadius: BorderRadius.circular(25.0),
                     ),
                     border: OutlineInputBorder(
@@ -49,7 +54,9 @@ class _SearchState extends State<Search> {
                         color: Colors.black,
                         fontSize: SizeConfig.safeBlockHorizontal * 5),
                     suffixIcon: IconButton(
-                      onPressed: () => _searchProduct.clear(),
+                      onPressed: () async {
+                        setState(() {});
+                      },
                       icon: Icon(
                         Icons.search,
                         color: Colors.green,
@@ -59,44 +66,31 @@ class _SearchState extends State<Search> {
                 ),
               ),
             ),
-            // Expanded(
-            //   child: ListView(
-            //     children: [
-            //       Container(
-            //         child: Card(
-            //           elevation: 0,
-            //           child: FutureBuilder<GetProducts>(
-            //             future: Utils().fetchProductsBySearch(_searchProduct.text),
-            //             builder: (context, snapshot) {
-            //               if (snapshot.hasData) {
-            //                 return ListView.builder(
-            //                   itemCount: snapshot.data?.data?.length,
-            //                   shrinkWrap: true,
-            //                   itemBuilder: (BuildContext context, index) {
-            //                     return Product(
-            //                       productId:  snapshot.data?.data?[index].id ?? 1,
-            //                       productName: snapshot.data?.data?[index].modelName ?? "",
-            //                       description: snapshot.data?.data?[index].description ?? "",
-            //                       price:  snapshot.data?.data?[index].salePrice ?? "",
-            //                       image_location: image_base_url+'${snapshot.data?.data?[index].productGalleries[0].productImage}',
-            //                       productBrand: snapshot.data?.data?[index].company.companyName ?? "",
-            //                     );
-            //                   },
-            //                 );
-            //               }
-            //               return Center(
-            //                 // child: CircularProgressIndicator(
-            //                 //   valueColor: new AlwaysStoppedAnimation(Colors.red),
-            //                 // ),
-            //               );
-            //             },
-            //           ),
-            //         ),
-            //       )
-            //     ],
-            //   ),)
+            ListView(children: [
+              Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Obx(() {
+                    return ListView.builder(
+                        itemCount: searchController.searchList.length,
+                        shrinkWrap: true,
+                        itemBuilder: (BuildContext context, index) {
+                          return StoryCard(
+                            img: '${API().image_base_url}' +
+                                searchController.searchList[index].image,
+                            title: searchController.searchList[index].title,
+                            childVideo: '${API().image_base_url}' +
+                                searchController
+                                    .searchList[index].childVideos[0].video,
+                            mouthVideo: '${API().image_base_url}' +
+                                searchController
+                                    .searchList[index].mouthVideos[0].video,
+                          );
+                        });
+                  })),
+            ])
           ],
-        ),),
+        ),
+      ),
     );
   }
 }

@@ -29,7 +29,8 @@ class StoryList extends StatelessWidget {
                       bookController.bookList[index].mouthVideos[0].video,
                 );
               });
-        }));
+        })
+        );
   }
 }
 

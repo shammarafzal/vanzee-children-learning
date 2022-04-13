@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vanzee/Model/book_search.dart';
+
 import 'package:vanzee/Model/get_books.dart';
 import 'package:vanzee/Model/get_me.dart';
 
@@ -47,13 +49,11 @@ class API {
     });
     if (response.statusCode == 200) {
       final String responseString = response.body;
-      print('qq2');
-      print(responseString);
+
       return jsonDecode(responseString);
     } else {
       final String responseString = response.body;
-      print('qq');
-      print(responseString);
+
       return jsonDecode(responseString);
     }
   }
@@ -67,7 +67,7 @@ class API {
     });
     if (response.statusCode == 200) {
       final String responseString = response.body;
-      return jsonDecode(responseString);
+      return responseString;
     } else {
       final String responseString = response.body;
       return jsonDecode(responseString);
@@ -96,10 +96,45 @@ class API {
       'Authorization': 'Bearer $token',
     });
     if (response.statusCode == 200) {
-      print(response.body);
       return booksFromJson(response.body);
     } else {
       return booksFromJson(response.statusCode.toString());
+    }
+  }
+
+
+ Future<List<BookSearch>> getSearch(String searchItem) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var token = prefs.getString('token');
+    var url = Uri.http(baseUrl, '/api/searchBooks', {"q": "dart"});
+    var response = await client.post(url, body: {
+      "search": searchItem,
+    }, headers: {
+      'Authorization': 'Bearer $token',
+    });
+    if (response.statusCode == 200) {
+      return bookSearchFromJson(response.body);
+    } else {
+      return bookSearchFromJson(response.statusCode.toString());
+    }
+  }
+
+  search(String searchItem) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var token = prefs.getString('token');
+    var url = Uri.http(baseUrl, '/api/searchBooks', {"q": "dart"});
+    final response = await http.post(url, body: {
+      "search": searchItem,
+    }, headers: {
+      'Authorization': 'Bearer $token',
+    });
+
+    if (response.statusCode == 200) {
+      final String responseString = response.body;
+      return jsonDecode(responseString);
+    } else {
+      final String responseString = response.body;
+      return jsonDecode(responseString);
     }
   }
 }
