@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vanzee/Screens/Components/story_images.dart';
 import 'package:vanzee/Screens/VideosViewer/VideosScreen.dart';
 
 class StoryPage extends StatefulWidget {
@@ -19,7 +18,7 @@ class _StoryPageState extends State<StoryPage> {
         backgroundColor: const Color.fromRGBO(235, 159, 73, 1),
         leading: InkWell(
             onTap: () {
-              Navigator.of(context).pop();
+              Navigator.of(context).pushReplacementNamed('/home');
             },
             child: Icon(Icons.arrow_back)),
       ),
@@ -27,7 +26,8 @@ class _StoryPageState extends State<StoryPage> {
         padding: const EdgeInsets.all(8.0),
         child: ListView(
           children: [
-            ImagesList(),
+            // ImagesList(),
+            Image.network(arguments['img']),
             Container(
                 height: 330,
                 decoration: BoxDecoration(

@@ -80,9 +80,7 @@ class _SignInState extends State<SignIn> {
                           );
                           var response =
                               await API().login(_email.text, _password.text);
-                          if (response['status'] == true ||
-                              response['message'] ==
-                                  'The given data was invalid.') {
+                          if (response['status'] == true) {
                             prefs.setBool('isLoggedIn', true);
                             prefs.setString('token', response['token']);
                             prefs.setInt('id', response['user']['id']);

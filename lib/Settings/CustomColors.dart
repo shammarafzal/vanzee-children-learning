@@ -18,27 +18,22 @@ class MyTheme {
     return base.copyWith(
       accentColor: SecondaryColor,
       accentColorBrightness: Brightness.dark,
-
       primaryColor: PrimaryColor,
       primaryColorDark: PrimaryColorDark,
       primaryColorLight: PrimaryColorLight,
       primaryColorBrightness: Brightness.dark,
-
       buttonTheme: base.buttonTheme.copyWith(
         buttonColor: SecondaryColor,
         textTheme: ButtonTextTheme.primary,
       ),
-
       scaffoldBackgroundColor: Background,
       cardColor: Background,
       textSelectionColor: PrimaryColorLight,
       backgroundColor: Background,
-
       textTheme: base.textTheme.copyWith(
           subtitle1: base.textTheme.subtitle1!.copyWith(color: TextColor),
           bodyText1: base.textTheme.bodyText1!.copyWith(color: TextColor),
-          bodyText2: base.textTheme.bodyText2!.copyWith(color: TextColor)
-      ),
+          bodyText2: base.textTheme.bodyText2!.copyWith(color: TextColor)),
     );
   }
 }

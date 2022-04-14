@@ -2,7 +2,6 @@
 //
 //     final bookSearch = bookSearchFromJson(jsonString);
 
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 List<BookSearch> bookSearchFromJson(String str) =>

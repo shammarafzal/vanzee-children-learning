@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vanzee/API/api.dart';
 import 'package:vanzee/Controller/search_controller.dart';
-import 'package:vanzee/Model/get_books.dart';
 import 'package:vanzee/Screens/story.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
 
@@ -66,28 +65,31 @@ class _SearchState extends State<Search> {
                 ),
               ),
             ),
-            ListView(children: [
-              Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Obx(() {
-                    return ListView.builder(
-                        itemCount: searchController.searchList.length,
-                        shrinkWrap: true,
-                        itemBuilder: (BuildContext context, index) {
-                          return StoryCard(
-                            img: '${API().image_base_url}' +
-                                searchController.searchList[index].image,
-                            title: searchController.searchList[index].title,
-                            childVideo: '${API().image_base_url}' +
-                                searchController
-                                    .searchList[index].childVideos[0].video,
-                            mouthVideo: '${API().image_base_url}' +
-                                searchController
-                                    .searchList[index].mouthVideos[0].video,
-                          );
-                        });
-                  })),
-            ])
+            SizedBox(
+              height: 400,
+              child: ListView(children: [
+                Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Obx(() {
+                      return ListView.builder(
+                          itemCount: searchController.searchList.length,
+                          shrinkWrap: true,
+                          itemBuilder: (BuildContext context, index) {
+                            return StoryCard(
+                              img: '${API().image_base_url}' +
+                                  searchController.searchList[index].image,
+                              title: searchController.searchList[index].title,
+                              childVideo: '${API().image_base_url}' +
+                                  searchController
+                                      .searchList[index].childVideos[0].video,
+                              mouthVideo: '${API().image_base_url}' +
+                                  searchController
+                                      .searchList[index].mouthVideos[0].video,
+                            );
+                          });
+                    })),
+              ]),
+            )
           ],
         ),
       ),

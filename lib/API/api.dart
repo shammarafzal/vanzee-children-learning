@@ -1,9 +1,7 @@
 import 'dart:convert';
-import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vanzee/Model/book_search.dart';
-
 import 'package:vanzee/Model/get_books.dart';
 import 'package:vanzee/Model/get_me.dart';
 
@@ -67,7 +65,7 @@ class API {
     });
     if (response.statusCode == 200) {
       final String responseString = response.body;
-      return responseString;
+      return jsonDecode(responseString);
     } else {
       final String responseString = response.body;
       return jsonDecode(responseString);
@@ -102,8 +100,7 @@ class API {
     }
   }
 
-
- Future<List<BookSearch>> getSearch(String searchItem) async {
+  Future<List<BookSearch>> getSearch(String searchItem) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     var token = prefs.getString('token');
     var url = Uri.http(baseUrl, '/api/searchBooks', {"q": "dart"});

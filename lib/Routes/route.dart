@@ -6,8 +6,9 @@ import 'package:vanzee/Screens/Auth/sign_in.dart';
 import 'package:vanzee/Screens/Auth/sign_up.dart';
 import 'package:vanzee/Screens/Components/story_page.dart';
 import 'package:vanzee/Screens/home.dart';
+import 'package:vanzee/Screens/search.dart';
 
-class Routes{
+class Routes {
   static final routes = [
     GetPage(
       name: '/signup',
@@ -34,8 +35,12 @@ class Routes{
       page: () => Home(),
     ),
     GetPage(
-          name: '/storyPage',
-          page: () => StoryPage(),
-        ),
+      name: '/storyPage',
+      page: () => StoryPage(),
+    ),
+    GetPage(
+      name: '/search',
+      page: () => Search(),
+    ),
   ];
 }

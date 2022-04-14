@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vanzee/API/api.dart';
 import 'package:vanzee/Controller/books_controller.dart';
-import 'package:vanzee/Screens/Components/customButton.dart';
-import 'package:vanzee/Screens/Components/story_page.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
 
 class StoryList extends StatelessWidget {
@@ -29,8 +27,7 @@ class StoryList extends StatelessWidget {
                       bookController.bookList[index].mouthVideos[0].video,
                 );
               });
-        })
-        );
+        }));
   }
 }
 
