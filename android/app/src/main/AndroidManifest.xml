@@ -1,9 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.ammarafzal.vanzee.vanzee">
+    package="com.talktalesapps.talktales">
    <application
-        android:label="vanzee"
+        android:label="Talk Tales"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:exported="true"

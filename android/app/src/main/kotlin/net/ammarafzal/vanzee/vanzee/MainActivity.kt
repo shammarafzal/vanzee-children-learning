@@ -1,4 +1,4 @@
-package net.ammarafzal.vanzee.vanzee
+package com.talktalesapps.talktales
 
 import io.flutter.embedding.android.FlutterActivity
 
