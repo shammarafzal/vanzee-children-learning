@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vanzee/API/api.dart';
-import 'package:vanzee/Controller/search_controller.dart';
+import 'package:vanzee/Model/book_search.dart';
 import 'package:vanzee/Screens/story.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
+import 'dart:async';
+import 'dart:io';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class Search extends StatefulWidget {
   @override
   _SearchState createState() => _SearchState();
 }
 
+String? searchvalue;
+
 class _SearchState extends State<Search> {
-  SearchController searchController =
-      Get.put(SearchController(searchValue: 'a'));
+  SearchController searchController = Get.put(SearchController());
 
   final _searchProduct = TextEditingController();
   @override
@@ -54,7 +58,9 @@ class _SearchState extends State<Search> {
                         fontSize: SizeConfig.safeBlockHorizontal * 5),
                     suffixIcon: IconButton(
                       onPressed: () async {
-                        setState(() {});
+                        setState(() {
+                          searchvalue = _searchProduct.text;
+                        });
                       },
                       icon: Icon(
                         Icons.search,
@@ -94,5 +100,38 @@ class _SearchState extends State<Search> {
         ),
       ),
     );
+  }
+}
+
+class SearchController extends GetxController {
+  // late String searchValue;
+  // SearchController({required this.searchValue});
+  RxList<BookSearch> searchList = <BookSearch>[].obs;
+  Timer? timer;
+
+  @override
+  void onInit() {
+    fetchSearches();
+    super.onInit();
+    timer = Timer.periodic(Duration(seconds: 8), (Timer t) => fetchSearches());
+  }
+
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
+  }
+
+  void fetchSearches() async {
+    try {
+      print(searchvalue);
+      var search = await API().getSearch(searchvalue!);
+      if (search != null) {
+        searchList.value = search;
+      }
+    } on SocketException catch (e) {
+      timer?.cancel();
+      await EasyLoading.showError('No Internet');
+    } finally {}
   }
 }
