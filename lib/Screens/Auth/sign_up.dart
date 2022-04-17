@@ -26,7 +26,7 @@ class _SignUpState extends State<SignUp> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
-        color: const Color.fromRGBO(241,229,225, 0.3),
+        color: const Color.fromRGBO(241, 229, 225, 0.3),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -43,17 +43,14 @@ class _SignUpState extends State<SignUp> {
                       height: 100,
                     ),
                     const Padding(padding: EdgeInsets.only(bottom: 10)),
-
                     CustomTextField(
                       controller: _name,
                       hintText: 'Full Name',
                     ),
-
                     CustomTextField(
                       controller: _email,
                       hintText: 'Email',
                     ),
-
                     CustomTextField(
                       controller: _password,
                       isPassword: true,
@@ -73,27 +70,21 @@ class _SignUpState extends State<SignUp> {
                               status: 'loading...',
                               maskType: EasyLoadingMaskType.black,
                             );
-                            var response = await API().register(
-                                _name.text,
-                                _email.text,
-                                _password.text,
-                                _age.text);
+                            var response = await API().register(_name.text,
+                                _email.text, _password.text, _age.text);
                             if (response['status'] == true) {
                               _timer?.cancel();
                               await EasyLoading.showSuccess(
                                   response['message']);
-                              Navigator.of(context).pushReplacementNamed(
-                                  '/signin');
+                              Navigator.of(context)
+                                  .pushReplacementNamed('/signin');
                             } else {
                               _timer?.cancel();
-                              await EasyLoading.showError(
-                                  response['message']);
+                              await EasyLoading.showError(response['message']);
                             }
-                          }
-                          catch(e){
+                          } catch (e) {
                             _timer?.cancel();
-                            await EasyLoading.showError(
-                                'Something Went Wrong');
+                            await EasyLoading.showError('Something Went Wrong');
                           }
                         },
                       ),
@@ -103,7 +94,8 @@ class _SignUpState extends State<SignUp> {
                         padding: const EdgeInsets.only(top: 10),
                         child: InkWell(
                           onTap: () {
-                            Navigator.of(context).pushReplacementNamed('/signin');
+                            Navigator.of(context)
+                                .pushReplacementNamed('/signin');
                           },
                           child: RichText(
                             text: const TextSpan(
@@ -112,8 +104,15 @@ class _SignUpState extends State<SignUp> {
                                 color: Colors.black,
                               ),
                               children: <TextSpan>[
-                                TextSpan(text: 'Already have an account? ', style: TextStyle(fontWeight: FontWeight.bold)),
-                                TextSpan(text: 'Sign In', style: TextStyle(color: Colors.green,fontWeight: FontWeight.bold)),
+                                TextSpan(
+                                    text: 'Already have an account? ',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                TextSpan(
+                                    text: 'Sign In',
+                                    style: TextStyle(
+                                        color: Colors.green,
+                                        fontWeight: FontWeight.bold)),
                               ],
                             ),
                           ),
