@@ -78,10 +78,17 @@ class _SettingsPageState extends State<SettingsPage> {
                   size: 35,
                   color: Color.fromRGBO(182, 188, 200, 1),
                 )),
-            subtitle: Text(
-              'Personal Info',
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-            ),
+            subtitle: Obx(() {
+              return ListView.builder(
+                  itemCount: meController.meList.length,
+                  shrinkWrap: true,
+                  itemBuilder: (BuildContext context, index) {
+                    return Text(
+                      meController.meList[index].email,
+                      style: TextStyle(color: Colors.black),
+                    );
+                  });
+            }),
             trailing: Container(
                 decoration: BoxDecoration(
                     color: Color.fromRGBO(246, 245, 248, 1),
@@ -90,7 +97,8 @@ class _SettingsPageState extends State<SettingsPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: Icon(Icons.arrow_forward),
                 )),
-            onTap: () => {},
+            onTap: () =>
+                {Navigator.of(context).pushReplacementNamed('/changePassword')},
           ),
           Padding(padding: EdgeInsets.all(15)),
           Text(

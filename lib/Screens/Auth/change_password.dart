@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:vanzee/API/api.dart';
 import 'package:vanzee/Screens/Components/customButton.dart';
 import 'package:vanzee/Screens/Components/customTextField.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
@@ -23,7 +24,7 @@ class _ChangePasswordState extends State<ChangePassword> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
-        color: const Color.fromRGBO(241,229,225, 0.3),
+        color: const Color.fromRGBO(241, 229, 225, 0.3),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -40,7 +41,12 @@ class _ChangePasswordState extends State<ChangePassword> {
                       height: 100,
                     ),
                     const Padding(padding: EdgeInsets.only(bottom: 10)),
-
+                    Text(
+                      'Change Password',
+                      style:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    ),
+                    const Padding(padding: EdgeInsets.only(bottom: 10)),
                     CustomTextField(
                       controller: _password,
                       isPassword: true,
@@ -51,40 +57,32 @@ class _ChangePasswordState extends State<ChangePassword> {
                       isPassword: true,
                       hintText: 'Confirm Password',
                     ),
-
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                       child: CustomButton(
                         title: 'Change Password',
                         onPress: () async {
                           try {
-                            // await EasyLoading.show(
-                            //   status: 'loading...',
-                            //   maskType: EasyLoadingMaskType.black,
-                            // );
-                            // var response = await API().register(
-                            //     _name.text,
-                            //     _email.text,
-                            //     _password.text,
-                            //     _passwordConfirm.text);
-                            //
-                            // if (response['status'] == false) {
-                            //   _timer?.cancel();
-                            //   await EasyLoading.showError(
-                            //       response['message']);
-                            // } else {
-                            //   _timer?.cancel();
-                            //   await EasyLoading.showSuccess(
-                            //       response['message']);
+                            await EasyLoading.show(
+                              status: 'loading...',
+                              maskType: EasyLoadingMaskType.black,
+                            );
+                            var response = await API().changePassword(
+                                _password.text, _passwordConfirm.text);
+                            if (response['status'] == false) {
+                              _timer?.cancel();
+                              await EasyLoading.showError(response['message']);
+                            } else {
+                              _timer?.cancel();
+                              await EasyLoading.showSuccess(
+                                  response['message']);
                               Navigator.of(context).pushReplacementNamed(
-                                  '/signin',
-                                 );
-                            // }
-                          }
-                          catch(e){
+                                '/signin',
+                              );
+                            }
+                          } catch (e) {
                             _timer?.cancel();
-                            await EasyLoading.showError(
-                                'Something Went Wrong');
+                            await EasyLoading.showError('Something Went Wrong');
                           }
                         },
                       ),

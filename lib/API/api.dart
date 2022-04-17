@@ -56,6 +56,25 @@ class API {
     }
   }
 
+  changePassword(String password, String passwordConfirm) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var token = prefs.getString('token');
+    var url = Uri.http(baseUrl, '/api/changePassword', {"q": "dart"});
+    final response = await http.post(url, body: {
+      "password": password,
+      "password_confirm": passwordConfirm
+    }, headers: {
+      'Authorization': 'Bearer $token',
+    });
+    if (response.statusCode == 200) {
+      final String responseString = response.body;
+      return jsonDecode(responseString);
+    } else {
+      final String responseString = response.body;
+      return jsonDecode(responseString);
+    }
+  }
+
   logout() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     var token = prefs.getString('token');
