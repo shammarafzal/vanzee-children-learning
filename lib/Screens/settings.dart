@@ -6,6 +6,7 @@ import 'package:vanzee/API/api.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vanzee/Controller/me_controller.dart';
+import 'package:vanzee/Screens/Auth/change_password.dart';
 
 class SettingsPage extends StatefulWidget {
   @override
@@ -97,8 +98,13 @@ class _SettingsPageState extends State<SettingsPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: Icon(Icons.arrow_forward),
                 )),
-            onTap: () =>
-                {Navigator.of(context).pushReplacementNamed('/changePassword')},
+            onTap: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ChangePassword()),
+              )
+              // Navigator.of(context).pushReplacementNamed('/changePassword')
+            },
           ),
           Padding(padding: EdgeInsets.all(15)),
           Text(

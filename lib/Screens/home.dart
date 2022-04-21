@@ -33,7 +33,7 @@ class Home_State extends State<Home> {
           break;
         case 2:
           {
-            _title = 'About App & Setings';
+            _title = 'About App & Settings';
           }
           break;
       }
@@ -82,7 +82,7 @@ class Home_State extends State<Home> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'Settings',
+            label: 'App Info',
           ),
         ],
         currentIndex: _selectIndex,

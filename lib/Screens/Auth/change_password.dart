@@ -22,6 +22,18 @@ class _ChangePasswordState extends State<ChangePassword> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(241, 229, 225, 0.3),
+        elevation: 0,
+        leading: InkWell(
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            child: Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            )),
+      ),
       resizeToAvoidBottomInset: false,
       body: Container(
         color: const Color.fromRGBO(241, 229, 225, 0.3),
@@ -31,7 +43,7 @@ class _ChangePasswordState extends State<ChangePassword> {
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: SizedBox(
-                height: SizeConfig.screenHeight * 0.75,
+                height: SizeConfig.screenHeight * 0.60,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
