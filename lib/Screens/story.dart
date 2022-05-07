@@ -4,30 +4,48 @@ import 'package:vanzee/API/api.dart';
 import 'package:vanzee/Controller/books_controller.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
 
+// class StoryList extends StatelessWidget {
+//   const StoryList({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     final BookController bookController = Get.put(BookController());
+//     return Padding(
+//         padding: const EdgeInsets.all(15.0),
+//         child: Obx(() {
+//           return ListView.builder(
+//               itemCount: bookController.bookList.length,
+//               shrinkWrap: true,
+//               itemBuilder: (BuildContext context, index) {
+//                 return StoryCard(
+//                   img: '${API().image_base_url}' +
+//                       bookController.bookList[index].image,
+//                   title: bookController.bookList[index].title,
+//                   childVideo: '${API().image_base_url}' +
+//                       bookController.bookList[index].childVideos[0].video,
+//                   mouthVideo: '${API().image_base_url}' +
+//                       bookController.bookList[index].mouthVideos[0].video,
+//                 );
+//               });
+//         }));
+//   }
+// }
+
 class StoryList extends StatelessWidget {
   const StoryList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final BookController bookController = Get.put(BookController());
     return Padding(
         padding: const EdgeInsets.all(15.0),
-        child: Obx(() {
-          return ListView.builder(
-              itemCount: bookController.bookList.length,
-              shrinkWrap: true,
-              itemBuilder: (BuildContext context, index) {
-                return StoryCard(
-                  img: '${API().image_base_url}' +
-                      bookController.bookList[index].image,
-                  title: bookController.bookList[index].title,
-                  childVideo: '${API().image_base_url}' +
-                      bookController.bookList[index].childVideos[0].video,
-                  mouthVideo: '${API().image_base_url}' +
-                      bookController.bookList[index].mouthVideos[0].video,
-                );
-              });
-        }));
+        child: ListView(children: [
+          StoryCard(
+            img: 'http://assets.talktalesapps.com/os1.jpg',
+            title: '',
+            childVideo: '',
+            mouthVideo: '',
+          )
+        ]));
   }
 }
 

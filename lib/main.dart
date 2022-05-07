@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'dart:async';
 import 'package:get/get.dart';
@@ -6,13 +7,16 @@ import 'Routes/route.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(
-    GetMaterialApp(
-        builder: EasyLoading.init(),
-        debugShowCheckedModeBanner: false,
-        initialRoute: '/signin',
-        getPages: Routes.routes),
-  );
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(
+      GetMaterialApp(
+          builder: EasyLoading.init(),
+          debugShowCheckedModeBanner: false,
+          initialRoute: '/signin',
+          getPages: Routes.routes),
+    );
+  });
   configLoading();
 }
 
