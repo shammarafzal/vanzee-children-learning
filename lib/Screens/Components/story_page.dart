@@ -48,11 +48,7 @@ class _StoryPageState extends State<StoryPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            // Image.network(arguments['img']),
-            // RotationTransition(
-            //   turns: AlwaysStoppedAnimation(90 / 360),
-            //   child: Image.network(arguments['img']),
-            // ),
+           
             Container(
               height: SizeConfig.screenHeight * 0.29,
               width: double.infinity,
@@ -95,39 +91,6 @@ class _StoryPageState extends State<StoryPage> {
           ],
         ),
       ),
-      // body: Padding(
-      //   padding: const EdgeInsets.all(8.0),
-      //   child: ListView(
-      //     children: [
-      //       // ImagesList(),
-      //       Image.network(arguments['img']),
-      //       Container(
-      //           height: 330,
-      //           decoration: BoxDecoration(
-      //             borderRadius: BorderRadius.circular(10),
-      //             // color: Colors.black,
-      //             // boxShadow: [
-      //             //   BoxShadow(color: Colors.green, spreadRadius: 3),
-      //             // ],
-      //           ),
-      //           child: VideosViewer(
-      //             videoLink: arguments['childVideo'],
-      //           )),
-      //       Container(
-      //           height: 330,
-      //           decoration: BoxDecoration(
-      //             borderRadius: BorderRadius.circular(10),
-      //             // color: Colors.black,
-      //             // boxShadow: [
-      //             //   BoxShadow(color: Colors.green, spreadRadius: 3),
-      //             // ],
-      //           ),
-      //           child: VideosViewer(
-      //             videoLink: arguments['mouthVideo'],
-      //           )),
-      //     ],
-      //   ),
-      // ),
     );
   }
 }

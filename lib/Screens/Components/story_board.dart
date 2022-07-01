@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vanzee/Screens/Components/story_board1.dart';
 
 import '../../Settings/SizeConfig.dart';
 import 'dart:math';
@@ -70,42 +71,106 @@ class _StoryBoardState extends State<StoryBoard> {
         backgroundColor: const Color.fromRGBO(235, 159, 73, 1),
         title: Text('Story Board'),
       ),
-      body: ListView(
-        children: [
-          InkWell(
-            onTap: () {
-              shakeKey.currentState?.shake();
-              playMusic('http://assets.talktalesapps.com/Oh.mp3');
-            },
-            child: ShakeWidget(
-              // 4. pass the GlobalKey as an argument
-              key: shakeKey,
-              // 5. configure the animation parameters
-              shakeCount: 3,
-              shakeOffset: 10,
-              shakeDuration: Duration(milliseconds: 500),
-              // 6. Add the child widget that will be animated
-              child: Container(
-                width: SizeConfig.screenWidth * 0.4,
-                height: SizeConfig.screenHeight * 0.35,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(
-                        'http://assets.talktalesapps.com/sbp1m1.jpg'),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
+      body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.fill,
+              image: AssetImage("Assets/storyboard.jpg"),
             ),
           ),
-          // Container(
-          //   height: 200,
-          //   child: MusicPlayer(
-          //     media: 'http://assets.talktalesapps.com/Oh.mp3',
-          //   ),
-          // ),
-        ],
-      ),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Container(
+                    height: SizeConfig.screenHeight * 0.43,
+                    width: SizeConfig.screenHeight * 0.05,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.transparent),
+                    child: InkWell(
+                      onTap: () {
+                        print("back");
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                  ),
+                  Container(
+                    height: SizeConfig.screenHeight * 0.43,
+                    width: SizeConfig.screenHeight * 0.24,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.transparent),
+                    child: InkWell(
+                      onTap: () {
+                        playMusic('http://assets.talktalesapps.com/Oh.mp3');
+                      },
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+              ),
+              Row(
+                children: [
+                  Container(
+                    height: SizeConfig.screenHeight * 0.4,
+                    width: SizeConfig.screenHeight * 0.05,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.transparent),
+                    child: InkWell(
+                      onTap: () {
+                        print("push");
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => StoryBoard1()));
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                  ),
+                  Container(
+                    height: SizeConfig.screenHeight * 0.4,
+                    width: SizeConfig.screenHeight * 0.165,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.transparent),
+                    child: InkWell(
+                      onTap: () {
+                        playMusic('http://assets.talktalesapps.com/Oh.mp3');
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(5.0),
+                  ),
+                  Container(
+                    height: SizeConfig.screenHeight * 0.4,
+                    width: SizeConfig.screenHeight * 0.19,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.transparent),
+                    child: InkWell(
+                      onTap: () {
+                        playMusic('http://assets.talktalesapps.com/Oh.mp3');
+                      },
+                    ),
+                  ),
+                ],
+              )
+            ],
+          )),
+      // Container(
+      //   height: 200,
+      //   child: MusicPlayer(
+      //     media: 'http://assets.talktalesapps.com/Oh.mp3',
+      //   ),
+      // ),
     );
   }
 }
