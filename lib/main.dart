@@ -7,16 +7,17 @@ import 'Routes/route.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
-      .then((_) {
-    runApp(
-      GetMaterialApp(
-          builder: EasyLoading.init(),
-          debugShowCheckedModeBanner: false,
-          initialRoute: '/signin',
-          getPages: Routes.routes),
-    );
-  });
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
+  runApp(
+    GetMaterialApp(
+        builder: EasyLoading.init(),
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/home',
+        getPages: Routes.routes),
+  );
+
   configLoading();
 }
 

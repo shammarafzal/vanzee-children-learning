@@ -40,7 +40,7 @@ class StoryList extends StatelessWidget {
         padding: const EdgeInsets.all(15.0),
         child: ListView(children: [
           StoryCard(
-            img: 'http://assets.talktalesapps.com/os1.jpg',
+            img: 'http://assets.talktalesapps.com/m1.png',
             title: '',
             childVideo: '',
             mouthVideo: '',
@@ -74,38 +74,41 @@ class _StoryCardState extends State<StoryCard> {
       // height: SizeConfig.screenHeight * 0.35,
       child: Card(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               width: SizeConfig.screenWidth * 0.9,
-              height: SizeConfig.screenHeight * 0.29,
+              height: SizeConfig.screenHeight * 0.35,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(widget.img),
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
             Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.of(context)
-                        .pushReplacementNamed('/storyPage', arguments: {
-                      'title': widget.title,
-                      'img': widget.img,
-                      'childVideo': widget.childVideo,
-                      'mouthVideo': widget.mouthVideo
-                    });
-                  },
-                  color: Color.fromRGBO(235, 159, 73, 1),
-                  textColor: Colors.white,
-                  child: Text(
-                    'Play',
-                    style: TextStyle(fontSize: 14),
+                child: Container(
+                  width: SizeConfig.screenWidth * 0.9,
+                  child: MaterialButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed('/storyPage', arguments: {
+                        'title': widget.title,
+                        'img': widget.img,
+                        'childVideo': widget.childVideo,
+                        'mouthVideo': widget.mouthVideo
+                      });
+                    },
+                    color: Color.fromRGBO(235, 159, 73, 1),
+                    textColor: Colors.white,
+                    child: Text(
+                      'Play',
+                      style: TextStyle(fontSize: 14),
+                    ),
+                    padding: EdgeInsets.all(16),
+                    // shape: CircleBorder(),
                   ),
-                  padding: EdgeInsets.all(16),
-                  // shape: CircleBorder(),
                 )),
           ],
         ),

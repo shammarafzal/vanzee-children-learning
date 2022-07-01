@@ -5,6 +5,7 @@ import 'package:vanzee/Screens/Auth/otp_verify.dart';
 import 'package:vanzee/Screens/Auth/sign_in.dart';
 import 'package:vanzee/Screens/Auth/sign_up.dart';
 import 'package:vanzee/Screens/Components/story_page.dart';
+import 'package:vanzee/Screens/VideosViewer/VideosScreen.dart';
 import 'package:vanzee/Screens/home.dart';
 import 'package:vanzee/Screens/search.dart';
 import 'package:vanzee/Screens/settings.dart';
@@ -43,7 +44,7 @@ class Routes {
       name: '/search',
       page: () => Search(),
     ),
-       GetPage(
+    GetPage(
       name: '/settings',
       page: () => SettingsPage(),
     ),

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:vanzee/Screens/Components/story_board.dart';
 import 'package:vanzee/Screens/VideosViewer/VideosScreen.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:vanzee/Settings/SizeConfig.dart';
 
 class StoryPage extends StatefulWidget {
   const StoryPage({Key? key}) : super(key: key);
@@ -21,6 +24,10 @@ class _StoryPageState extends State<StoryPage> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     final arguments = ModalRoute.of(context)!.settings.arguments as Map;
     return Scaffold(
       appBar: AppBar(
@@ -36,58 +43,53 @@ class _StoryPageState extends State<StoryPage> {
         decoration: BoxDecoration(
             image: DecorationImage(
           fit: BoxFit.fill,
-          image: NetworkImage(arguments['img']),
+          image: NetworkImage('http://assets.talktalesapps.com/os1.png'),
         )),
-        child: Stack(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             // Image.network(arguments['img']),
             // RotationTransition(
             //   turns: AlwaysStoppedAnimation(90 / 360),
             //   child: Image.network(arguments['img']),
             // ),
-            Align(
-              alignment: Alignment.topCenter,
-              child: Container(
-                height: 120,
-                width: 30,
-                decoration: BoxDecoration(
+            Container(
+              height: SizeConfig.screenHeight * 0.29,
+              width: double.infinity,
+              decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                ),
-                child: InkWell(
-                  onTap: () => {_abouttalktales()},
-                ),
+                  color: Colors.transparent),
+              child: InkWell(
+                onTap: () => {_abouttalktales()},
               ),
             ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Container(
-                height: 200,
-                width: 70,
-                decoration: BoxDecoration(
+            Container(
+              height: SizeConfig.screenHeight * 0.29,
+              width: double.infinity,
+              decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  // color: Colors.black
-                ),
-                child: InkWell(
-                  onTap: () {
-                    print('read');
-                  },
-                ),
+                  color: Colors.transparent),
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => StoryBoard()));
+                },
               ),
             ),
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: Container(
-                height: 90,
-                width: 140,
-                decoration: BoxDecoration(
+            Container(
+              height: SizeConfig.screenHeight * 0.29,
+              width: double.infinity,
+              decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  // color: Colors.black
-                ),
-                child: InkWell(
-                  onTap: () {
-                    print('play');
-                  },
-                ),
+                  color: Colors.transparent),
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => VideosViewer(
+                            videoLink:
+                                'http://assets.talktalesapps.com/s1video.mp4',
+                          )));
+                },
               ),
             )
           ],
