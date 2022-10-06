@@ -4,12 +4,11 @@ import 'package:vanzee/Screens/Auth/forgot_password.dart';
 import 'package:vanzee/Screens/Auth/otp_verify.dart';
 import 'package:vanzee/Screens/Auth/sign_in.dart';
 import 'package:vanzee/Screens/Auth/sign_up.dart';
-import 'package:vanzee/Screens/Components/story_page.dart';
-
-import 'package:vanzee/Screens/VideosViewer/VideosScreen.dart';
+import 'package:vanzee/Screens/story1/story_page.dart';
 import 'package:vanzee/Screens/home.dart';
-import 'package:vanzee/Screens/search.dart';
 import 'package:vanzee/Screens/settings.dart';
+import 'package:vanzee/Screens/story2/story_page2.dart';
+import 'package:vanzee/Screens/story3/story_page3.dart';
 
 class Routes {
   static final routes = [
@@ -42,8 +41,12 @@ class Routes {
       page: () => StoryPage(),
     ),
     GetPage(
-      name: '/search',
-      page: () => Search(),
+      name: '/storyPage2',
+      page: () => StoryPage2(),
+    ),
+    GetPage(
+      name: '/storyPage3',
+      page: () => StoryPage3(),
     ),
     GetPage(
       name: '/settings',

@@ -28,7 +28,7 @@ class MyTheme {
       ),
       scaffoldBackgroundColor: Background,
       cardColor: Background,
-      textSelectionColor: PrimaryColorLight,
+      // textSelectionColor: PrimaryColorLight,
       backgroundColor: Background,
       textTheme: base.textTheme.copyWith(
           subtitle1: base.textTheme.subtitle1!.copyWith(color: TextColor),

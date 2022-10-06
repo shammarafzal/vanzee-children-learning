@@ -7,8 +7,10 @@ import 'Routes/route.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.landscapeLeft,
+    DeviceOrientation.landscapeRight,
+  ]);
 
   runApp(
     GetMaterialApp(
@@ -36,3 +38,5 @@ void configLoading() {
     ..userInteractions = true
     ..dismissOnTap = false;
 }
+
+

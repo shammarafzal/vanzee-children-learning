@@ -13,8 +13,8 @@ class Home_State extends State<Home> {
   int _selectIndex = 0;
   late String _title;
   List<Widget> _widgetOptions = <Widget>[
-    StoryList(),
-    Search(),
+    StoryCard1(),
+    // Search(),
     SettingsPage(),
   ];
   void _OnItemTap(int index) {
@@ -26,12 +26,12 @@ class Home_State extends State<Home> {
             _title = 'Simple Silly Speech Sounds';
           }
           break;
+        // case 1:
+        //   {
+        //     _title = 'Search';
+        //   }
+        //   break;
         case 1:
-          {
-            _title = 'Search';
-          }
-          break;
-        case 2:
           {
             _title = 'About App & Settings';
           }
@@ -76,10 +76,10 @@ class Home_State extends State<Home> {
             icon: Icon(Icons.auto_stories),
             label: 'Story',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.search),
+          //   label: 'Search',
+          // ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'App Info',
