@@ -1,6 +1,7 @@
 import 'package:better_page_turn/better_page_turn.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vanzee/Screens/story1/s1_final.dart';
 import 'package:vanzee/Screens/story1/single_story_2.dart';
 import 'package:vanzee/Screens/story1/single_story_3.dart';
 import 'package:vanzee/Screens/story1/single_story_4.dart';
@@ -31,6 +32,7 @@ class _StoryAnimationState extends State<StoryAnimation> {
           SingleStoryComponent3(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
           SingleStoryComponent4(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
           SingleStoryComponent5(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
+          SingleStoryComponentF(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
 
         ],
         cellSize: Size(SizeConfig.screenHeight, SizeConfig.screenWidth),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:vanzee/Screens/story1/play_video1.dart';
 import 'package:vanzee/Screens/story1/story_animation.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
 
@@ -77,13 +78,15 @@ class _StoryPageState extends State<StoryPage> {
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.transparent),
               child: InkWell(
-                // onTap: () {
-                //   Navigator.of(context).push(MaterialPageRoute(
-                //       builder: (context) => VideosViewer(
-                //             videoLink:
-                //                 'http://assets.talktalesapps.com/s1video.mp4',
-                //           )));
-                // },
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => PlayVideo1  ()));
+                  // Navigator.of(context).push(MaterialPageRoute(
+                  //     builder: (context) => VideosViewer(
+                  //           videoLink:
+                  //               'http://assets.talktalesapps.com/s1video.mp4',
+                  //         )));
+                },
               ),
             )
           ],

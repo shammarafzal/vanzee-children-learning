@@ -90,7 +90,7 @@ class _SingleStoryComponent2State extends State<SingleStoryComponent2> {
                           color: Color(0xffA4C2F4)),
                       child: RotatedBox(
                           quarterTurns: 1,
-                          child: Text('Mmm', style: TextStyle(fontSize: 42, fontWeight: FontWeight.w900),)
+                          child: Text('Mmm!', style: TextStyle(fontSize: 42, fontWeight: FontWeight.w900),)
                       ),
                     ),
                   ],
