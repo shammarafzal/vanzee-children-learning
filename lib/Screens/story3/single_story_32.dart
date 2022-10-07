@@ -16,7 +16,7 @@ class _SingleStoryComponent32State extends State<SingleStoryComponent32> {
 
   AudioPlayer audioPlayer = AudioPlayer();
   YoutubePlayerController _controller = YoutubePlayerController(
-    initialVideoId: 'Ev1_IPdevgg',
+    initialVideoId: 'DsHrbjB7H7w',
     flags: YoutubePlayerFlags(
       autoPlay: false,
       mute: false,
