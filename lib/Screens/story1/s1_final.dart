@@ -34,13 +34,14 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
     return RotatedBox(
       quarterTurns: 3,
       child: Container(
+          color: Color(0xffA4C2F4),
         // padding: EdgeInsets.only(top: 10),
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage("Assets/s1/s1f.png"),
-            ),
-          ),
+        //   decoration: BoxDecoration(
+        //     image: DecorationImage(
+        //       fit: BoxFit.fill,
+        //       image: AssetImage("Assets/s1/s1f.png"),
+        //     ),
+        //   ),
           child:
           SafeArea(
             child: Column(
@@ -182,7 +183,7 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: const EdgeInsets.only(top: 100),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -197,7 +198,7 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
 
                         child: Container(
                           height: SizeConfig.screenHeight * 0.15,
-                          width: SizeConfig.screenHeight * 0.28,
+                          width: SizeConfig.screenHeight * 0.2,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.fill,
@@ -232,7 +233,7 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                         shakeDuration: Duration(milliseconds: 500),
                         child: Container(
                           height: SizeConfig.screenHeight * 0.15,
-                          width: SizeConfig.screenHeight * 0.28,
+                          width: SizeConfig.screenHeight * 0.2,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.fill,
@@ -258,6 +259,17 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    Container(
+                      height: SizeConfig.screenHeight * 0.1,
+                      width: SizeConfig.screenHeight * 0.2,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage("Assets/s1/s1f-e.png"),
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.transparent),
+                    ),
                     ShakeWidget(
                       key: shakeKey7,
                       shakeCount: 3,
@@ -267,6 +279,10 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                         height: SizeConfig.screenHeight * 0.15,
                         width: SizeConfig.screenHeight * 0.2,
                         decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage("Assets/s1/s1fP.png"),
+                            ),
                             borderRadius: BorderRadius.circular(10),
                             color: Colors.transparent),
                         child: InkWell(
@@ -276,9 +292,11 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                           },
                         ),
                       ),
-                    )
+                    ),
+
                   ],
-                )
+                ),
+
               ],
             ),
           )),

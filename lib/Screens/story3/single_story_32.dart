@@ -41,12 +41,7 @@ class _SingleStoryComponent32State extends State<SingleStoryComponent32> {
     return RotatedBox(
       quarterTurns: 3,
       child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage("Assets/baseImg.png"),
-            ),
-          ),
+          color: Color(0xffA4C2F4),
           child:
           SafeArea(
             child: Column(
@@ -54,9 +49,13 @@ class _SingleStoryComponent32State extends State<SingleStoryComponent32> {
                 Row(
                   children: [
                     Container(
-                      height: SizeConfig.screenHeight * 0.43,
-                      width: SizeConfig.screenHeight * 0.05,
+                      height: SizeConfig.screenHeight * 0.45,
+                      width: SizeConfig.screenWidth * 0.15,
                       decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage("Assets/baseImg-2.png"),
+                          ),
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.transparent),
                       child: InkWell(
@@ -65,12 +64,10 @@ class _SingleStoryComponent32State extends State<SingleStoryComponent32> {
                         },
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(15.0),
-                    ),
+
                     Container(
-                      height: SizeConfig.screenHeight * 0.44,
-                      width: SizeConfig.screenHeight * 0.24,
+                      height: SizeConfig.screenHeight * 0.42,
+                      width: SizeConfig.screenWidth * 0.6,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.black),
@@ -84,7 +81,7 @@ class _SingleStoryComponent32State extends State<SingleStoryComponent32> {
                     ),
                     Container(
                       height: SizeConfig.screenHeight * 0.2,
-                      width: SizeConfig.screenHeight * 0.1,
+                      width: SizeConfig.screenWidth * 0.25,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffA4C2F4)),
@@ -102,8 +99,12 @@ class _SingleStoryComponent32State extends State<SingleStoryComponent32> {
                   children: [
                     Container(
                       height: SizeConfig.screenHeight * 0.4,
-                      width: SizeConfig.screenHeight * 0.05,
+                      width: SizeConfig.screenWidth * 0.11,
                       decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage("Assets/baseImg-3.png"),
+                          ),
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.transparent),
                       child: InkWell(
@@ -117,8 +118,8 @@ class _SingleStoryComponent32State extends State<SingleStoryComponent32> {
                     ),
 
                     Container(
-                      height: SizeConfig.screenHeight * 0.41,
-                      width: SizeConfig.screenHeight * 0.17,
+                      height: SizeConfig.screenHeight * 0.4,
+                      width: SizeConfig.screenWidth * 0.4,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.black),
@@ -142,8 +143,8 @@ class _SingleStoryComponent32State extends State<SingleStoryComponent32> {
                         shakeOffset: 10,
                         shakeDuration: Duration(milliseconds: 500),
                         child:  Container(
-                          height: SizeConfig.screenHeight * 0.2,
-                          width: SizeConfig.screenHeight * 0.3,
+                          height: SizeConfig.screenHeight * 0.15,
+                          width: SizeConfig.screenWidth * 0.4,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.fill,
