@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 import '../../Settings/SizeConfig.dart';
 import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import '../video_player_widget.dart';
 
 class SingleStoryComponent2 extends StatefulWidget {
   const SingleStoryComponent2({Key? key, required this.horizontalFlipPageTurnController}) : super(key: key);
@@ -13,22 +14,7 @@ class SingleStoryComponent2 extends StatefulWidget {
 
 class _SingleStoryComponent2State extends State<SingleStoryComponent2> {
   final shakeKey = GlobalKey<ShakeWidgetState>();
-
   AudioPlayer audioPlayer = AudioPlayer();
-  YoutubePlayerController _controller = YoutubePlayerController(
-    initialVideoId: 'Ev1_IPdevgg',
-    flags: YoutubePlayerFlags(
-      autoPlay: false,
-      mute: false,
-    ),
-  );
-  YoutubePlayerController _controller1 = YoutubePlayerController(
-    initialVideoId: 'w0oICA4IIXU',
-    flags: YoutubePlayerFlags(
-      autoPlay: false,
-      mute: false,
-    ),
-  );
 
   @override
   void dispose() {
@@ -42,12 +28,7 @@ class _SingleStoryComponent2State extends State<SingleStoryComponent2> {
       quarterTurns: 3,
       child: Container(
           color: Color(0xffA4C2F4),
-          // decoration: BoxDecoration(
-          //   image: DecorationImage(
-          //     fit: BoxFit.fill,
-          //     image: AssetImage("Assets/baseImg.png"),
-          //   ),
-          // ),
+
           child:
           SafeArea(
             child: Column(
@@ -79,10 +60,7 @@ class _SingleStoryComponent2State extends State<SingleStoryComponent2> {
                           color: Colors.transparent),
                       child: RotatedBox(
                         quarterTurns: 1,
-                        child:YoutubePlayer(
-                          controller: _controller1,
-                          showVideoProgressIndicator: true,
-                        ),
+                        child:VideoPlayerView(url: "Assets/s1/videos/mmm-1.mp4", dataSourceType: DataSourceType.asset),
                       ),
                     ),
                     Container(
@@ -131,10 +109,7 @@ class _SingleStoryComponent2State extends State<SingleStoryComponent2> {
                           color: Colors.transparent),
                       child: RotatedBox(
                         quarterTurns: 1,
-                        child:YoutubePlayer(
-                          controller: _controller,
-                          showVideoProgressIndicator: true,
-                        ),
+                        child:VideoPlayerView(url: "Assets/s1/videos/mmm-2.mp4", dataSourceType: DataSourceType.asset),
                       ),
                     ),
                     Padding(

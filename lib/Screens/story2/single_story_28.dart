@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 import '../../Settings/SizeConfig.dart';
 import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import '../video_player_widget.dart';
 
 class SingleStoryComponent28 extends StatefulWidget {
   const SingleStoryComponent28({Key? key, required this.horizontalFlipPageTurnController}) : super(key: key);
@@ -13,23 +14,7 @@ class SingleStoryComponent28 extends StatefulWidget {
 
 class _SingleStoryComponent28State extends State<SingleStoryComponent28> {
   final shakeKey = GlobalKey<ShakeWidgetState>();
-
   AudioPlayer audioPlayer = AudioPlayer();
-  YoutubePlayerController _controller = YoutubePlayerController(
-    initialVideoId: 'x4yqOHF6mNc',
-    flags: YoutubePlayerFlags(
-      autoPlay: false,
-      mute: false,
-    ),
-  );
-  YoutubePlayerController _controller1 = YoutubePlayerController(
-    initialVideoId: 'FeZNwSqH-UQ',
-    flags: YoutubePlayerFlags(
-      autoPlay: false,
-      mute: false,
-    ),
-  );
-
   @override
   void dispose() {
     audioPlayer.dispose();
@@ -73,10 +58,7 @@ class _SingleStoryComponent28State extends State<SingleStoryComponent28> {
                           color: Colors.black),
                       child: RotatedBox(
                         quarterTurns: 1,
-                        child:YoutubePlayer(
-                          controller: _controller1,
-                          showVideoProgressIndicator: true,
-                        ),
+                        child:VideoPlayerView(url: "Assets/s2/videos/ohyeah-1.mp4", dataSourceType: DataSourceType.asset),
                       ),
                     ),
                     Container(
@@ -125,10 +107,7 @@ class _SingleStoryComponent28State extends State<SingleStoryComponent28> {
                           color: Colors.black),
                       child: RotatedBox(
                         quarterTurns: 1,
-                        child:YoutubePlayer(
-                          controller: _controller,
-                          showVideoProgressIndicator: true,
-                        ),
+                        child:VideoPlayerView(url: "Assets/s2/videos/ohyeah-2.mp4", dataSourceType: DataSourceType.asset),
                       ),
                     ),
                     Padding(

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 import '../../Settings/SizeConfig.dart';
 import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import '../video_player_widget.dart';
 
 class SingleStoryComponent25 extends StatefulWidget {
   const SingleStoryComponent25({Key? key, required this.horizontalFlipPageTurnController}) : super(key: key);
@@ -13,22 +14,7 @@ class SingleStoryComponent25 extends StatefulWidget {
 
 class _SingleStoryComponent25State extends State<SingleStoryComponent25> {
   final shakeKey = GlobalKey<ShakeWidgetState>();
-
   AudioPlayer audioPlayer = AudioPlayer();
-  YoutubePlayerController _controller = YoutubePlayerController(
-    initialVideoId: 'dFlCklOCa-8',
-    flags: YoutubePlayerFlags(
-      autoPlay: false,
-      mute: false,
-    ),
-  );
-  YoutubePlayerController _controller1 = YoutubePlayerController(
-    initialVideoId: 'CT5kfTD96Zw',
-    flags: YoutubePlayerFlags(
-      autoPlay: false,
-      mute: false,
-    ),
-  );
 
   @override
   void dispose() {
@@ -73,10 +59,7 @@ class _SingleStoryComponent25State extends State<SingleStoryComponent25> {
                           color: Colors.black),
                       child: RotatedBox(
                         quarterTurns: 1,
-                        child:YoutubePlayer(
-                          controller: _controller1,
-                          showVideoProgressIndicator: true,
-                        ),
+                        child:VideoPlayerView(url: "Assets/s2/videos/ohman-1.mp4", dataSourceType: DataSourceType.asset),
                       ),
                     ),
                     Container(
@@ -99,8 +82,12 @@ class _SingleStoryComponent25State extends State<SingleStoryComponent25> {
                   children: [
                     Container(
                       height: SizeConfig.screenHeight * 0.4,
-                      width: SizeConfig.screenHeight * 0.05,
+                      width: SizeConfig.screenWidth * 0.11,
                       decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage("Assets/baseImg-3.png"),
+                          ),
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.transparent),
                       child: InkWell(
@@ -125,10 +112,7 @@ class _SingleStoryComponent25State extends State<SingleStoryComponent25> {
                           color: Colors.black),
                       child: RotatedBox(
                         quarterTurns: 1,
-                        child:YoutubePlayer(
-                          controller: _controller,
-                          showVideoProgressIndicator: true,
-                        ),
+                        child:VideoPlayerView(url: "Assets/s2/videos/ohman-2.mp4", dataSourceType: DataSourceType.asset),
                       ),
                     ),
                     Padding(

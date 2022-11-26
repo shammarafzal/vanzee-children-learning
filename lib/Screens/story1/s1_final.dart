@@ -3,7 +3,6 @@ import 'package:vanzee/Screens/story1/play_video1.dart';
 import '../../Settings/SizeConfig.dart';
 import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class SingleStoryComponentF extends StatefulWidget {
   const SingleStoryComponentF({Key? key, required this.horizontalFlipPageTurnController}) : super(key: key);

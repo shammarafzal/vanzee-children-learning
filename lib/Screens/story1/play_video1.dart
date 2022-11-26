@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vanzee/Screens/home.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:video_player/video_player.dart';
+import '../video_player_widget.dart';
 
 class PlayVideo1 extends StatefulWidget {
   const PlayVideo1({Key? key}) : super(key: key);
@@ -11,13 +12,6 @@ class PlayVideo1 extends StatefulWidget {
 }
 
 class _PlayVideo1State extends State<PlayVideo1> {
-  YoutubePlayerController _controller = YoutubePlayerController(
-    initialVideoId: 'Vl8eYM8jSaw',
-    flags: YoutubePlayerFlags(
-      autoPlay: true,
-      mute: false,
-    ),
-  );
 
   @override
   Widget build(BuildContext context) {
@@ -35,20 +29,7 @@ class _PlayVideo1State extends State<PlayVideo1> {
         child: Container(
           width:SizeConfig.screenHeight,
           height: SizeConfig.screenWidth,
-          child: YoutubePlayerBuilder(
-          player: YoutubePlayer(
-          controller: _controller,
-    ),
-    builder: (context, player) {
-          return Column(
-            children: [
-              // some widgets
-              player,
-              //some other widgets
-            ],
-          );
-    }
-    ),
+          child:VideoPlayerView(url: "Assets/s1/videos/s1Movie.mp4", dataSourceType: DataSourceType.asset),
         ),
       )
     );
