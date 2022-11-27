@@ -31,6 +31,7 @@ class _SingleStoryComponent22State extends State<SingleStoryComponent22> {
           child:
           SafeArea(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
