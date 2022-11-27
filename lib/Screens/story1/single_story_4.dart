@@ -32,6 +32,7 @@ class _SingleStoryComponent4State extends State<SingleStoryComponent4> {
           child:
           SafeArea(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
@@ -53,7 +54,7 @@ class _SingleStoryComponent4State extends State<SingleStoryComponent4> {
                     ),
 
                     Container(
-                      height: SizeConfig.screenHeight * 0.42,
+                      height: SizeConfig.screenHeight * 0.4,
                       width: SizeConfig.screenWidth * 0.6,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -71,19 +72,19 @@ class _SingleStoryComponent4State extends State<SingleStoryComponent4> {
                           color: Color(0xffA4C2F4)),
                       child: RotatedBox(
                           quarterTurns: 1,
-                          child: Text('Eh!', style: TextStyle(fontSize: 42, fontWeight: FontWeight.w900),)
+                          child: Center(child: Text('Eh!', style: TextStyle(fontSize: SizeConfig.screenWidth * 0.1, fontWeight: FontWeight.w900),))
                       ),
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.all(15.0),
+                // ),
                 Row(
                   children: [
                     Container(
                       height: SizeConfig.screenHeight * 0.4,
-                      width: SizeConfig.screenWidth * 0.11,
+                      width: SizeConfig.screenWidth * 0.1,
                       decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.fill,
@@ -102,8 +103,8 @@ class _SingleStoryComponent4State extends State<SingleStoryComponent4> {
                     ),
 
                     Container(
-                      height: SizeConfig.screenHeight * 0.4,
-                      width: SizeConfig.screenWidth * 0.4,
+                      height: SizeConfig.screenHeight * 0.43,
+                      width: SizeConfig.screenWidth * 0.35,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.black),
@@ -124,8 +125,8 @@ class _SingleStoryComponent4State extends State<SingleStoryComponent4> {
                         shakeOffset: 10,
                         shakeDuration: Duration(milliseconds: 500),
                         child:  Container(
-                          height: SizeConfig.screenHeight * 0.15,
-                          width: SizeConfig.screenWidth * 0.4,
+                          height: SizeConfig.screenHeight * 0.22,
+                          width: SizeConfig.screenWidth * 0.43,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.fill,

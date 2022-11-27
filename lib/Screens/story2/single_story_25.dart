@@ -52,7 +52,7 @@ class _SingleStoryComponent25State extends State<SingleStoryComponent25> {
                     ),
 
                     Container(
-                      height: SizeConfig.screenHeight * 0.42,
+                      height: SizeConfig.screenHeight * 0.4,
                       width: SizeConfig.screenWidth * 0.6,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -70,19 +70,19 @@ class _SingleStoryComponent25State extends State<SingleStoryComponent25> {
                           color: Color(0xffA4C2F4)),
                       child: RotatedBox(
                           quarterTurns: 1,
-                          child: Text('Oh Man!', style: TextStyle(fontSize: 42, fontWeight: FontWeight.w900),)
+                          child: Center(child: Text('Oh Man!', style: TextStyle(fontSize: SizeConfig.screenWidth * 0.1, fontWeight: FontWeight.w900),))
                       ),
                     ),
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.all(15.0),
+                // ),
                 Row(
                   children: [
                     Container(
                       height: SizeConfig.screenHeight * 0.4,
-                      width: SizeConfig.screenWidth * 0.11,
+                      width: SizeConfig.screenWidth * 0.1,
                       decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.fill,
@@ -101,8 +101,8 @@ class _SingleStoryComponent25State extends State<SingleStoryComponent25> {
                     ),
 
                     Container(
-                      height: SizeConfig.screenHeight * 0.4,
-                      width: SizeConfig.screenWidth * 0.4,
+                      height: SizeConfig.screenHeight * 0.43,
+                      width: SizeConfig.screenWidth * 0.35,
                       decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.fill,
@@ -127,8 +127,8 @@ class _SingleStoryComponent25State extends State<SingleStoryComponent25> {
                         shakeOffset: 10,
                         shakeDuration: Duration(milliseconds: 500),
                         child:  Container(
-                          height: SizeConfig.screenHeight * 0.15,
-                          width: SizeConfig.screenWidth * 0.4,
+                          height: SizeConfig.screenHeight * 0.22,
+                          width: SizeConfig.screenWidth * 0.45,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.fill,

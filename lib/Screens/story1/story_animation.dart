@@ -1,4 +1,4 @@
-import 'package:better_page_turn/better_page_turn.dart';
+// import 'package:better_page_turn/better_page_turn.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vanzee/Screens/story1/s1_final.dart';
@@ -9,6 +9,7 @@ import 'package:vanzee/Screens/story1/single_story_5.dart';
 import 'package:vanzee/Screens/story1/single_story_6.dart';
 
 import '../../Settings/SizeConfig.dart';
+import '../page_turn_animation.dart';
 import 'single_story_1.dart';
 
 class StoryAnimation extends StatefulWidget {

@@ -44,10 +44,11 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
           child:
           SafeArea(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-
+                  // crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     ShakeWidget(
                       key: shakeKey1,
@@ -112,9 +113,9 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                     )
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(5.0),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.all(5.0),
+                // ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -181,9 +182,9 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                     )
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 100),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.only(top: 80),
+                // ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -255,20 +256,10 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                   padding: const EdgeInsets.all(5.0),
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      height: SizeConfig.screenHeight * 0.1,
-                      width: SizeConfig.screenHeight * 0.2,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.fill,
-                            image: AssetImage("Assets/s1/s1f-e.png"),
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.transparent),
-                    ),
+
                     ShakeWidget(
                       key: shakeKey7,
                       shakeCount: 3,
@@ -292,6 +283,25 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                         ),
                       ),
                     ),
+                    Container(
+                      height: SizeConfig.screenHeight * 0.15,
+                      width: SizeConfig.screenHeight * 0.2,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage("Assets/s1/s1f-e.png"),
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.transparent),
+                    ),
+                    // Container(
+                    //   height: SizeConfig.screenHeight * 0.2,
+                    //   width: SizeConfig.screenHeight * 0.2,
+                    //   decoration: BoxDecoration(
+                    //
+                    //       borderRadius: BorderRadius.circular(10),
+                    //       color: Colors.transparent),
+                    // ),
 
                   ],
                 ),

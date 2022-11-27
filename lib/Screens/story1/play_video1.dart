@@ -17,6 +17,7 @@ class _PlayVideo1State extends State<PlayVideo1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(
+        backgroundColor: const Color.fromRGBO(235, 159, 73, 1),
         leading: GestureDetector(
             onTap: (){
               Navigator.of(context).push(

@@ -14,7 +14,7 @@ class StoryPage extends StatefulWidget {
 
 class _StoryPageState extends State<StoryPage> {
   _abouttalktales() async {
-    const url = "https://www.talktalesbooks.com";
+    const url = "https://www.talktalesbooks.com/simple-sounds";
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -48,6 +48,7 @@ class _StoryPageState extends State<StoryPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+
             Container(
               height: SizeConfig.screenHeight * 0.29,
               width: double.infinity,
@@ -58,21 +59,55 @@ class _StoryPageState extends State<StoryPage> {
                 onTap: () => {_abouttalktales()},
               ),
             ),
+            // Container(
+            //   height: SizeConfig.screenHeight * 0.12,
+            //   width: double.infinity,
+            //   decoration: BoxDecoration(
+            //       borderRadius: BorderRadius.circular(10),
+            //       color: Colors.black),
+            //   child: InkWell(
+            //     onTap: () {
+            //       Navigator.of(context).push(
+            //           MaterialPageRoute(builder: (context) => StoryAnimation  ()));
+            //     },
+            //   ),
+            // ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Container(
+                height: SizeConfig.screenHeight * 0.15,
+                width: SizeConfig.screenWidth * 0.3,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage("Assets/image.png"),
+                    ),
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.transparent),
+                child: InkWell(
+                  onTap: () => {
+                  Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => StoryAnimation  ()))
+                  },
+                ),
+              ),
+            ),
             Container(
-              height: SizeConfig.screenHeight * 0.29,
-              width: double.infinity,
+              height: SizeConfig.screenHeight * 0.1,
+              width: SizeConfig.screenWidth * 0.9 ,
               decoration: BoxDecoration(
+
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.transparent),
               child: InkWell(
-                onTap: () {
+                onTap: () => {
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => StoryAnimation  ()));
+                      MaterialPageRoute(builder: (context) => StoryAnimation  ()))
                 },
               ),
             ),
             Container(
-              height: SizeConfig.screenHeight * 0.29,
+              height: SizeConfig.screenHeight * 0.25,
               width: double.infinity,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),

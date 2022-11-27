@@ -31,124 +31,130 @@ class _SingleStoryComponentState extends State<SingleStoryComponent> {
           child: 
           SafeArea(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: SizeConfig.screenHeight * 0.45,
-                      width: SizeConfig.screenWidth * 0.15,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.fill,
-                            image: AssetImage("Assets/baseImg-2.png"),
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.transparent),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                    ),
-                    // Padding(
-                    //   padding: const EdgeInsets.all(15.0),
-                    // ),
-                    Container(
-                      height: SizeConfig.screenHeight * 0.42,
-                      width: SizeConfig.screenWidth * 0.6,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.transparent),
-                      child: RotatedBox(
-                        quarterTurns: 1,
-                        child:VideoPlayerView(url: "Assets/s1/videos/oh-1.mp4", dataSourceType: DataSourceType.asset),
-                      ),
-                    ),
-                    Container(
-                      height: SizeConfig.screenHeight * 0.2,
-                      width: SizeConfig.screenWidth * 0.25,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color(0xffA4C2F4)),
-                      child: RotatedBox(
-                          quarterTurns: 1,
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(20.0,35,20,20),
-                            child: Text("Oh!", style: TextStyle(fontSize: 42, fontWeight: FontWeight.w900),),
-                          )
-                      ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                ),
-                Row(
-                  children: [
-                    Container(
-                      height: SizeConfig.screenHeight * 0.4,
-                      width: SizeConfig.screenWidth * 0.11,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.fill,
-                            image: AssetImage("Assets/baseImg-3.png"),
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.transparent),
-                      child: InkWell(
-                        onTap: () {
-                          widget.horizontalFlipPageTurnController.animToRightWidget();
-                        },
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(5.0),
-                    ),
+                Container(
 
-                    Container(
-                      height: SizeConfig.screenHeight * 0.4,
-                      width: SizeConfig.screenWidth * 0.4,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.transparent),
-                      child: RotatedBox(
-                        quarterTurns: 1,
-                       child:VideoPlayerView(url: "Assets/s1/videos/oh-2.mp4", dataSourceType: DataSourceType.asset),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(5.0),
-                    ),
-                    RotatedBox(
-                      quarterTurns: 1,
-                      child:
-                      ShakeWidget(
-                        key: shakeKey,
-                        shakeCount: 3,
-                        shakeOffset: 10,
-                        shakeDuration: Duration(milliseconds: 500),
-                        child:  Container(
-                          height: SizeConfig.screenHeight * 0.15,
-                          width: SizeConfig.screenWidth * 0.4,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: AssetImage("Assets/s1/oh.jpg"),
-                              ),
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.transparent),
-                          child: InkWell(
-                            onTap: () {
-                              shakeKey.currentState?.shake();
-                              audioPlayer.play('http://assets.talktalesapps.com/s1/oh/oh.mp3');
-                            },
-                          ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: SizeConfig.screenHeight * 0.45,
+                        width: SizeConfig.screenWidth * 0.15,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage("Assets/baseImg-2.png"),
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.transparent),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
                         ),
-
                       ),
-                    )
-                  ],
+                      // Padding(
+                      //   padding: const EdgeInsets.all(15.0),
+                      // ),
+                      Container(
+                        height: SizeConfig.screenHeight * 0.4,
+                        width: SizeConfig.screenWidth * 0.6,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.transparent),
+                        child: RotatedBox(
+                          quarterTurns: 1,
+                          child:VideoPlayerView(url: "Assets/s1/videos/oh-1.mp4", dataSourceType: DataSourceType.asset),
+                        ),
+                      ),
+                      Container(
+                        height: SizeConfig.screenHeight * 0.2,
+                        width: SizeConfig.screenWidth * 0.25,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xffA4C2F4)),
+                        child: RotatedBox(
+                            quarterTurns: 1,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(20.0,35,20,20),
+                              child: Center(child: Text("Oh!", style: TextStyle(fontSize: SizeConfig.screenWidth * 0.1, fontWeight: FontWeight.w900),)),
+                            )
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                Container(
+                  color: Colors.transparent,
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        height: SizeConfig.screenHeight * 0.4,
+                        width: SizeConfig.screenWidth * 0.1,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage("Assets/baseImg-3.png"),
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.transparent),
+                        child: InkWell(
+                          onTap: () {
+                            widget.horizontalFlipPageTurnController.animToRightWidget();
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                      ),
+
+                      Container(
+                        height: SizeConfig.screenHeight * 0.43,
+                        width: SizeConfig.screenWidth * 0.35,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.transparent),
+                        child: RotatedBox(
+                          quarterTurns: 1,
+                         child:VideoPlayerView(url: "Assets/s1/videos/oh-2.mp4", dataSourceType: DataSourceType.asset),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(5.0),
+                      ),
+                      RotatedBox(
+                        quarterTurns: 1,
+                        child:
+                        ShakeWidget(
+                          key: shakeKey,
+                          shakeCount: 3,
+                          shakeOffset: 10,
+                          shakeDuration: Duration(milliseconds: 500),
+                          child:  Container(
+                            height: SizeConfig.screenHeight * 0.22,
+                            width: SizeConfig.screenWidth * 0.45,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image: AssetImage("Assets/s1/oh.jpg"),
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.transparent),
+                            child: InkWell(
+                              onTap: () {
+                                shakeKey.currentState?.shake();
+                                audioPlayer.play('http://assets.talktalesapps.com/s1/oh/oh.mp3');
+                              },
+                            ),
+                          ),
+
+                        ),
+                      )
+                    ],
+                  ),
                 )
               ],
             ),

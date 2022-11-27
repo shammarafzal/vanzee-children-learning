@@ -40,7 +40,7 @@ class _StoryCard1State extends State<StoryCard1> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                     width: SizeConfig.screenWidth * 1,
+                     width: SizeConfig.screenWidth * 0.9,
                      height: SizeConfig.screenHeight * 0.3,
                     decoration: BoxDecoration(
                       image: DecorationImage(
@@ -78,7 +78,7 @@ class _StoryCard1State extends State<StoryCard1> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    width: SizeConfig.screenWidth * 1,
+                    width: SizeConfig.screenWidth * 0.9,
                     height: SizeConfig.screenHeight * 0.3,
                     decoration: BoxDecoration(
                       image: DecorationImage(
@@ -116,7 +116,7 @@ class _StoryCard1State extends State<StoryCard1> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    width: SizeConfig.screenWidth * 1,
+                    width: SizeConfig.screenWidth * 0.9,
                     height: SizeConfig.screenHeight * 0.3,
                     decoration: BoxDecoration(
                       image: DecorationImage(

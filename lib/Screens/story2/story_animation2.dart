@@ -1,6 +1,7 @@
-import 'package:better_page_turn/better_page_turn.dart';
+// import 'package:better_page_turn/better_page_turn.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vanzee/Screens/story2/s2_final.dart';
 import 'package:vanzee/Screens/story2/single_story_21.dart';
 import 'package:vanzee/Screens/story2/single_story_22.dart';
 import 'package:vanzee/Screens/story2/single_story_23.dart';
@@ -12,6 +13,7 @@ import 'package:vanzee/Screens/story2/single_story_28.dart';
 import 'package:vanzee/Screens/story2/single_story_29.dart';
 
 import '../../Settings/SizeConfig.dart';
+import '../page_turn_animation.dart';
 
 
 class StoryAnimation2 extends StatefulWidget {
@@ -38,6 +40,7 @@ class _StoryAnimation2State extends State<StoryAnimation2> {
           SingleStoryComponent27(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
           SingleStoryComponent28(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
           SingleStoryComponent29(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
+          SingleStoryComponentF2(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
 
         ],
         cellSize: Size(SizeConfig.screenHeight, SizeConfig.screenWidth),
