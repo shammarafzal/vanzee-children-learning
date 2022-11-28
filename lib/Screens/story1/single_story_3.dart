@@ -64,7 +64,7 @@ class _SingleStoryComponent3State extends State<SingleStoryComponent3> {
                       ),
                     ),
                     Container(
-                      height: SizeConfig.screenHeight * 0.2,
+                      height: SizeConfig.screenHeight * 0.45,
                       width: SizeConfig.screenWidth * 0.25,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),

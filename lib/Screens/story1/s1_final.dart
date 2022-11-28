@@ -284,6 +284,7 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                       ),
                     ),
                     Container(
+                      margin: EdgeInsets.only(bottom: SizeConfig.screenHeight*0.03),
                       height: SizeConfig.screenHeight * 0.15,
                       width: SizeConfig.screenHeight * 0.2,
                       decoration: BoxDecoration(

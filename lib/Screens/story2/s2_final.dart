@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:vanzee/Screens/story2/play_video2.dart';
-import 'package:vanzee/Screens/story3/play_vide03.dart';
 import '../../Settings/SizeConfig.dart';
 import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
@@ -43,24 +42,24 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
           child:
           SafeArea(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
               Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                 children:[
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  // crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
+                    SizedBox(width: 100,),
                     ShakeWidget(
                       key: shakeKey1,
                       shakeCount: 3,
                       shakeOffset: 10,
                       shakeDuration: Duration(milliseconds: 500),
-
                       child: RotatedBox(
                         quarterTurns: 1,
                         child: Container(
-                          height: SizeConfig.screenHeight * 0.14,
+                          height: SizeConfig.screenHeight * 0.16,
                           width: SizeConfig.screenHeight * 0.13,
                           decoration: BoxDecoration(
                               image: DecorationImage(
@@ -78,9 +77,6 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                         ),
                       ),
                     ),
-
-
-
                     Padding(
                       padding: const EdgeInsets.all(5.0),
                     ),
@@ -93,7 +89,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                         quarterTurns: 1,
                         child:
                         Container(
-                          height: SizeConfig.screenHeight * 0.14,
+                          height: SizeConfig.screenHeight * 0.16,
                           width: SizeConfig.screenHeight * 0.13,
                           decoration: BoxDecoration(
                               image: DecorationImage(
@@ -113,15 +109,13 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                     )
                   ],
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.all(5.0),
-                // ),
                 Padding(
                   padding: const EdgeInsets.all(5.0),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    SizedBox(width: 100,),
                     ShakeWidget(
                       key: shakeKey3,
                       shakeCount: 3,
@@ -130,8 +124,8 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                       child: RotatedBox(
                         quarterTurns: 1,
                         child: Container(
-                          height: SizeConfig.screenHeight * 0.14,
-                          width: SizeConfig.screenHeight * 0.13,
+                          height: SizeConfig.screenHeight * 0.16,
+                          width: SizeConfig.screenHeight * 0.14,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.fill,
@@ -148,56 +142,18 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                         ),
                       ),
                     ),
-                    // Padding(
-                    //   padding: const EdgeInsets.all(5.0),
-                    // ),
-
-
                     Padding(
                       padding: const EdgeInsets.all(5.0),
                     ),
-                    // RotatedBox(
-                    //   quarterTurns: 1,
-                    //   child:
-                    //   ShakeWidget(
-                    //     key: shakeKey4,
-                    //     shakeCount: 3,
-                    //     shakeOffset: 10,
-                    //     shakeDuration: Duration(milliseconds: 500),
-                    //     child: Container(
-                    //       height: SizeConfig.screenHeight * 0.13,
-                    //       width: SizeConfig.screenHeight * 0.12,
-                    //       decoration: BoxDecoration(
-                    //           image: DecorationImage(
-                    //             fit: BoxFit.fill,
-                    //             image: AssetImage("Assets/s3/s40.jpeg"),
-                    //           ),
-                    //           borderRadius: BorderRadius.circular(10),
-                    //           color: Colors.transparent),
-                    //       child: InkWell(
-                    //         onTap: () {
-                    //           shakeKey4.currentState?.shake();
-                    //           audioPlayer.play('http://assets.talktalesapps.com/s3/oin.mp3');
-                    //         },
-                    //       ),
-                    //     ),
-                    //   ),
-                    // )
                   ],
                 ),
-
-                // Padding(
-                //   padding: const EdgeInsets.only(top: 80),
-                // ),
                 Padding(
                   padding: const EdgeInsets.all(5.0),
                 ),
-                //////////// SHEIKH /////
-
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    SizedBox(width: 100,),
                     ShakeWidget(
                       key: shakeKey9,
                       shakeCount: 3,
@@ -205,10 +161,9 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                       shakeDuration: Duration(milliseconds: 500),
                       child: RotatedBox(
                         quarterTurns: 1,
-
                         child: Container(
-                          height: SizeConfig.screenHeight * 0.14,
-                          width: SizeConfig.screenHeight * 0.13,
+                          height: SizeConfig.screenHeight * 0.16,
+                          width: SizeConfig.screenHeight * 0.14,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.fill,
@@ -228,11 +183,6 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                     Padding(
                       padding: const EdgeInsets.all(5.0),
                     ),
-
-
-                    // Padding(
-                    //   padding: const EdgeInsets.all(5.0),
-                    // ),
                     RotatedBox(
                       quarterTurns: 1,
                       child:
@@ -242,8 +192,8 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                         shakeOffset: 10,
                         shakeDuration: Duration(milliseconds: 500),
                         child: Container(
-                          height: SizeConfig.screenHeight * 0.14,
-                          width: SizeConfig.screenHeight * 0.13,
+                          height: SizeConfig.screenHeight * 0.16,
+                          width: SizeConfig.screenHeight * 0.14,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.fill,
@@ -260,190 +210,181 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                         ),
                       ),
                     ),
-
                   ],
                 ),
-
                 ]
               ),
-                ///////////// END ///////
-                SizedBox(height: 5,),
-                Row(
+                SizedBox(height: 35,),
+                Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ShakeWidget(
-                      key: shakeKey7,
-                      shakeCount: 3,
-                      shakeOffset: 10,
-                      shakeDuration: Duration(milliseconds: 500),
-                      child: Container(
-                        height: SizeConfig.screenHeight * 0.15,
-                        width: SizeConfig.screenHeight * 0.12,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage("Assets/s1/s1fP.png"),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ShakeWidget(
+                          key: shakeKey7,
+                          shakeCount: 3,
+                          shakeOffset: 10,
+                          shakeDuration: Duration(milliseconds: 500),
+                          child: Container(
+                            height: SizeConfig.screenHeight * 0.1,
+                            width: SizeConfig.screenHeight * 0.1,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image: AssetImage("Assets/s1/s1fP.png"),
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.transparent),
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                    MaterialPageRoute(builder: (context) => PlayVideo2  ()));
+                              },
                             ),
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.transparent),
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.of(context).push(
-                                MaterialPageRoute(builder: (context) => PlayVideo2  ()));
-                          },
-                        ),
-                      ),
-                    ),
-                    ShakeWidget(
-                      key: shakeKey5,
-                      shakeCount: 3,
-                      shakeOffset: 10,
-                      shakeDuration: Duration(milliseconds: 500),
-                      child: RotatedBox(
-                        quarterTurns: 1,
-
-                        child: Container(
-                          height: SizeConfig.screenHeight * 0.13,
-                          width: SizeConfig.screenHeight * 0.12,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: AssetImage("Assets/s2/s29.jpeg"),
-                              ),
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.transparent),
-                          child: InkWell(
-                            onTap: () {
-                              shakeKey5.currentState?.shake();
-                              audioPlayer.play('http://assets.talktalesapps.com/s2/oh-yeah.mp3');
-                            },
                           ),
                         ),
-                      ),
+                        ShakeWidget(
+                          key: shakeKey5,
+                          shakeCount: 3,
+                          shakeOffset: 10,
+                          shakeDuration: Duration(milliseconds: 500),
+                          child: RotatedBox(
+                            quarterTurns: 1,
+                            child: Container(
+                              height: SizeConfig.screenHeight * 0.16,
+                              width: SizeConfig.screenHeight * 0.15,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage("Assets/s2/s29.jpeg"),
+                                  ),
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.transparent),
+                              child: InkWell(
+                                onTap: () {
+                                  shakeKey5.currentState?.shake();
+                                  audioPlayer.play('http://assets.talktalesapps.com/s2/oh-yeah.mp3');
+                                },
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                        ),
+                        RotatedBox(
+                          quarterTurns: 1,
+                          child:
+                          ShakeWidget(
+                            key: shakeKey6,
+                            shakeCount: 3,
+                            shakeOffset: 10,
+                            shakeDuration: Duration(milliseconds: 500),
+                            child: Container(
+                              height: SizeConfig.screenHeight * 0.16,
+                              width: SizeConfig.screenHeight * 0.15,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage("Assets/s2/s25.jpg"),
+                                  ),
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.transparent),
+                              child: InkWell(
+                                onTap: () {
+                                  shakeKey6.currentState?.shake();
+                                  audioPlayer.play('http://assets.talktalesapps.com/s2/bom.mp3');
+                                },
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     Padding(
                       padding: const EdgeInsets.all(5.0),
                     ),
-
-
-                    Padding(
-                      padding: const EdgeInsets.all(5.0),
-                    ),
-                    RotatedBox(
-                      quarterTurns: 1,
-                      child:
-                      ShakeWidget(
-                        key: shakeKey6,
-                        shakeCount: 3,
-                        shakeOffset: 10,
-                        shakeDuration: Duration(milliseconds: 500),
-                        child: Container(
-                          height: SizeConfig.screenHeight * 0.13,
-                          width: SizeConfig.screenHeight * 0.12,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: SizeConfig.screenHeight * 0.1,
+                          width: SizeConfig.screenHeight * 0.1,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.fill,
-                                image: AssetImage("Assets/s2/s25.jpg"),
+                                image: AssetImage("Assets/s1/s1f-e.png"),
                               ),
                               borderRadius: BorderRadius.circular(10),
                               color: Colors.transparent),
-                          child: InkWell(
-                            onTap: () {
-                              shakeKey6.currentState?.shake();
-                              audioPlayer.play('http://assets.talktalesapps.com/s2/bom.mp3');
-                            },
+                        ),
+                        ShakeWidget(
+                          key: shakeKey11,
+                          shakeCount: 3,
+                          shakeOffset: 10,
+                          shakeDuration: Duration(milliseconds: 500),
+                          child: RotatedBox(
+                            quarterTurns: 1,
+                            child: Container(
+                              height: SizeConfig.screenHeight * 0.16,
+                              width: SizeConfig.screenHeight * 0.15,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage("Assets/s2/s28.jpg"),
+                                  ),
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.transparent),
+                              child: InkWell(
+                                onTap: () {
+                                  shakeKey11.currentState?.shake();
+                                  audioPlayer.play('http://assets.talktalesapps.com/s2/whe.mp3');
+                                },
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                        ),
+                        RotatedBox(
+                          quarterTurns: 1,
+                          child:
+                          ShakeWidget(
+                            key: shakeKey12,
+                            shakeCount: 3,
+                            shakeOffset: 10,
+                            shakeDuration: Duration(milliseconds: 500),
+                            child: Container(
+                              height: SizeConfig.screenHeight * 0.16,
+                              width: SizeConfig.screenHeight * 0.15,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage("Assets/s2/s23.jpeg"),
+                                  ),
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.transparent),
+                              child: InkWell(
+                                onTap: () {
+                                  shakeKey12.currentState?.shake();
+                                  audioPlayer.play('http://assets.talktalesapps.com/s2/pop.mp3');
+                                },
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-
                   ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(5.0),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      height: SizeConfig.screenHeight * 0.15,
-                      width: SizeConfig.screenHeight * 0.11,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.fill,
-                            image: AssetImage("Assets/s1/s1f-e.png"),
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.transparent),
-                    ),
-                    ShakeWidget(
-                      key: shakeKey11,
-                      shakeCount: 3,
-                      shakeOffset: 10,
-                      shakeDuration: Duration(milliseconds: 500),
-                      child: RotatedBox(
-                        quarterTurns: 1,
-
-                        child: Container(
-                          height: SizeConfig.screenHeight * 0.13,
-                          width: SizeConfig.screenHeight * 0.12,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: AssetImage("Assets/s2/s28.jpg"),
-                              ),
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.transparent),
-                          child: InkWell(
-                            onTap: () {
-                              shakeKey11.currentState?.shake();
-                              audioPlayer.play('http://assets.talktalesapps.com/s2/whe.mp3');
-                            },
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(5.0),
-                    ),
-
-
-                    Padding(
-                      padding: const EdgeInsets.all(5.0),
-                    ),
-                    RotatedBox(
-                      quarterTurns: 1,
-                      child:
-                      ShakeWidget(
-                        key: shakeKey12,
-                        shakeCount: 3,
-                        shakeOffset: 10,
-                        shakeDuration: Duration(milliseconds: 500),
-                        child: Container(
-                          height: SizeConfig.screenHeight * 0.13,
-                          width: SizeConfig.screenHeight * 0.12,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: AssetImage("Assets/s2/s23.jpeg"),
-                              ),
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.transparent),
-                          child: InkWell(
-                            onTap: () {
-                              shakeKey12.currentState?.shake();
-                              audioPlayer.play('http://assets.talktalesapps.com/s2/pop.mp3');
-                            },
-                          ),
-                        ),
-                      ),
-                    ),
-
-
-                  ],
-                ),
-
-
               ],
             ),
           )),

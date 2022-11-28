@@ -37,18 +37,22 @@ class _StoryCard1State extends State<StoryCard1> {
           Card(
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                     width: SizeConfig.screenWidth * 0.9,
-                     height: SizeConfig.screenHeight * 0.3,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage("Assets/s1m.png"),
+
+                RotatedBox(
+                  quarterTurns: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      width: SizeConfig.screenWidth * 0.6,
+                      height: SizeConfig.screenHeight * 0.6,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage("Assets/s1open.png"),
+                        ),
                       ),
-                    ),
-                   ),
+                     ),
+                  ),
                 ),
 
                 Padding(
@@ -75,15 +79,18 @@ class _StoryCard1State extends State<StoryCard1> {
           Card(
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    width: SizeConfig.screenWidth * 0.9,
-                    height: SizeConfig.screenHeight * 0.3,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage("Assets/s2m.png"),
+                RotatedBox(
+                  quarterTurns: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      width: SizeConfig.screenWidth * 0.6,
+                      height: SizeConfig.screenHeight * 0.6,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage("Assets/s2open.png"),
+                        ),
                       ),
                     ),
                   ),
@@ -113,15 +120,18 @@ class _StoryCard1State extends State<StoryCard1> {
           Card(
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    width: SizeConfig.screenWidth * 0.9,
-                    height: SizeConfig.screenHeight * 0.3,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage("Assets/s3m.png"),
+                RotatedBox(
+                  quarterTurns: 1,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      width: SizeConfig.screenWidth * 0.6,
+                      height: SizeConfig.screenHeight * 0.6,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage("Assets/s3open.png"),
+                        ),
                       ),
                     ),
                   ),

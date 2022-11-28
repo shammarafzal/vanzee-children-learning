@@ -92,17 +92,28 @@ class _StoryPage2State extends State<StoryPage2> {
                 },
               ),
             ),
-            Container(
-              height: SizeConfig.screenHeight * 0.25,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.transparent),
-              child: InkWell(
-                // onTap: () {
-                //   Navigator.of(context).push(
-                //       MaterialPageRoute(builder: (context) => PlayVideo2  ()));
-                // },
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: RotatedBox(
+                quarterTurns: 1,
+                child: Container(
+                  margin: EdgeInsets.only(bottom: SizeConfig.screenHeight*0.1,right:SizeConfig.screenHeight*0.04 ),
+                  height: SizeConfig.screenHeight * 0.1,
+                  width: SizeConfig.screenWidth * 0.2,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage("Assets/play_movie.png"),
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.transparent),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => PlayVideo2  ()));
+                    },
+                  ),
+                ),
               ),
             )
           ],

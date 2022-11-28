@@ -64,14 +64,14 @@ class _SingleStoryComponent26State extends State<SingleStoryComponent26> {
                           child: VideoPlayerView(url: "Assets/s2/videos/boom-1.mp4", dataSourceType: DataSourceType.asset)),
                     ),
                     Container(
-                      height: SizeConfig.screenHeight * 0.2,
+                      height: SizeConfig.screenHeight * 0.45,
                       width: SizeConfig.screenWidth * 0.25,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: Color(0xffA4C2F4)),
                       child: RotatedBox(
                           quarterTurns: 1,
-                          child: Center(child: Text('Boom Boom!', style: TextStyle(fontSize: SizeConfig.screenWidth * 0.1, fontWeight: FontWeight.w900),))
+                          child: Center(child: Text('Boom Boom!', style: TextStyle(fontSize: SizeConfig.screenWidth * 0.07, fontWeight: FontWeight.w900),))
                       ),
                     ),
                   ],

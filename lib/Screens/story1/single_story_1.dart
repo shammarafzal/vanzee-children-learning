@@ -34,7 +34,6 @@ class _SingleStoryComponentState extends State<SingleStoryComponent> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -69,11 +68,13 @@ class _SingleStoryComponentState extends State<SingleStoryComponent> {
                         ),
                       ),
                       Container(
-                        height: SizeConfig.screenHeight * 0.2,
+                        height: SizeConfig.screenHeight * 0.45,
                         width: SizeConfig.screenWidth * 0.25,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: Color(0xffA4C2F4)),
+                            color: Color(0xffA4C2F4)
+
+                        ),
                         child: RotatedBox(
                             quarterTurns: 1,
                             child: Padding(
