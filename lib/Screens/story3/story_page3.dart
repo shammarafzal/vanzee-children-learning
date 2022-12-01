@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:vanzee/Screens/story1/story_animation.dart';
 import 'package:vanzee/Screens/story3/play_vide03.dart';
 import 'package:vanzee/Screens/story3/story_animation3.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
@@ -59,38 +58,35 @@ class _StoryPage3State extends State<StoryPage3> {
                 onTap: () => {_abouttalktales()},
               ),
             ),
-            Align(
-              alignment: Alignment.bottomRight,
+            GestureDetector(
+              onTap: () => {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => StoryAnimation3  ()))
+              },
               child: Container(
-                height: SizeConfig.screenHeight * 0.15,
-                width: SizeConfig.screenWidth * 0.3,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage("Assets/image.png"),
+                color: Colors.transparent,
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    margin: EdgeInsets.only(top: SizeConfig.screenHeight * 0.12),
+                    // padding:  EdgeInsets.only(top: SizeConfig.screenHeight * 0.1),
+                    height: SizeConfig.screenHeight * 0.2,
+                    width: SizeConfig.screenWidth * 0.3,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage("Assets/image.png"),
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.transparent),
+                    child: InkWell(
+                      onTap: () => {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => StoryAnimation3  ()))
+                      },
                     ),
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.transparent),
-                child: InkWell(
-                  onTap: () => {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => StoryAnimation3  ()))
-                  },
+                  ),
                 ),
-              ),
-            ),
-            Container(
-              height: SizeConfig.screenHeight * 0.1,
-              width: SizeConfig.screenWidth * 0.9 ,
-              decoration: BoxDecoration(
-
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.transparent),
-              child: InkWell(
-                onTap: () => {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => StoryAnimation3  ()))
-                },
               ),
             ),
             Container(

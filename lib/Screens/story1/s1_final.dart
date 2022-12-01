@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:vanzee/Screens/home.dart';
 import 'package:vanzee/Screens/story1/play_video1.dart';
+import 'package:vanzee/Screens/story1/story_page.dart';
 import '../../Settings/SizeConfig.dart';
 import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
+
+import '../story.dart';
 
 class SingleStoryComponentF extends StatefulWidget {
   const SingleStoryComponentF({Key? key, required this.horizontalFlipPageTurnController}) : super(key: key);
@@ -50,6 +54,27 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   // crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
+                    RotatedBox(
+                      quarterTurns: 1,
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => Home  ()));
+                        },
+                        child: Container(
+                          margin: EdgeInsets.only(top: 30),
+                          height: SizeConfig.screenHeight * 0.06,
+                          width: SizeConfig.screenHeight * 0.08,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.fill,
+                                image: AssetImage("Assets/return.png"),
+                              ),
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.transparent),
+                        ),
+                      ),
+                    ),
                     ShakeWidget(
                       key: shakeKey1,
                       shakeCount: 3,
@@ -119,6 +144,18 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    RotatedBox(
+                      quarterTurns: 1,
+                      child: Container(
+                        margin: EdgeInsets.only(top: 30),
+                        height: SizeConfig.screenHeight * 0.06,
+                        width: SizeConfig.screenHeight * 0.1,
+                        decoration: BoxDecoration(
+
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.transparent),
+                      ),
+                    ),
                     ShakeWidget(
                       key: shakeKey3,
                       shakeCount: 3,
@@ -188,6 +225,18 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+
+                    RotatedBox(
+                      quarterTurns: 1,
+                      child: Container(
+                        margin: EdgeInsets.only(top: 30),
+                        height: SizeConfig.screenHeight * 0.06,
+                        width: SizeConfig.screenHeight * 0.1,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.transparent),
+                      ),
+                    ),
                     ShakeWidget(
                       key: shakeKey5,
                       shakeCount: 3,
@@ -259,7 +308,27 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-
+                    RotatedBox(
+                      quarterTurns: 1,
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => StoryPage  ()));
+                        },
+                        child: Container(
+                          margin: EdgeInsets.only(bottom: 20),
+                          height: SizeConfig.screenHeight * 0.06,
+                          width: SizeConfig.screenHeight * 0.1,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.fill,
+                                image: AssetImage("Assets/book-icon.png"),
+                              ),
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.transparent),
+                        ),
+                      ),
+                    ),
                     ShakeWidget(
                       key: shakeKey7,
                       shakeCount: 3,
@@ -267,7 +336,7 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                       shakeDuration: Duration(milliseconds: 500),
                       child: Container(
                         height: SizeConfig.screenHeight * 0.15,
-                        width: SizeConfig.screenHeight * 0.2,
+                        width: SizeConfig.screenHeight * 0.17,
                         decoration: BoxDecoration(
                             image: DecorationImage(
                               fit: BoxFit.fill,
@@ -283,6 +352,7 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                         ),
                       ),
                     ),
+
                     Container(
                       margin: EdgeInsets.only(bottom: SizeConfig.screenHeight*0.03),
                       height: SizeConfig.screenHeight * 0.15,
@@ -303,6 +373,7 @@ class _SingleStoryComponentFState extends State<SingleStoryComponentF> {
                     //       borderRadius: BorderRadius.circular(10),
                     //       color: Colors.transparent),
                     // ),
+
 
                   ],
                 ),

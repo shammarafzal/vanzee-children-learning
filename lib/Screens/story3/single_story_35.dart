@@ -72,7 +72,11 @@ class _SingleStoryComponent35State extends State<SingleStoryComponent35> {
                           color: Color(0xffA4C2F4)),
                       child: RotatedBox(
                           quarterTurns: 1,
-                          child: Center(child: Text('Aark!', style: TextStyle(fontSize: SizeConfig.screenWidth * 0.1, fontWeight: FontWeight.w900),))
+                          child: Center(child: GestureDetector(
+                              onTap: (){
+                                audioPlayer.play('http://assets.talktalesapps.com/s3/ark.mp3');
+                              },
+                              child: Text('Aark!', style: TextStyle(fontSize: SizeConfig.screenWidth * 0.1, fontWeight: FontWeight.w900),)))
                       ),
                     ),
                   ],

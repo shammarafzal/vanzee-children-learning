@@ -71,7 +71,11 @@ class _SingleStoryComponent24State extends State<SingleStoryComponent24> {
                           color: Color(0xffA4C2F4)),
                       child: RotatedBox(
                           quarterTurns: 1,
-                          child: Center(child: Text('Bam Bam!', style: TextStyle(fontSize: SizeConfig.screenWidth * 0.1, fontWeight: FontWeight.w900),))
+                          child: Center(child: GestureDetector(
+                              onTap: (){
+                                audioPlayer.play('http://assets.talktalesapps.com/s2/bam.mp3');
+                              },
+                              child: Text('Bam Bam!', style: TextStyle(fontSize: SizeConfig.screenWidth * 0.1, fontWeight: FontWeight.w900),)))
                       ),
                     ),
                   ],

@@ -71,7 +71,11 @@ class _SingleStoryComponent5State extends State<SingleStoryComponent5> {
                           color: Color(0xffA4C2F4)),
                       child: RotatedBox(
                           quarterTurns: 1,
-                          child: Center(child: Text('Eee!', style: TextStyle(fontSize: SizeConfig.screenWidth * 0.1, fontWeight: FontWeight.w900),))
+                          child: Center(child: GestureDetector(
+                              onTap: (){
+                                audioPlayer.play('http://assets.talktalesapps.com/s1/eee/eee.mp3');
+                              },
+                              child: Text('Eee!', style: TextStyle(fontSize: SizeConfig.screenWidth * 0.1, fontWeight: FontWeight.w900),)))
                       ),
                     ),
                   ],

@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:vanzee/Screens/story1/play_video1.dart';
 import 'package:vanzee/Screens/story1/story_animation.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
+import 'package:flutter_bounce/flutter_bounce.dart';
 
 class StoryPage extends StatefulWidget {
   const StoryPage({Key? key}) : super(key: key);
@@ -72,40 +73,43 @@ class _StoryPageState extends State<StoryPage> {
             //     },
             //   ),
             // ),
-            Align(
-              alignment: Alignment.bottomRight,
+            // Bounce(
+            //     duration: Duration(milliseconds: 110),
+            //     onPressed: (){  },
+            //     child: Image.asset("Assets/image.png")
+            // ),
+            GestureDetector(
+              onTap: () => {
+                Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => StoryAnimation  ()))
+              },
               child: Container(
-                height: SizeConfig.screenHeight * 0.15,
-                width: SizeConfig.screenWidth * 0.3,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage("Assets/image.png"),
+                color: Colors.transparent,
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    margin: EdgeInsets.only(top: SizeConfig.screenHeight * 0.12),
+                    // padding:  EdgeInsets.only(top: SizeConfig.screenHeight * 0.1),
+                    height: SizeConfig.screenHeight * 0.2,
+                    width: SizeConfig.screenWidth * 0.3,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage("Assets/image.png"),
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.transparent),
+                    child: InkWell(
+                      onTap: () => {
+                      Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => StoryAnimation  ()))
+                      },
                     ),
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.transparent),
-                child: InkWell(
-                  onTap: () => {
-                  Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => StoryAnimation  ()))
-                  },
+                  ),
                 ),
               ),
             ),
-            Container(
-              height: SizeConfig.screenHeight * 0.1,
-              width: SizeConfig.screenWidth * 0.9 ,
-              decoration: BoxDecoration(
 
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.transparent),
-              child: InkWell(
-                onTap: () => {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => StoryAnimation  ()))
-                },
-              ),
-            ),
             Container(
               height: SizeConfig.screenHeight * 0.25,
               width: double.infinity,

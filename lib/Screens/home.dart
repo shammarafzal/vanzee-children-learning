@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vanzee/Screens/search.dart';
 import 'package:vanzee/Screens/settings.dart';
 import 'package:vanzee/Screens/story.dart';
 
@@ -14,7 +13,6 @@ class Home_State extends State<Home> {
   late String _title;
   List<Widget> _widgetOptions = <Widget>[
     StoryCard1(),
-    // Search(),
     SettingsPage(),
   ];
   void _OnItemTap(int index) {
@@ -26,11 +24,6 @@ class Home_State extends State<Home> {
             _title = 'Simple Silly Speech Sounds';
           }
           break;
-        // case 1:
-        //   {
-        //     _title = 'Search';
-        //   }
-        //   break;
         case 1:
           {
             _title = 'About App & Settings';
@@ -61,8 +54,11 @@ class Home_State extends State<Home> {
           color: const Color.fromRGBO(235, 159, 73, 1),
         ),
       ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectIndex),
+      body: 
+      SafeArea(
+        child: Center(
+          child: _widgetOptions.elementAt(_selectIndex),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color.fromRGBO(235, 159, 73, 1),
@@ -70,16 +66,11 @@ class Home_State extends State<Home> {
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white,
         iconSize: 25,
-// This is all you need!
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.auto_stories),
-            label: 'Story',
+            label: 'Stories',
           ),
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.search),
-          //   label: 'Search',
-          // ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'App Info',

@@ -23,6 +23,7 @@ dependencies:
   better_page_turn: ^0.0.6
   video_player: ^2.4.8
   chewie: ^1.3.5
+  flutter_bounce: ^1.1.0
   
 dev_dependencies:
   flutter_test:
@@ -39,7 +40,7 @@ flutter_native_splash:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "Assets/logo-white.jpg"
+  image_path: "Assets/icon_app.png"
 
   flutter_lints: ^1.0.0
 

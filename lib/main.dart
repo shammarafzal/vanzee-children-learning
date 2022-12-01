@@ -13,7 +13,6 @@ Future<void> main() async {
         initialRoute: '/home',
         getPages: Routes.routes),
   );
-
   configLoading();
 }
 

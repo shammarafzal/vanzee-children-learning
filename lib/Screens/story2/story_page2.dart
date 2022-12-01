@@ -58,40 +58,38 @@ class _StoryPage2State extends State<StoryPage2> {
                 onTap: () => {_abouttalktales()},
               ),
             ),
-            Align(
-              alignment: Alignment.bottomRight,
+            GestureDetector(
+              onTap: () => {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => StoryAnimation2  ()))
+              },
               child: Container(
-                height: SizeConfig.screenHeight * 0.15,
-                width: SizeConfig.screenWidth * 0.3,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage("Assets/image.png"),
+                color: Colors.transparent,
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    margin: EdgeInsets.only(top: SizeConfig.screenHeight * 0.12),
+                    // padding:  EdgeInsets.only(top: SizeConfig.screenHeight * 0.1),
+                    height: SizeConfig.screenHeight * 0.2,
+                    width: SizeConfig.screenWidth * 0.3,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage("Assets/image.png"),
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.transparent),
+                    child: InkWell(
+                      onTap: () => {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => StoryAnimation2  ()))
+                      },
                     ),
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.transparent),
-                child: InkWell(
-                  onTap: () => {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => StoryAnimation2  ()))
-                  },
+                  ),
                 ),
               ),
             ),
-            Container(
-              height: SizeConfig.screenHeight * 0.1,
-              width: SizeConfig.screenWidth * 0.9 ,
-              decoration: BoxDecoration(
 
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.transparent),
-              child: InkWell(
-                onTap: () => {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => StoryAnimation2  ()))
-                },
-              ),
-            ),
             Align(
               alignment: Alignment.bottomLeft,
               child: RotatedBox(

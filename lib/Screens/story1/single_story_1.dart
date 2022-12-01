@@ -79,7 +79,11 @@ class _SingleStoryComponentState extends State<SingleStoryComponent> {
                             quarterTurns: 1,
                             child: Padding(
                               padding: const EdgeInsets.fromLTRB(20.0,35,20,20),
-                              child: Center(child: Text("Oh!", style: TextStyle(fontSize: SizeConfig.screenWidth * 0.1, fontWeight: FontWeight.w900),)),
+                              child: Center(child: GestureDetector(
+                                  onTap: (){
+                                    audioPlayer.play('http://assets.talktalesapps.com/s1/oh/oh.mp3');
+                                  },
+                                  child: Text("Oh!", style: TextStyle(fontSize: SizeConfig.screenWidth * 0.1, fontWeight: FontWeight.w900),))),
                             )
                         ),
                       ),
