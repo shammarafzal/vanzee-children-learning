@@ -24,6 +24,7 @@ dependencies:
   video_player: ^2.4.8
   chewie: ^1.3.5
   flutter_bounce: ^1.1.0
+  lottie: ^1.3.0
   
 dev_dependencies:
   flutter_test:

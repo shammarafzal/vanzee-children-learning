@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vanzee/Screens/story2/play_video2.dart';
 import 'package:vanzee/Screens/story2/story_animation2.dart';
@@ -71,12 +72,12 @@ class _StoryPage2State extends State<StoryPage2> {
                     margin: EdgeInsets.only(top: SizeConfig.screenHeight * 0.12),
                     // padding:  EdgeInsets.only(top: SizeConfig.screenHeight * 0.1),
                     height: SizeConfig.screenHeight * 0.2,
-                    width: SizeConfig.screenWidth * 0.3,
+                    width: SizeConfig.screenWidth * 0.2,
                     decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.fill,
-                          image: AssetImage("Assets/image.png"),
-                        ),
+                        // image: DecorationImage(
+                        //   fit: BoxFit.fill,
+                        //   image: AssetImage("Assets/image.png"),
+                        // ),
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.transparent),
                     child: InkWell(
@@ -84,6 +85,14 @@ class _StoryPage2State extends State<StoryPage2> {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: (context) => StoryAnimation2  ()))
                       },
+                      child: RotatedBox(
+                        quarterTurns: 2,
+                        child: SizedBox(
+                            width: 200,
+                            height: 200,
+                            child: Lottie.network(
+                                'https://assets8.lottiefiles.com/packages/lf20_80nu1g6c.json')),
+                      ),
                     ),
                   ),
                 ),

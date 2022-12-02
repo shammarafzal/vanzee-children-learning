@@ -4,7 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:vanzee/Screens/story1/play_video1.dart';
 import 'package:vanzee/Screens/story1/story_animation.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
-import 'package:flutter_bounce/flutter_bounce.dart';
+import 'package:lottie/lottie.dart';
 
 class StoryPage extends StatefulWidget {
   const StoryPage({Key? key}) : super(key: key);
@@ -91,12 +91,12 @@ class _StoryPageState extends State<StoryPage> {
                     margin: EdgeInsets.only(top: SizeConfig.screenHeight * 0.12),
                     // padding:  EdgeInsets.only(top: SizeConfig.screenHeight * 0.1),
                     height: SizeConfig.screenHeight * 0.2,
-                    width: SizeConfig.screenWidth * 0.3,
+                    width: SizeConfig.screenWidth * 0.2,
                     decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.fill,
-                          image: AssetImage("Assets/image.png"),
-                        ),
+                        // image: DecorationImage(
+                        //   fit: BoxFit.fill,
+                        //   image: AssetImage("Assets/image.png"),
+                        // ),
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.transparent),
                     child: InkWell(
@@ -104,6 +104,14 @@ class _StoryPageState extends State<StoryPage> {
                       Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => StoryAnimation  ()))
                       },
+                      child:   RotatedBox(
+                        quarterTurns: 2,
+                        child: SizedBox(
+                            width: 200,
+                            height: 200,
+                            child: Lottie.network(
+                                'https://assets8.lottiefiles.com/packages/lf20_80nu1g6c.json')),
+                      ),
                     ),
                   ),
                 ),
