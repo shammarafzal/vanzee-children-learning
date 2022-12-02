@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vanzee/Screens/settings.dart';
-import 'package:vanzee/Screens/story.dart';
+import 'package:vanzee/Screens/bottom_bar_screens/settings.dart';
+import 'package:vanzee/Screens/bottom_bar_screens/story.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -46,7 +46,7 @@ class Home_State extends State<Home> {
         elevation: 0.0,
         title: Text(
           _title,
-          style: TextStyle(color: Colors.green),
+          style: TextStyle(color: Color.fromRGBO(235, 159, 73, 1), fontWeight: FontWeight.bold, fontSize: 26),
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:vanzee/Screens/home.dart';
+import 'package:vanzee/Screens/bottom_bar_screens/home.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
 import 'package:video_player/video_player.dart';
-import '../video_player_widget.dart';
+import '../Components/video_player_widget.dart';
 
 class PlayVideo3 extends StatefulWidget {
   const PlayVideo3({Key? key}) : super(key: key);

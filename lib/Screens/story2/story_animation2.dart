@@ -13,7 +13,7 @@ import 'package:vanzee/Screens/story2/single_story_28.dart';
 import 'package:vanzee/Screens/story2/single_story_29.dart';
 
 import '../../Settings/SizeConfig.dart';
-import '../page_turn_animation.dart';
+import '../Components/page_turn_animation.dart';
 
 
 class StoryAnimation2 extends StatefulWidget {

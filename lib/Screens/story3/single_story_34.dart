@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vanzee/Screens/video_player_widget.dart';
+import 'package:vanzee/Screens/Components/video_player_widget.dart';
 import 'package:video_player/video_player.dart';
 import '../../Settings/SizeConfig.dart';
 import 'dart:math';
@@ -73,7 +73,7 @@ class _SingleStoryComponent34State extends State<SingleStoryComponent34> {
                           quarterTurns: 1,
                           child: Center(child: GestureDetector(
                               onTap: (){
-                                audioPlayer.play('http://assets.talktalesapps.com/s3/baa.mp3');
+                                audioPlayer.play('http://assets.talktalesapps.com/s3/bak.mp3');
                               },
                               child: Text('Baak!', style: TextStyle(fontSize: SizeConfig.screenWidth * 0.1, fontWeight: FontWeight.w900),)))
                       ),

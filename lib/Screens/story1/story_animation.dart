@@ -9,7 +9,7 @@ import 'package:vanzee/Screens/story1/single_story_5.dart';
 import 'package:vanzee/Screens/story1/single_story_6.dart';
 
 import '../../Settings/SizeConfig.dart';
-import '../page_turn_animation.dart';
+import '../Components/page_turn_animation.dart';
 import 'single_story_1.dart';
 
 class StoryAnimation extends StatefulWidget {
@@ -36,7 +36,7 @@ class _StoryAnimationState extends State<StoryAnimation> {
           SingleStoryComponentF(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
 
         ],
-        cellSize: Size(SizeConfig.screenHeight, SizeConfig.screenWidth),
+        cellSize: Size(SizeConfig.screenWidth, SizeConfig.screenHeight),
         controller: horizontalFlipPageTurnController,
       ),
     );

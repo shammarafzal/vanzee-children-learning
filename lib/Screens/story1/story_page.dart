@@ -25,13 +25,8 @@ class _StoryPageState extends State<StoryPage> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
     return Scaffold(
       appBar: AppBar(
-
         backgroundColor: const Color.fromRGBO(235, 159, 73, 1),
         leading: InkWell(
             onTap: () {
@@ -40,19 +35,21 @@ class _StoryPageState extends State<StoryPage> {
             child: Icon(Icons.arrow_back)),
       ),
       body: Container(
+        height: SizeConfig.screenHeight * 1,
+        width: SizeConfig.screenWidth * 1,
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.fill,
             image: AssetImage("Assets/os1.png"),
           ),
         ),
-        child: Column(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             Container(
-              height: SizeConfig.screenHeight * 0.29,
-              width: double.infinity,
+              height: SizeConfig.screenHeight * 1,
+              width: SizeConfig.screenWidth * 0.25,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.transparent),
@@ -60,67 +57,33 @@ class _StoryPageState extends State<StoryPage> {
                 onTap: () => {_abouttalktales()},
               ),
             ),
-            // Container(
-            //   height: SizeConfig.screenHeight * 0.12,
-            //   width: double.infinity,
-            //   decoration: BoxDecoration(
-            //       borderRadius: BorderRadius.circular(10),
-            //       color: Colors.black),
-            //   child: InkWell(
-            //     onTap: () {
-            //       Navigator.of(context).push(
-            //           MaterialPageRoute(builder: (context) => StoryAnimation  ()));
-            //     },
-            //   ),
-            // ),
-            // Bounce(
-            //     duration: Duration(milliseconds: 110),
-            //     onPressed: (){  },
-            //     child: Image.asset("Assets/image.png")
-            // ),
             GestureDetector(
               onTap: () => {
                 Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => StoryAnimation  ()))
               },
               child: Container(
+                margin: EdgeInsets.only(left: SizeConfig.screenWidth * 0.25),
+                height: SizeConfig.screenHeight * 0.5,
+                width: SizeConfig.screenWidth * 0.25,
                 color: Colors.transparent,
                 child: Align(
-                  alignment: Alignment.bottomRight,
-                  child: Container(
-                    margin: EdgeInsets.only(top: SizeConfig.screenHeight * 0.12),
-                    // padding:  EdgeInsets.only(top: SizeConfig.screenHeight * 0.1),
-                    height: SizeConfig.screenHeight * 0.2,
-                    width: SizeConfig.screenWidth * 0.2,
-                    decoration: BoxDecoration(
-                        // image: DecorationImage(
-                        //   fit: BoxFit.fill,
-                        //   image: AssetImage("Assets/image.png"),
-                        // ),
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.transparent),
-                    child: InkWell(
-                      onTap: () => {
-                      Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => StoryAnimation  ()))
-                      },
-                      child:   RotatedBox(
-                        quarterTurns: 2,
-                        child: SizedBox(
-                            width: 200,
-                            height: 200,
-                            child: Lottie.network(
-                                'https://assets8.lottiefiles.com/packages/lf20_80nu1g6c.json')),
-                      ),
-                    ),
+                  alignment: Alignment.topCenter,
+                  child: RotatedBox(
+                    quarterTurns: 1,
+                    child: SizedBox(
+                        width: 180,
+                        height: 180,
+                        child: Lottie.network(
+                            'https://assets8.lottiefiles.com/packages/lf20_80nu1g6c.json')),
                   ),
                 ),
               ),
             ),
 
             Container(
-              height: SizeConfig.screenHeight * 0.25,
-              width: double.infinity,
+              height: SizeConfig.screenHeight * 1,
+              width: SizeConfig.screenWidth * 0.2,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.transparent),

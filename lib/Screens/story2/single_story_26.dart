@@ -4,7 +4,7 @@ import '../../Settings/SizeConfig.dart';
 import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
 
-import '../video_player_widget.dart';
+import '../Components/video_player_widget.dart';
 
 class SingleStoryComponent26 extends StatefulWidget {
   const SingleStoryComponent26({Key? key, required this.horizontalFlipPageTurnController}) : super(key: key);
@@ -75,7 +75,7 @@ class _SingleStoryComponent26State extends State<SingleStoryComponent26> {
                               onTap: (){
                                 audioPlayer.play('http://assets.talktalesapps.com/s2/bom.mp3');
                               },
-                              child: Text('Boom Boom!', style: TextStyle(fontSize: SizeConfig.screenWidth * 0.07, fontWeight: FontWeight.w900),)))
+                              child: Text('Boom! Boom!', style: TextStyle(fontSize: SizeConfig.screenWidth * 0.07, fontWeight: FontWeight.w900),)))
                       ),
                     ),
                   ],

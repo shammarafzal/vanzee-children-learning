@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:vanzee/Screens/story3/play_vide03.dart';
+import 'package:vanzee/Screens/story3/story_page3.dart';
 import '../../Settings/SizeConfig.dart';
 import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
-import '../home.dart';
+import '../bottom_bar_screens/home.dart';
 
 class SingleStoryComponentF3 extends StatefulWidget {
   const SingleStoryComponentF3(
@@ -175,7 +176,7 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                               onTap: () {
                                 shakeKey4.currentState?.shake();
                                 audioPlayer.play(
-                                    'http://assets.talktalesapps.com/s3/baa.mp3');
+                                    'http://assets.talktalesapps.com/s3/bak.mp3');
                               },
                             ),
                           ),
@@ -337,7 +338,7 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (context) => Home()));
+                            .push(MaterialPageRoute(builder: (context) => StoryPage3()));
                       },
                       child: Container(
                         height: SizeConfig.screenHeight * 0.05,

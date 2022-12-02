@@ -3,7 +3,7 @@ import 'package:video_player/video_player.dart';
 import '../../Settings/SizeConfig.dart';
 import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
-import '../video_player_widget.dart';
+import '../Components/video_player_widget.dart';
 
 class SingleStoryComponent32 extends StatefulWidget {
   const SingleStoryComponent32({Key? key, required this.horizontalFlipPageTurnController}) : super(key: key);

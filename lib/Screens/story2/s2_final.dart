@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:vanzee/Screens/story2/play_video2.dart';
+import 'package:vanzee/Screens/story2/story_page2.dart';
 import '../../Settings/SizeConfig.dart';
 import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
-import '../home.dart';
+import '../bottom_bar_screens/home.dart';
 
 class SingleStoryComponentF2 extends StatefulWidget {
   const SingleStoryComponentF2({Key? key, required this.horizontalFlipPageTurnController}) : super(key: key);
@@ -412,7 +413,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (context) => Home()));
+                            .push(MaterialPageRoute(builder: (context) => StoryPage2()));
                       },
                       child: Container(
                         height: SizeConfig.screenHeight * 0.05,
