@@ -8,7 +8,7 @@ Future<void> main() async {
   runApp(
     GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/home',
+        initialRoute: '/splash',
         getPages: Routes.routes),
   );
 }

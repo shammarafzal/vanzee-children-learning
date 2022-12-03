@@ -10,6 +10,7 @@ final String book_icon = "Assets/book-icon.png";
 final String back_icon = "Assets/return.png";
 final String movie_icon = "Assets/movie_icon.png";
 final String end_icon = "Assets/the_end.png";
+final String splash_image = "Assets/logo.png";
 
 
 // Stories MP3 Urls
