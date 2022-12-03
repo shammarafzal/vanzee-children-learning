@@ -11,7 +11,7 @@ final String back_icon = "Assets/return.png";
 final String movie_icon = "Assets/movie_icon.png";
 final String end_icon = "Assets/the_end.png";
 final String splash_image = "Assets/logo.png";
-
+final String talk_tales_mp3 = 'http://assets.talktalesapps.com/talk_tales.mp3';
 
 // Stories MP3 Urls
 //// Story 1

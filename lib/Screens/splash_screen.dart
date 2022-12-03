@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:vanzee/Constants/constant.dart';
 import 'dart:async';
@@ -13,13 +14,21 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  AudioPlayer audioPlayer = AudioPlayer();
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     startTime();
+    audioPlayer.play(
+        talk_tales_mp3);
   }
 
+  @override
+  void dispose() {
+    audioPlayer.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -29,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   startTime() async {
-    var duration = new Duration(seconds: 6);
+    var duration = new Duration(seconds: 5);
     return new Timer(duration, route);
   }
 
