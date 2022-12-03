@@ -1,30 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../Constants/constant.dart';
+
 class SettingsPage extends StatefulWidget {
   @override
   State<SettingsPage> createState() => _SettingsPageState();
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  final Uri _url1 = Uri.parse('https://www.talktalesbooks.com');
-  final Uri _url2 = Uri.parse('https://www.talktalesbooks.com');
-  final Uri _url3 = Uri.parse('https://www.talktalesbooks.com/download-silly-sounds');
+  final Uri _url1 = Uri.parse(about_talktales_url);
+  final Uri _url2 = Uri.parse(download_words_url);
 
   Future<void> _aboutapp() async {
     if (!await launchUrl(_url1)) {
       throw 'Could not launch $_url1';
     }
   }
-
-  Future<void> _abouttalktales() async {
+  Future<void> _downloadwords() async {
     if (!await launchUrl(_url2)) {
       throw 'Could not launch $_url2';
-    }
-  }
-  Future<void> _downloadwords() async {
-    if (!await launchUrl(_url3)) {
-      throw 'Could not launch $_url3';
     }
   }
 
@@ -93,7 +88,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: Icon(Icons.arrow_forward),
                 )),
-            onTap: () => {_abouttalktales()},
+            onTap: () => {_aboutapp()},
           ),
           Padding(padding: EdgeInsets.all(8.0)),
           ListTile(

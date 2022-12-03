@@ -1,15 +1,7 @@
-// import 'package:better_page_turn/better_page_turn.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vanzee/Constants/constant.dart';
+import 'package:vanzee/Screens/Components/single_story_component.dart';
 import 'package:vanzee/Screens/story3/s3_final.dart';
-import 'package:vanzee/Screens/story3/single_story_31.dart';
-import 'package:vanzee/Screens/story3/single_story_32.dart';
-import 'package:vanzee/Screens/story3/single_story_33.dart';
-import 'package:vanzee/Screens/story3/single_story_34.dart';
-import 'package:vanzee/Screens/story3/single_story_35.dart';
-import 'package:vanzee/Screens/story3/single_story_36.dart';
-import 'package:vanzee/Screens/story3/single_story_37.dart';
-
 import '../../Settings/SizeConfig.dart';
 import '../Components/page_turn_animation.dart';
 
@@ -29,17 +21,16 @@ class _StoryAnimation3State extends State<StoryAnimation3> {
     return Scaffold(
       body: HorizontalFlipPageTurn(
         children: [
-          SingleStoryComponent31(horizontalFlipPageTurnController: horizontalFlipPageTurnController),
-          SingleStoryComponent32(horizontalFlipPageTurnController: horizontalFlipPageTurnController),
-          SingleStoryComponent33(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
-          SingleStoryComponent34(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
-          SingleStoryComponent35(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
-          SingleStoryComponent36(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
-          SingleStoryComponent37(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
-          SingleStoryComponentF3(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
-
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: moo_word, vid1: moo_vid1, vid2: moo_vid2, mp3: moo_mp3, img: moo_img),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: oin_word, vid1: oin_vid1, vid2: oin_vid2, mp3: oin_mp3, img: oin_img),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: nei_word, vid1: nei_vid1, vid2: nei_vid2, mp3: nei_mp3, img: nei_img),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: bak_word, vid1: bak_vid1, vid2: bak_vid2, mp3: bak_mp3, img: bak_img),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: ark_word, vid1: ark_vid1, vid2: ark_vid2, mp3: ark_mp3, img: ark_img),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: meo_word, vid1: meo_vid1, vid2: meo_vid2, mp3: meo_mp3, img: meo_img),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: baa_word, vid1: baa_vid1, vid2: baa_vid2, mp3: baa_mp3, img: baa_img),
+          SingleStoryComponentF3(horizontalFlipPageTurnController: horizontalFlipPageTurnController),
         ],
-        cellSize: Size(SizeConfig.screenHeight, SizeConfig.screenWidth),
+        cellSize: Size(SizeConfig.screenWidth, SizeConfig.screenHeight),
         controller: horizontalFlipPageTurnController,
       ),
     );

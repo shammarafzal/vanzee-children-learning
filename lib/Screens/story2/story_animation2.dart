@@ -1,17 +1,9 @@
-// import 'package:better_page_turn/better_page_turn.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vanzee/Screens/Components/single_story_component.dart';
 import 'package:vanzee/Screens/story2/s2_final.dart';
-import 'package:vanzee/Screens/story2/single_story_21.dart';
-import 'package:vanzee/Screens/story2/single_story_22.dart';
-import 'package:vanzee/Screens/story2/single_story_23.dart';
-import 'package:vanzee/Screens/story2/single_story_24.dart';
-import 'package:vanzee/Screens/story2/single_story_25.dart';
-import 'package:vanzee/Screens/story2/single_story_26.dart';
-import 'package:vanzee/Screens/story2/single_story_27.dart';
-import 'package:vanzee/Screens/story2/single_story_28.dart';
-import 'package:vanzee/Screens/story2/single_story_29.dart';
 
+import '../../Constants/constant.dart';
 import '../../Settings/SizeConfig.dart';
 import '../Components/page_turn_animation.dart';
 
@@ -25,25 +17,30 @@ class StoryAnimation2 extends StatefulWidget {
 
 class _StoryAnimation2State extends State<StoryAnimation2> {
   HorizontalFlipPageTurnController horizontalFlipPageTurnController = HorizontalFlipPageTurnController();
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
       body: HorizontalFlipPageTurn(
         children: [
-          SingleStoryComponent21(horizontalFlipPageTurnController: horizontalFlipPageTurnController),
-          SingleStoryComponent22(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
-          SingleStoryComponent23(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
-          SingleStoryComponent24(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
-          SingleStoryComponent25(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
-          SingleStoryComponent26(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
-          SingleStoryComponent27(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
-          SingleStoryComponent28(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
-          SingleStoryComponent29(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: uhoh_word, vid1: uhoh_vid1, vid2: uhoh_vid2, mp3: uhoh_mp3, img: uhoh_img),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: ohno_word, vid1: ohno_vid1, vid2: ohno_vid2, mp3: ohno_mp3, img: ohno_img),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: ow_word, vid1: ow_vid1, vid2: ow_vid2, mp3: ow_mp3, img: ow_img),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: bam_word, vid1: bam_vid1, vid2: bam_vid2, mp3: bam_mp3, img: bam_img),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: ohman_word, vid1: ohman_vid1, vid2: ohman_vid2, mp3: ohman_mp3, img: ohman_img),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: bom_word, vid1: bom_vid1, vid2: bom_vid2, mp3: bom_mp3, img: bom_img),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: pop_word, vid1: pop_vid1, vid2: pop_vid2, mp3: pop_mp3, img: pop_img),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: ohyeah_word, vid1: ohyeah_vid1, vid2: ohyeah_vid2, mp3: ohyeah_mp3, img: ohyeah_img),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: whee_word, vid1: whee_vid1, vid2: whee_vid2, mp3: whee_mp3, img: whee_img),
           SingleStoryComponentF2(horizontalFlipPageTurnController: horizontalFlipPageTurnController,),
 
         ],
-        cellSize: Size(SizeConfig.screenHeight, SizeConfig.screenWidth),
+        cellSize: Size(SizeConfig.screenWidth, SizeConfig.screenHeight),
         controller: horizontalFlipPageTurnController,
       ),
     );

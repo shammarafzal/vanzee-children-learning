@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPlayerView extends StatefulWidget {
-  const VideoPlayerView({Key? key, required this.url, required this.dataSourceType}) : super(key: key);
-
+  const VideoPlayerView({Key? key, required this.url, required this.dataSourceType,  required this.newKey,}) : super(key: newKey);
+  final UniqueKey newKey;
   final String url;
   final DataSourceType dataSourceType;
   @override
@@ -14,7 +14,6 @@ class VideoPlayerView extends StatefulWidget {
 class _VideoPlayerViewState extends State<VideoPlayerView> {
   late VideoPlayerController _videoPlayerController;
   late ChewieController _chewieController;
-
   @override
   void initState(){
     super.initState();

@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:vanzee/Screens/story2/story_animation2.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
+
+import '../../Constants/constant.dart';
+import '../story1/story_animation.dart';
+import '../Components/story_page.dart';
+import '../story3/story_animation3.dart';
 
 class StoryCard1 extends StatefulWidget {
   const StoryCard1({
@@ -42,8 +48,11 @@ class _StoryCard1State extends State<StoryCard1> {
                     height: SizeConfig.screenHeight * 0.08,
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.of(context)
-                            .pushReplacementNamed('/storyPage');
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => StoryPage(opening_scene: story1_openingScene, video_url: s1Movie, onPress: (){
+                              Navigator.of(context).push(
+                                  MaterialPageRoute(builder: (context) => StoryAnimation()));
+                            },)));
                       },
                         color: Color.fromRGBO(100,114,43,0.8),
                       textColor: Colors.white,
@@ -81,8 +90,11 @@ class _StoryCard1State extends State<StoryCard1> {
                     height: SizeConfig.screenHeight * 0.08,
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.of(context)
-                            .pushReplacementNamed('/storyPage2');
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => StoryPage(opening_scene: story2_openingScene, video_url: s2Movie, onPress: (){
+                              Navigator.of(context).push(
+                                  MaterialPageRoute(builder: (context) => StoryAnimation2()));
+                            },)));
                       },
                       color: Color.fromRGBO(17,67,117,0.8),
                       textColor: Colors.white,
@@ -120,8 +132,11 @@ class _StoryCard1State extends State<StoryCard1> {
                     height: SizeConfig.screenHeight * 0.08,
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.of(context)
-                            .pushReplacementNamed('/storyPage3');
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => StoryPage(opening_scene: story3_openingScene, video_url: s3movie, onPress: (){
+                              Navigator.of(context).push(
+                                  MaterialPageRoute(builder: (context) => StoryAnimation3()));
+                            },)));
                       },
                       color: Color.fromRGBO(161,78,34,0.8),
                       textColor: Colors.white,
