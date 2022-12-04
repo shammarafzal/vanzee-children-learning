@@ -43,7 +43,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
           children: [
             ///////// ROW 1 ////////
             Container(
-              width: SizeConfig.screenWidth * 0.48,
+              width: SizeConfig.screenWidth * 0.47,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -61,7 +61,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                             shakeDuration: Duration(milliseconds: 500),
                             child: Container(
                               height: SizeConfig.screenWidth * 0.15,
-                              width: SizeConfig.screenWidth * 0.15,
+                              width: SizeConfig.screenWidth * 0.149,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -88,7 +88,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                             shakeDuration: Duration(milliseconds: 500),
                             child: Container(
                               height: SizeConfig.screenWidth * 0.15,
-                              width: SizeConfig.screenWidth * 0.15,
+                              width: SizeConfig.screenWidth * 0.149,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -114,7 +114,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                         },
                         child: Container(
                           height: SizeConfig.screenHeight * 0.1,
-                          width: SizeConfig.screenWidth * 0.15,
+                          width: SizeConfig.screenWidth * 0.145,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.fill,
@@ -139,7 +139,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                             shakeDuration: Duration(milliseconds: 500),
                             child: Container(
                               height: SizeConfig.screenWidth * 0.15,
-                              width: SizeConfig.screenWidth * 0.15,
+                              width: SizeConfig.screenWidth * 0.145,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -166,7 +166,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                             shakeDuration: Duration(milliseconds: 500),
                             child: Container(
                               height: SizeConfig.screenWidth * 0.15,
-                              width: SizeConfig.screenWidth * 0.15,
+                              width: SizeConfig.screenWidth * 0.149,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -187,7 +187,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                       ),
                       Container(
                         height: SizeConfig.screenHeight * 0.1,
-                        width: SizeConfig.screenWidth * 0.15,
+                        width: SizeConfig.screenWidth * 0.149,
                       ),
                     ],
                   ),
@@ -204,7 +204,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                             shakeDuration: Duration(milliseconds: 500),
                             child: Container(
                               height: SizeConfig.screenWidth * 0.15,
-                              width: SizeConfig.screenWidth * 0.15,
+                              width: SizeConfig.screenWidth * 0.149,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -231,7 +231,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                             shakeDuration: Duration(milliseconds: 500),
                             child: Container(
                               height: SizeConfig.screenWidth * 0.15,
-                              width: SizeConfig.screenWidth * 0.15,
+                              width: SizeConfig.screenWidth * 0.149,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -257,7 +257,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                         },
                         child: Container(
                           height: SizeConfig.screenHeight * 0.1,
-                          width: SizeConfig.screenWidth * 0.15,
+                          width: SizeConfig.screenWidth * 0.149,
                           // decoration: BoxDecoration(
                           //     image: DecorationImage(
                           //       fit: BoxFit.fill,
@@ -269,13 +269,13 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                       ),
                     ],
                   ),
-                  Padding(padding: EdgeInsets.only(right: 5)),
+                  // Padding(padding: EdgeInsets.only(right: 5)),
                 ],
               ),
             ),
             Container(width: 2, height: SizeConfig.screenHeight, color: Colors.white,),
             Container(
-              width: SizeConfig.screenWidth * 0.475,
+              width: SizeConfig.screenWidth * 0.465,
               child: Row(
                 children: [
                   ///////// ROW 2 ////////
@@ -294,7 +294,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                             shakeDuration: Duration(milliseconds: 500),
                             child: Container(
                               height: SizeConfig.screenWidth * 0.15,
-                              width: SizeConfig.screenWidth * 0.15,
+                              width: SizeConfig.screenWidth * 0.149,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -321,7 +321,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                             shakeDuration: Duration(milliseconds: 500),
                             child: Container(
                               height: SizeConfig.screenWidth * 0.15,
-                              width: SizeConfig.screenWidth * 0.15,
+                              width: SizeConfig.screenWidth * 0.149,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -342,7 +342,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                       ),
                       Container(
                         height: SizeConfig.screenHeight * 0.1,
-                        width: SizeConfig.screenWidth * 0.15,
+                        width: SizeConfig.screenWidth * 0.149,
                       ),
                     ],
                   ),
@@ -361,7 +361,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                             shakeDuration: Duration(milliseconds: 500),
                             child: Container(
                               height: SizeConfig.screenWidth * 0.15,
-                              width: SizeConfig.screenWidth * 0.15,
+                              width: SizeConfig.screenWidth * 0.149,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -383,12 +383,12 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                           ),
                           Container(
                             height: SizeConfig.screenWidth * 0.15,
-                            width: SizeConfig.screenWidth * 0.15,
+                            width: SizeConfig.screenWidth * 0.149,
                             child: Column(
                               children: [
                                 Container(
                                   height: SizeConfig.screenWidth * 0.075,
-                                  width: SizeConfig.screenWidth * 0.075,
+                                  width: SizeConfig.screenWidth * 0.0745,
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
                                         fit: BoxFit.fill,
@@ -399,7 +399,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                                 ),
                                 Container(
                                   height: SizeConfig.screenWidth * 0.075,
-                                  width: SizeConfig.screenWidth * 0.075,
+                                  width: SizeConfig.screenWidth * 0.0745,
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
                                         fit: BoxFit.fill,
@@ -429,7 +429,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                         },
                         child: Container(
                           height: SizeConfig.screenHeight * 0.1,
-                          width: SizeConfig.screenWidth * 0.15,
+                          width: SizeConfig.screenWidth * 0.149,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.fill,

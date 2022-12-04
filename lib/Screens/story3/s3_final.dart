@@ -45,7 +45,7 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
           children: [
             ///////// ROW 1 ////////
             Container(
-              width: SizeConfig.screenWidth * 0.475,
+              width: SizeConfig.screenWidth * 0.47,
               child: Row(
                 children: [
                   Column(
@@ -59,8 +59,8 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                             shakeOffset: 10,
                             shakeDuration: Duration(milliseconds: 500),
                             child: Container(
-                              height: SizeConfig.screenWidth * 0.2,
-                              width: SizeConfig.screenWidth * 0.2,
+                              height: SizeConfig.screenWidth * 0.185,
+                              width: SizeConfig.screenWidth * 0.185,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -71,8 +71,7 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey1.currentState?.shake();
-                                  audioPlayer.play(
-                                     moo_mp3);
+                                  audioPlayer.play(moo_mp3);
                                 },
                               ),
                             ),
@@ -86,8 +85,8 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                             shakeOffset: 10,
                             shakeDuration: Duration(milliseconds: 500),
                             child: Container(
-                              height: SizeConfig.screenWidth * 0.2,
-                              width: SizeConfig.screenWidth * 0.2,
+                              height: SizeConfig.screenWidth * 0.185,
+                              width: SizeConfig.screenWidth * 0.185,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -98,8 +97,7 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey2.currentState?.shake();
-                                  audioPlayer.play(
-                                     nei_mp3);
+                                  audioPlayer.play(nei_mp3);
                                 },
                               ),
                             ),
@@ -108,12 +106,12 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (context) => Home()));
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => Home()));
                         },
                         child: Container(
                           height: SizeConfig.screenHeight * 0.1,
-                          width: SizeConfig.screenWidth * 0.2,
+                          width: SizeConfig.screenWidth * 0.185,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.fill,
@@ -139,8 +137,8 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                             shakeOffset: 10,
                             shakeDuration: Duration(milliseconds: 500),
                             child: Container(
-                              height: SizeConfig.screenWidth * 0.2,
-                              width: SizeConfig.screenWidth * 0.2,
+                              height: SizeConfig.screenWidth * 0.185,
+                              width: SizeConfig.screenWidth * 0.185,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -151,8 +149,7 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey3.currentState?.shake();
-                                  audioPlayer.play(
-                                      oin_mp3);
+                                  audioPlayer.play(oin_mp3);
                                 },
                               ),
                             ),
@@ -166,8 +163,8 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                             shakeOffset: 10,
                             shakeDuration: Duration(milliseconds: 500),
                             child: Container(
-                              height: SizeConfig.screenWidth * 0.2,
-                              width: SizeConfig.screenWidth * 0.2,
+                              height: SizeConfig.screenWidth * 0.185,
+                              width: SizeConfig.screenWidth * 0.185,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -178,8 +175,7 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey4.currentState?.shake();
-                                  audioPlayer.play(
-                                      bak_mp3);
+                                  audioPlayer.play(bak_mp3);
                                 },
                               ),
                             ),
@@ -188,7 +184,7 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                       ),
                       Container(
                         height: SizeConfig.screenHeight * 0.1,
-                        width: SizeConfig.screenWidth * 0.2,
+                        width: SizeConfig.screenWidth * 0.185,
                       ),
                     ],
                   ),
@@ -196,10 +192,14 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                 ],
               ),
             ),
-            Container(width: 2, height: SizeConfig.screenHeight, color: Colors.white,),
+            Container(
+              width: 2,
+              height: SizeConfig.screenHeight,
+              color: Colors.white,
+            ),
 
             Container(
-              width: SizeConfig.screenWidth * 0.475,
+              width: SizeConfig.screenWidth * 0.465,
               child: Row(
                 children: [
                   ///////// ROW 2 ////////
@@ -217,8 +217,8 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                             shakeOffset: 10,
                             shakeDuration: Duration(milliseconds: 500),
                             child: Container(
-                              height: SizeConfig.screenWidth * 0.2,
-                              width: SizeConfig.screenWidth * 0.2,
+                              height: SizeConfig.screenWidth * 0.185,
+                              width: SizeConfig.screenWidth * 0.185,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -229,8 +229,7 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey5.currentState?.shake();
-                                  audioPlayer.play(
-                                      ark_mp3);
+                                  audioPlayer.play(ark_mp3);
                                 },
                               ),
                             ),
@@ -244,8 +243,8 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                             shakeOffset: 10,
                             shakeDuration: Duration(milliseconds: 500),
                             child: Container(
-                              height: SizeConfig.screenWidth * 0.2,
-                              width: SizeConfig.screenWidth * 0.2,
+                              height: SizeConfig.screenWidth * 0.185,
+                              width: SizeConfig.screenWidth * 0.185,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -256,8 +255,7 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey6.currentState?.shake();
-                                  audioPlayer.play(
-                                      baa_mp3);
+                                  audioPlayer.play(baa_mp3);
                                 },
                               ),
                             ),
@@ -266,7 +264,7 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                       ),
                       Container(
                         height: SizeConfig.screenHeight * 0.1,
-                        width: SizeConfig.screenWidth * 0.2,
+                        width: SizeConfig.screenWidth * 0.185,
                       ),
                     ],
                   ),
@@ -284,8 +282,8 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                             shakeOffset: 10,
                             shakeDuration: Duration(milliseconds: 500),
                             child: Container(
-                              height: SizeConfig.screenWidth * 0.2,
-                              width: SizeConfig.screenWidth * 0.2,
+                              height: SizeConfig.screenWidth * 0.185,
+                              width: SizeConfig.screenWidth * 0.185,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                     fit: BoxFit.fill,
@@ -296,8 +294,7 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey7.currentState?.shake();
-                                  audioPlayer.play(
-                                      meo_mp3);
+                                  audioPlayer.play(meo_mp3);
                                 },
                               ),
                             ),
@@ -306,13 +303,13 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                             padding: const EdgeInsets.all(5.0),
                           ),
                           Container(
-                            height: SizeConfig.screenWidth * 0.2,
-                            width: SizeConfig.screenWidth * 0.2,
+                            height: SizeConfig.screenWidth * 0.185,
+                            width: SizeConfig.screenWidth * 0.185,
                             child: Column(
                               children: [
                                 Container(
-                                  height: SizeConfig.screenWidth * 0.1,
-                                  width: SizeConfig.screenWidth * 0.1,
+                                  height: SizeConfig.screenWidth * 0.09,
+                                  width: SizeConfig.screenWidth * 0.09,
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
                                         fit: BoxFit.fill,
@@ -322,8 +319,8 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                                       color: Colors.transparent),
                                 ),
                                 Container(
-                                  height: SizeConfig.screenWidth * 0.1,
-                                  width: SizeConfig.screenWidth * 0.1,
+                                  height: SizeConfig.screenWidth * 0.09,
+                                  width: SizeConfig.screenWidth * 0.09,
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
                                         fit: BoxFit.fill,
@@ -333,8 +330,11 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                                       color: Colors.transparent),
                                   child: InkWell(
                                     onTap: () {
-                                      Navigator.of(context).push(MaterialPageRoute(
-                                          builder: (context) => PlayVideo(video_url: s3movie,)));
+                                      Navigator.of(context)
+                                          .push(MaterialPageRoute(
+                                              builder: (context) => PlayVideo(
+                                                    video_url: s3movie,
+                                                  )));
                                     },
                                   ),
                                 ),
@@ -345,15 +345,21 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => StoryPage(opening_scene: story3_openingScene, video_url: s3movie, onPress: (){
-                                Navigator.of(context).push(
-                                    MaterialPageRoute(builder: (context) => StoryAnimation3()));
-                              },)));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => StoryPage(
+                                    opening_scene: story3_openingScene,
+                                    video_url: s3movie,
+                                    onPress: () {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  StoryAnimation3()));
+                                    },
+                                  )));
                         },
                         child: Container(
                           height: SizeConfig.screenHeight * 0.1,
-                          width: SizeConfig.screenWidth * 0.2,
+                          width: SizeConfig.screenWidth * 0.185,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                 fit: BoxFit.fill,

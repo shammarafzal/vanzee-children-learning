@@ -21,7 +21,7 @@ class _StoryAnimation3State extends State<StoryAnimation3> {
     return Scaffold(
       body: HorizontalFlipPageTurn(
         children: [
-          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: moo_word, vid1: moo_vid1, vid2: moo_vid2, mp3: moo_mp3, img: moo_img),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: moo_word, vid1: moo_vid1, vid2: moo_vid2, mp3: moo_mp3, img: moo_img, isfirst: true,),
           StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: oin_word, vid1: oin_vid1, vid2: oin_vid2, mp3: oin_mp3, img: oin_img),
           StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: nei_word, vid1: nei_vid1, vid2: nei_vid2, mp3: nei_mp3, img: nei_img),
           StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: bak_word, vid1: bak_vid1, vid2: bak_vid2, mp3: bak_mp3, img: bak_img),

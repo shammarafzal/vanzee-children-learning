@@ -7,13 +7,22 @@ import 'animated_controller.dart';
 import 'video_player_widget.dart';
 
 class StoryComponent extends StatefulWidget {
-  const StoryComponent({Key? key, required this.horizontalFlipPageTurnController, required this.word, required this.vid1, required this.vid2, required this.mp3, required this.img}) : super(key: key);
+  const StoryComponent({Key? key,
+    required this.horizontalFlipPageTurnController,
+    required this.word,
+    required this.vid1,
+    required this.vid2,
+    required this.mp3,
+    required this.img,
+    this.isfirst = false
+  }) : super(key: key);
   final horizontalFlipPageTurnController;
   final word;
   final vid1;
   final vid2;
   final mp3;
   final img;
+  final isfirst;
   @override
   State<StoryComponent> createState() => _StoryComponentState();
 }
@@ -51,11 +60,11 @@ class _StoryComponentState extends State<StoryComponent> {
                         onTap: (){
                           audioPlayer.play(widget.mp3);
                         },
-                        child: Text(widget.word, style: TextStyle(fontSize: SizeConfig.screenHeight * 0.08, fontWeight: FontWeight.w900),))),
+                        child: Text(widget.word, style: TextStyle(fontSize: SizeConfig.screenHeight * 0.07, fontWeight: FontWeight.w800),))),
                   ),
                   Container(
                     height: SizeConfig.screenHeight * 0.33,
-                    width: SizeConfig.screenWidth * 0.4,
+                    width: SizeConfig.screenWidth * 0.45,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.transparent),
@@ -73,7 +82,7 @@ class _StoryComponentState extends State<StoryComponent> {
                         color: Colors.transparent),
                     child: InkWell(
                       onTap: () {
-                        Navigator.pop(context);
+                        widget.isfirst ? Navigator.pop(context) : widget.horizontalFlipPageTurnController.animToLeftWidget();
                       },
                     ),
                   ),
@@ -116,7 +125,7 @@ class _StoryComponentState extends State<StoryComponent> {
                   ),
                   Container(
                     height: SizeConfig.screenHeight * 0.33,
-                    width: SizeConfig.screenWidth * 0.4,
+                    width: SizeConfig.screenWidth * 0.45,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.transparent),

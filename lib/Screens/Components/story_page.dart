@@ -3,6 +3,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:vanzee/Screens/Components/play_video.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
 import 'package:lottie/lottie.dart';
+import 'package:flutter_gif/flutter_gif.dart';
 
 import '../../Constants/constant.dart';
 
@@ -14,12 +15,30 @@ class StoryPage extends StatefulWidget {
   _StoryPageState createState() => _StoryPageState();
 }
 
-class _StoryPageState extends State<StoryPage> {
-  final Uri _url1 = Uri.parse(about_talktales_url);
+class _StoryPageState extends State<StoryPage>with TickerProviderStateMixin {
+  late FlutterGifController controller1;
+  final Uri _url1 = Uri.parse(about_book);
   Future<void> _aboutapp() async {
     if (!await launchUrl(_url1)) {
       throw 'Could not launch $_url1';
     }
+  }
+  @override
+  void initState() {
+    controller1 = FlutterGifController(vsync: this);
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      controller1.repeat(
+        min: 0,
+        max: 40,
+        period: const Duration(milliseconds: 500),
+      );
+    });
+    super.initState();
+  }
+  @override
+  void dispose(){
+    controller1.dispose();
+    super.dispose();
   }
 
   @override
@@ -60,18 +79,26 @@ class _StoryPageState extends State<StoryPage> {
               onTap: widget.onPress,
               child: Container(
                 margin: EdgeInsets.only(left: SizeConfig.screenWidth * 0.25),
-                height: SizeConfig.screenHeight * 0.5,
+                height: SizeConfig.screenHeight * 1,
                 width: SizeConfig.screenWidth * 0.25,
                 color: Colors.transparent,
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: RotatedBox(
-                    quarterTurns: 1,
-                    child: SizedBox(
-                        width: 180,
-                        height: 180,
-                        child: Lottie.network(arrow_animation)),
-                  ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      // width: SizeConfig.screenHeight * 0.2,
+                      height: SizeConfig.screenHeight * 0.2,
+                      color: Colors.transparent,
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: GifImage(
+                          controller: controller1,
+                          image: const AssetImage("Assets/arrow.gif"),
+                        ),
+                      ),
+                    ),
+                    Container(height: SizeConfig.screenHeight * 0.2, color: Colors.transparent,)
+                  ],
                 ),
               ),
             ),

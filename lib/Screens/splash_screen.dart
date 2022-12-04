@@ -58,7 +58,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             Padding(padding: EdgeInsets.only(top: 20.0)),
             Text(
-              "Welcome to Simple Sounds",
+              "Welcome to Simple Silly Speech Sounds",
               style: TextStyle(fontSize: 20.0, color: Colors.green),
             ),
             Padding(padding: EdgeInsets.only(top: 20.0)),

@@ -28,7 +28,7 @@ class _StoryAnimation2State extends State<StoryAnimation2> {
     return Scaffold(
       body: HorizontalFlipPageTurn(
         children: [
-          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: uhoh_word, vid1: uhoh_vid1, vid2: uhoh_vid2, mp3: uhoh_mp3, img: uhoh_img),
+          StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: uhoh_word, vid1: uhoh_vid1, vid2: uhoh_vid2, mp3: uhoh_mp3, img: uhoh_img, isfirst: true,),
           StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: ohno_word, vid1: ohno_vid1, vid2: ohno_vid2, mp3: ohno_mp3, img: ohno_img),
           StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: ow_word, vid1: ow_vid1, vid2: ow_vid2, mp3: ow_mp3, img: ow_img),
           StoryComponent(horizontalFlipPageTurnController: horizontalFlipPageTurnController, word: bam_word, vid1: bam_vid1, vid2: bam_vid2, mp3: bam_mp3, img: bam_img),

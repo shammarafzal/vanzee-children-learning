@@ -2,6 +2,7 @@ final String story1_openingScene = "Assets/os1.png";
 final String story2_openingScene = "Assets/os2.png";
 final String story3_openingScene = "Assets/os3.png";
 final String about_talktales_url = 'https://www.talktalesbooks.com';
+final String about_book = 'https://www.talktalesbooks.com/simple-sounds';
 final String download_words_url = 'https://www.talktalesbooks.com/download-silly-sounds';
 final String arrow_animation = 'https://assets8.lottiefiles.com/packages/lf20_80nu1g6c.json';
 final String left_arrow = "Assets/arrow_left.png";
