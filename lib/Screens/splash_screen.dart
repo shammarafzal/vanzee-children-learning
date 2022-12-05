@@ -14,14 +14,13 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  AudioPlayer audioPlayer = AudioPlayer();
+  final audioPlayer = AudioPlayer();
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     startTime();
-    audioPlayer.play(
-        talk_tales_mp3);
+    audioPlayer.play(AssetSource(talk_tales_mp3));
   }
 
   @override

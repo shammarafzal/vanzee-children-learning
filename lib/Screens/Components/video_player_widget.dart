@@ -19,7 +19,7 @@ class _VideoPlayerViewState extends State<VideoPlayerView> {
     super.initState();
     switch(widget.dataSourceType){
       case DataSourceType.asset:
-        _videoPlayerController = VideoPlayerController.asset(widget.url)..initialize().then((_) => setState((){}));
+        _videoPlayerController = VideoPlayerController.asset(widget.url, videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true))..initialize().then((_) => setState((){}));
         break;
       case DataSourceType.network:
         _videoPlayerController = VideoPlayerController.asset(widget.url);

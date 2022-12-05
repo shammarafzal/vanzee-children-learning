@@ -14,11 +14,10 @@ dependencies:
 
   cupertino_icons: ^1.0.5
   get: ^4.6.5
-  url_launcher: ^6.1.5
-  audioplayers: ^0.20.1
+  url_launcher: ^6.1.7
+  audioplayers: ^1.1.0
   video_player: ^2.4.8
-  chewie: ^1.3.5
-  lottie: ^1.3.0
+  chewie: ^1.3.6
   flutter_gif: ^0.0.4
   
 dev_dependencies:
@@ -29,14 +28,14 @@ dev_dependencies:
 
 flutter_native_splash:
   color: "#ffffff"
-  image: Assets/logo.png
+  image: assets/logo.png
   android: true
   ios: true
 
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "Assets/icon_app.png"
+  image_path: "assets/icon_app.png"
 
   flutter_lints: ^1.0.0
 
@@ -45,54 +44,54 @@ flutter:
   uses-material-design: true
 
   assets:
-    - Assets/
-    - Assets/s1/
-    - Assets/s2/
-    - Assets/s3/
-    - Assets/s1/videos/oh-1.mp4
-    - Assets/s1/videos/oh-2.mp4
-    - Assets/s1/videos/mmm-1.mp4
-    - Assets/s1/videos/mmm-2.mp4
-    - Assets/s1/videos/ah-1.mp4
-    - Assets/s1/videos/ah-2.mp4
-    - Assets/s1/videos/eee-1.mp4
-    - Assets/s1/videos/eee-2.mp4
-    - Assets/s1/videos/eh-1.mp4
-    - Assets/s1/videos/eh-2.mp4
-    - Assets/s1/videos/ew-1.mp4
-    - Assets/s1/videos/ew-2.mp4
-    - Assets/s1/videos/s1Movie.mp4
-    - Assets/s2/videos/bam-1.mp4
-    - Assets/s2/videos/bam-2.mp4
-    - Assets/s2/videos/boom-1.mp4
-    - Assets/s2/videos/boom-2.mp4
-    - Assets/s2/videos/ohman-1.mp4
-    - Assets/s2/videos/ohman-2.mp4
-    - Assets/s2/videos/ohno-1.mp4
-    - Assets/s2/videos/ohno-2.mp4
-    - Assets/s2/videos/ohyeah-1.mp4
-    - Assets/s2/videos/ohyeah-2.mp4
-    - Assets/s2/videos/ow-1.mp4
-    - Assets/s2/videos/ow-2.mp4
-    - Assets/s2/videos/pop-1.mp4
-    - Assets/s2/videos/pop-2.mp4
-    - Assets/s2/videos/uh-1.mp4
-    - Assets/s2/videos/uh-2.mp4
-    - Assets/s2/videos/whe-1.mp4
-    - Assets/s2/videos/whe-2.mp4
-    - Assets/s3/videos/ark-1.mp4
-    - Assets/s3/videos/ark-2.mp4
-    - Assets/s3/videos/baak-1.mp4
-    - Assets/s3/videos/baak-2.mp4
-    - Assets/s3/videos/meow-1.mp4
-    - Assets/s3/videos/meow-2.mp4
-    - Assets/s3/videos/moo-1.mp4
-    - Assets/s3/videos/moo-2.mp4
-    - Assets/s3/videos/nei-1.mp4
-    - Assets/s3/videos/nei-2.mp4
-    - Assets/s3/videos/pig-1.mp4
-    - Assets/s3/videos/pig-2.mp4
-    - Assets/s3/videos/baa-1.mp4
-    - Assets/s3/videos/baa-2.mp4
-    - Assets/s3/videos/s3Final.mp4
-    - Assets/s2/videos/s2Final.mp4
+    - assets/
+    - assets/s1/
+    - assets/s2/
+    - assets/s3/
+    - assets/s1/videos/oh-1.mp4
+    - assets/s1/videos/oh-2.mp4
+    - assets/s1/videos/mmm-1.mp4
+    - assets/s1/videos/mmm-2.mp4
+    - assets/s1/videos/ah-1.mp4
+    - assets/s1/videos/ah-2.mp4
+    - assets/s1/videos/eee-1.mp4
+    - assets/s1/videos/eee-2.mp4
+    - assets/s1/videos/eh-1.mp4
+    - assets/s1/videos/eh-2.mp4
+    - assets/s1/videos/ew-1.mp4
+    - assets/s1/videos/ew-2.mp4
+    - assets/s1/videos/s1Movie.mp4
+    - assets/s2/videos/bam-1.mp4
+    - assets/s2/videos/bam-2.mp4
+    - assets/s2/videos/boom-1.mp4
+    - assets/s2/videos/boom-2.mp4
+    - assets/s2/videos/ohman-1.mp4
+    - assets/s2/videos/ohman-2.mp4
+    - assets/s2/videos/ohno-1.mp4
+    - assets/s2/videos/ohno-2.mp4
+    - assets/s2/videos/ohyeah-1.mp4
+    - assets/s2/videos/ohyeah-2.mp4
+    - assets/s2/videos/ow-1.mp4
+    - assets/s2/videos/ow-2.mp4
+    - assets/s2/videos/pop-1.mp4
+    - assets/s2/videos/pop-2.mp4
+    - assets/s2/videos/uh-1.mp4
+    - assets/s2/videos/uh-2.mp4
+    - assets/s2/videos/whe-1.mp4
+    - assets/s2/videos/whe-2.mp4
+    - assets/s3/videos/ark-1.mp4
+    - assets/s3/videos/ark-2.mp4
+    - assets/s3/videos/baak-1.mp4
+    - assets/s3/videos/baak-2.mp4
+    - assets/s3/videos/meow-1.mp4
+    - assets/s3/videos/meow-2.mp4
+    - assets/s3/videos/moo-1.mp4
+    - assets/s3/videos/moo-2.mp4
+    - assets/s3/videos/nei-1.mp4
+    - assets/s3/videos/nei-2.mp4
+    - assets/s3/videos/pig-1.mp4
+    - assets/s3/videos/pig-2.mp4
+    - assets/s3/videos/baa-1.mp4
+    - assets/s3/videos/baa-2.mp4
+    - assets/s3/videos/s3Final.mp4
+    - assets/s2/videos/s2Final.mp4

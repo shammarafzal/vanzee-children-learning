@@ -68,8 +68,7 @@ class _Single1FinalState extends State<Single1Final> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey1.currentState?.shake();
-                                  audioPlayer.play(
-                                      oh_mp3);
+                                  audioPlayer.play(AssetSource(oh_mp3));
                                 },
                               ),
                             ),
@@ -95,8 +94,8 @@ class _Single1FinalState extends State<Single1Final> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey2.currentState?.shake();
-                                  audioPlayer.play(
-                                      ah_mp3);
+                                  audioPlayer.play(AssetSource(ah_mp3)
+                                      );
                                 },
                               ),
                             ),
@@ -146,8 +145,8 @@ class _Single1FinalState extends State<Single1Final> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey3.currentState?.shake();
-                                  audioPlayer.play(
-                                      mmm_mp3);
+                                  audioPlayer.play(AssetSource(mmm_mp3)
+                                      );
                                 },
                               ),
                             ),
@@ -173,8 +172,8 @@ class _Single1FinalState extends State<Single1Final> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey4.currentState?.shake();
-                                  audioPlayer.play(
-                                      ew_mp3);
+                                  audioPlayer.play(AssetSource(ew_mp3)
+                                      );
                                 },
                               ),
                             ),
@@ -222,8 +221,8 @@ class _Single1FinalState extends State<Single1Final> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey5.currentState?.shake();
-                                  audioPlayer.play(
-                                      eee_mp3);
+                                  audioPlayer.play(AssetSource(eee_mp3)
+                                      );
                                 },
                               ),
                             ),
@@ -249,8 +248,8 @@ class _Single1FinalState extends State<Single1Final> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey6.currentState?.shake();
-                                  audioPlayer.play(
-                                      eh_mp3);
+                                  audioPlayer.play(AssetSource(eh_mp3)
+                                      );
                                 },
                               ),
                             ),

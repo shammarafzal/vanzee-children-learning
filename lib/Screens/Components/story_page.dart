@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vanzee/Screens/Components/play_video.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
-import 'package:lottie/lottie.dart';
 import 'package:flutter_gif/flutter_gif.dart';
 
 import '../../Constants/constant.dart';
@@ -93,7 +92,7 @@ class _StoryPageState extends State<StoryPage>with TickerProviderStateMixin {
                         alignment: Alignment.topLeft,
                         child: GifImage(
                           controller: controller1,
-                          image: const AssetImage("Assets/arrow.gif"),
+                          image: const AssetImage("assets/arrow.gif"),
                         ),
                       ),
                     ),

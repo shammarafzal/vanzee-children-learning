@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:vanzee/Constants/constant.dart';
+import 'package:vanzee/Screens/Components/story_page.dart';
+import 'package:vanzee/Screens/story2/story_animation2.dart';
 import 'package:video_player/video_player.dart';
 import '../../Settings/SizeConfig.dart';
 import 'package:audioplayers/audioplayers.dart';
+import '../story1/story_animation.dart';
+import '../story3/story_animation3.dart';
 import 'animated_controller.dart';
 import 'video_player_widget.dart';
 
@@ -14,6 +18,7 @@ class StoryComponent extends StatefulWidget {
     required this.vid2,
     required this.mp3,
     required this.img,
+    this.storyNo = 1,
     this.isfirst = false
   }) : super(key: key);
   final horizontalFlipPageTurnController;
@@ -23,6 +28,7 @@ class StoryComponent extends StatefulWidget {
   final mp3;
   final img;
   final isfirst;
+  final storyNo;
   @override
   State<StoryComponent> createState() => _StoryComponentState();
 }
@@ -53,12 +59,52 @@ class _StoryComponentState extends State<StoryComponent> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  Align(
+                    alignment: Alignment.bottomLeft,
+                    child: GestureDetector(
+                      onTap: () {
+                        if(widget.storyNo == 1){
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => StoryPage(opening_scene: story1_openingScene, video_url: s1Movie, onPress: (){
+                                Navigator.of(context).push(
+                                    MaterialPageRoute(builder: (context) => StoryAnimation()));
+                              },)));
+                        }
+                        else if(widget.storyNo == 2) {
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => StoryPage(opening_scene: story2_openingScene, video_url: s2Movie, onPress: (){
+                                Navigator.of(context).push(
+                                    MaterialPageRoute(builder: (context) => StoryAnimation2()));
+                              },)));
+                        }
+                        else {
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => StoryPage(opening_scene: story3_openingScene, video_url: s3movie, onPress: (){
+                                Navigator.of(context).push(
+                                    MaterialPageRoute(builder: (context) => StoryAnimation3()));
+                              },)));
+                        }
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(top: 30,left: 20),
+                        height: SizeConfig.screenHeight * 0.1,
+                        width: SizeConfig.screenWidth * 0.1,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage(book_icon),
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                      ),
+                    ),
+                  ),
                   Container(
-                    height: SizeConfig.screenHeight * 0.33,
-                    width: SizeConfig.screenWidth * 0.4,
+                    height: SizeConfig.screenHeight * 0.27,
+                    width: SizeConfig.screenWidth * 0.43,
                     child: Center(child: GestureDetector(
                         onTap: (){
-                          audioPlayer.play(widget.mp3);
+                          audioPlayer.play(AssetSource(widget.mp3));
                         },
                         child: Text(widget.word, style: TextStyle(fontSize: SizeConfig.screenHeight * 0.07, fontWeight: FontWeight.w800),))),
                   ),
@@ -115,7 +161,7 @@ class _StoryComponentState extends State<StoryComponent> {
                       child: InkWell(
                         onTap: () {
                           shakeKey.currentState?.shake();
-                          audioPlayer.play(widget.mp3);
+                          audioPlayer.play(AssetSource(widget.mp3));
                         },
                       ),
                     ),

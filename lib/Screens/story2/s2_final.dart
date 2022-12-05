@@ -72,8 +72,8 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey1.currentState?.shake();
-                                  audioPlayer.play(
-                                      uhoh_mp3);
+                                  audioPlayer.play(AssetSource(uhoh_mp3)
+                                      );
                                 },
                               ),
                             ),
@@ -99,8 +99,8 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey2.currentState?.shake();
-                                  audioPlayer.play(
-                                      bam_mp3);
+                                  audioPlayer.play(AssetSource(bam_mp3)
+                                      );
                                 },
                               ),
                             ),
@@ -150,8 +150,8 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey3.currentState?.shake();
-                                  audioPlayer.play(
-                                      ow_mp3);
+                                  audioPlayer.play(AssetSource(ow_mp3)
+                                      );
                                 },
                               ),
                             ),
@@ -177,8 +177,8 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey4.currentState?.shake();
-                                  audioPlayer.play(
-                                      ohno_mp3);
+                                  audioPlayer.play(AssetSource(ohno_mp3)
+                                      );
                                 },
                               ),
                             ),
@@ -215,8 +215,8 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey5.currentState?.shake();
-                                  audioPlayer.play(
-                                      ohman_mp3);
+                                  audioPlayer.play(AssetSource(ohman_mp3)
+                                      );
                                 },
                               ),
                             ),
@@ -242,8 +242,8 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey6.currentState?.shake();
-                                  audioPlayer.play(
-                                      bom_mp3);
+                                  audioPlayer.play(AssetSource(bom_mp3)
+                                      );
                                 },
                               ),
                             ),
@@ -305,8 +305,8 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey7.currentState?.shake();
-                                  audioPlayer.play(
-                                      ohyeah_mp3);
+                                  audioPlayer.play(AssetSource(ohyeah_mp3)
+                                      );
                                 },
                               ),
                             ),
@@ -332,8 +332,8 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey8.currentState?.shake();
-                                  audioPlayer.play(
-                                      pop_mp3);
+                                  audioPlayer.play(AssetSource(pop_mp3)
+                                      );
                                 },
                               ),
                             ),
@@ -372,8 +372,8 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                               child: InkWell(
                                 onTap: () {
                                   shakeKey9.currentState?.shake();
-                                  audioPlayer.play(
-                                      whee_mp3);
+                                  audioPlayer.play(AssetSource(whee_mp3)
+                                      );
                                 },
                               ),
                             ),

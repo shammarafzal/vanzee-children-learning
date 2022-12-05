@@ -41,7 +41,7 @@ class _StoryCard1State extends State<StoryCard1> {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.fill,
-                            image: AssetImage("Assets/s1open.png"),
+                            image: AssetImage(story1_open),
                           ),
                         ),
                       ),
@@ -82,7 +82,7 @@ class _StoryCard1State extends State<StoryCard1> {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.fill,
-                            image: AssetImage("Assets/s2open.png"),
+                            image: AssetImage(story2_open),
                           ),
                         ),
                       ),
@@ -123,7 +123,7 @@ class _StoryCard1State extends State<StoryCard1> {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.fill,
-                            image: AssetImage("Assets/s3open.png"),
+                            image: AssetImage(story3_open),
                           ),
                         ),
                       ),
