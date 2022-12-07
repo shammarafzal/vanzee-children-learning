@@ -43,14 +43,14 @@ class _StoryPageState extends State<StoryPage>with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(235, 159, 73, 1),
-        leading: InkWell(
-            onTap: () {
-              Navigator.of(context).pushReplacementNamed('/home');
-            },
-            child: Icon(Icons.arrow_back)),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: const Color.fromRGBO(235, 159, 73, 1),
+      //   leading: InkWell(
+      //       onTap: () {
+      //         Navigator.of(context).pushReplacementNamed('/home');
+      //       },
+      //       child: Icon(Icons.arrow_back)),
+      // ),
       body: Container(
         height: SizeConfig.screenHeight * 1,
         width: SizeConfig.screenWidth * 1,
@@ -64,15 +64,32 @@ class _StoryPageState extends State<StoryPage>with TickerProviderStateMixin {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: SizeConfig.screenHeight * 1,
-              width: SizeConfig.screenWidth * 0.25,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.transparent),
-              child: InkWell(
-                onTap: () => {_aboutapp()},
-              ),
+            Column(
+              children: [
+                Container(
+                  height: SizeConfig.screenHeight * 0.25,
+                  width: SizeConfig.screenWidth * 0.25,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.transparent),
+                  child: InkWell(
+                    onTap: () => {
+                      Navigator.of(context).pushReplacementNamed('/home')
+                    },
+                    child: Icon(Icons.arrow_back_ios, size: 30, color: Colors.black,),
+                  ),
+                ),
+                Container(
+                  height: SizeConfig.screenHeight * 0.75,
+                  width: SizeConfig.screenWidth * 0.25,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.transparent),
+                  child: InkWell(
+                    onTap: () => {_aboutapp()},
+                  ),
+                ),
+              ],
             ),
             GestureDetector(
               onTap: widget.onPress,

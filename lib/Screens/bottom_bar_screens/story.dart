@@ -21,6 +21,7 @@ class _StoryCard1State extends State<StoryCard1> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
+    var shortestSide = MediaQuery.of(context).size.shortestSide;
     return SingleChildScrollView(
       child:
         SizedBox(
@@ -36,7 +37,7 @@ class _StoryCard1State extends State<StoryCard1> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        width: SizeConfig.screenWidth * 0.4,
+                        width: shortestSide < 600 ? SizeConfig.screenWidth * 0.3 : SizeConfig.screenWidth * 0.4,
                         height: SizeConfig.screenHeight * 0.6,
                         decoration: BoxDecoration(
                           image: DecorationImage(
@@ -49,7 +50,7 @@ class _StoryCard1State extends State<StoryCard1> {
                     Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
-                          width: SizeConfig.screenWidth * 0.4,
+                          width: shortestSide < 600 ? SizeConfig.screenWidth * 0.3 : SizeConfig.screenWidth * 0.4,
                           height: SizeConfig.screenHeight * 0.08,
                           child: MaterialButton(
                             onPressed: () {
@@ -77,7 +78,7 @@ class _StoryCard1State extends State<StoryCard1> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        width: SizeConfig.screenWidth * 0.4,
+                        width: shortestSide < 600 ? SizeConfig.screenWidth * 0.3 : SizeConfig.screenWidth * 0.4,
                         height: SizeConfig.screenHeight * 0.6,
                         decoration: BoxDecoration(
                           image: DecorationImage(
@@ -90,7 +91,7 @@ class _StoryCard1State extends State<StoryCard1> {
                     Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
-                          width: SizeConfig.screenWidth * 0.4,
+                          width: shortestSide < 600 ? SizeConfig.screenWidth * 0.3 : SizeConfig.screenWidth * 0.4,
                           height: SizeConfig.screenHeight * 0.08,
                           child: MaterialButton(
                             onPressed: () {
@@ -118,7 +119,7 @@ class _StoryCard1State extends State<StoryCard1> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        width: SizeConfig.screenWidth * 0.4,
+                        width: shortestSide < 600 ? SizeConfig.screenWidth * 0.3 : SizeConfig.screenWidth * 0.4,
                         height: SizeConfig.screenHeight * 0.6,
                         decoration: BoxDecoration(
                           image: DecorationImage(
@@ -131,7 +132,7 @@ class _StoryCard1State extends State<StoryCard1> {
                     Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
-                          width: SizeConfig.screenWidth * 0.4,
+                          width: shortestSide < 600 ? SizeConfig.screenWidth * 0.3 : SizeConfig.screenWidth * 0.4,
                           height: SizeConfig.screenHeight * 0.08,
                           child: MaterialButton(
                             onPressed: () {

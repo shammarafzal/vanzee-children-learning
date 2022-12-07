@@ -9,9 +9,9 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  final Uri _url1 = Uri.parse(about_talktales_url);
+  final Uri _url1 = Uri.parse(about_book);
   final Uri _url2 = Uri.parse(download_words_url);
-  final Uri _url3 = Uri.parse(about_book);
+  final Uri _url3 = Uri.parse(about_talktales_url);
 
   Future<void> _aboutapp() async {
     if (!await launchUrl(_url1)) {

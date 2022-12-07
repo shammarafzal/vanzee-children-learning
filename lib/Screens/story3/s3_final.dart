@@ -106,8 +106,9 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => Home()));
+                          widget.horizontalFlipPageTurnController.animToLeftWidget();
+                          // Navigator.of(context).push(
+                          //     MaterialPageRoute(builder: (context) => Home()));
                         },
                         child: Container(
                           height: SizeConfig.screenHeight * 0.1,

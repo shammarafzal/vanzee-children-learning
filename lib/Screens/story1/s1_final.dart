@@ -36,11 +36,12 @@ class _Single1FinalState extends State<Single1Final> {
   Widget build(BuildContext context) {
     return Container(
         color: Color(0xffA4C2F4),
-        padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+        padding: EdgeInsets.only(left: 20, right: 20,),
         child: Row(
           children: [
             ///////// ROW 1 ////////
             Container(
+              padding: EdgeInsets.only(top: 20),
               width: SizeConfig.screenWidth * 0.47,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -104,8 +105,9 @@ class _Single1FinalState extends State<Single1Final> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (context) => Home()));
+                          // Navigator.of(context)
+                          //     .push(MaterialPageRoute(builder: (context) => Home()));
+                          widget.horizontalFlipPageTurnController.animToLeftWidget();
                         },
                         child: Container(
                           height: SizeConfig.screenHeight * 0.1,
@@ -191,6 +193,7 @@ class _Single1FinalState extends State<Single1Final> {
             ),
             Container(width: 2, height: SizeConfig.screenHeight, color: Colors.white,),
             Container(
+              padding: EdgeInsets.only(top: 20),
               width: SizeConfig.screenWidth * 0.47,
               child: Row(
                 children: [

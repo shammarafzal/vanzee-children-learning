@@ -42,18 +42,18 @@ class Home_State extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        title: Text(
-          _title,
-          style: TextStyle(color: Color.fromRGBO(235, 159, 73, 1), fontWeight: FontWeight.bold, fontSize: 26),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        iconTheme: IconThemeData(
-          color: const Color.fromRGBO(235, 159, 73, 1),
-        ),
-      ),
+      // appBar: AppBar(
+      //   elevation: 0.0,
+      //   title: Text(
+      //     _title,
+      //     style: TextStyle(color: Color.fromRGBO(235, 159, 73, 1), fontWeight: FontWeight.bold, fontSize: 26),
+      //   ),
+      //   centerTitle: true,
+      //   backgroundColor: Colors.transparent,
+      //   iconTheme: IconThemeData(
+      //     color: const Color.fromRGBO(235, 159, 73, 1),
+      //   ),
+      // ),
       body: 
       SafeArea(
         child: Center(
