@@ -29,7 +29,7 @@ class _StoryPageState extends State<StoryPage>with TickerProviderStateMixin {
       controller1.repeat(
         min: 0,
         max: 40,
-        period: const Duration(milliseconds: 500),
+        period: const Duration(milliseconds: 1200),
       );
     });
     super.initState();
@@ -103,7 +103,7 @@ class _StoryPageState extends State<StoryPage>with TickerProviderStateMixin {
                   children: [
                     Container(
                       // width: SizeConfig.screenHeight * 0.2,
-                      height: SizeConfig.screenHeight * 0.2,
+                      height: SizeConfig.screenHeight * 0.28,
                       color: Colors.transparent,
                       child: Align(
                         alignment: Alignment.topLeft,

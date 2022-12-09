@@ -109,8 +109,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (context) => Home()));
+                          widget.horizontalFlipPageTurnController.animToLeftWidget();
                         },
                         child: Container(
                           height: SizeConfig.screenHeight * 0.1,
@@ -254,11 +253,12 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                         onTap: () {
                           // Navigator.of(context)
                           //     .push(MaterialPageRoute(builder: (context) => Home()));
-                          widget.horizontalFlipPageTurnController.animToLeftWidget();
+                          // widget.horizontalFlipPageTurnController.animToLeftWidget();
                         },
                         child: Container(
                           height: SizeConfig.screenHeight * 0.1,
                           width: SizeConfig.screenWidth * 0.149,
+
                           // decoration: BoxDecoration(
                           //     image: DecorationImage(
                           //       fit: BoxFit.fill,

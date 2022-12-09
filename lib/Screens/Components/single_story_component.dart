@@ -45,6 +45,7 @@ class _StoryComponentState extends State<StoryComponent> {
 
   @override
   Widget build(BuildContext context) {
+    var shortestSide = MediaQuery.of(context).size.shortestSide;
     return Container(
         color: Color(0xffA4C2F4),
         height: SizeConfig.screenHeight * 1,
@@ -106,7 +107,7 @@ class _StoryComponentState extends State<StoryComponent> {
                         onTap: (){
                           audioPlayer.play(AssetSource(widget.mp3));
                         },
-                        child: Text(widget.word, style: TextStyle(fontSize: SizeConfig.screenHeight * 0.07, fontWeight: FontWeight.w800),))),
+                        child: Text(widget.word, style: TextStyle(fontSize: shortestSide < 600 ? SizeConfig.screenHeight * 0.1 : SizeConfig.screenHeight * 0.07, fontWeight: FontWeight.w800),))),
                   ),
                   Container(
                     height: SizeConfig.screenHeight * 0.33,
