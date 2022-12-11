@@ -3,6 +3,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:vanzee/Screens/Components/play_video.dart';
 import 'package:vanzee/Settings/SizeConfig.dart';
 import 'package:flutter_gif/flutter_gif.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../Constants/constant.dart';
 
@@ -107,10 +108,11 @@ class _StoryPageState extends State<StoryPage>with TickerProviderStateMixin {
                       color: Colors.transparent,
                       child: Align(
                         alignment: Alignment.topLeft,
-                        child: GifImage(
-                          controller: controller1,
-                          image: const AssetImage("assets/arrow.gif"),
-                        ),
+                        child: Lottie.network(arrow_animation),
+                        // child: GifImage(
+                        //   controller: controller1,
+                        //   image: const AssetImage("assets/arrow.gif"),
+                        // ),
                       ),
                     ),
                     Container(height: SizeConfig.screenHeight * 0.2, color: Colors.transparent,)
