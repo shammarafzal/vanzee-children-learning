@@ -13,6 +13,7 @@ class Home_State extends State<Home> {
   late String _title;
   List<Widget> _widgetOptions = <Widget>[
     StoryCard1(),
+    StoryCard1(),
     SettingsPage(),
   ];
   void _OnItemTap(int index) {
@@ -70,6 +71,10 @@ class Home_State extends State<Home> {
           BottomNavigationBarItem(
             icon: Icon(Icons.auto_stories),
             label: 'Stories',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.devices_other, color: Color.fromRGBO(235, 159, 73, 1),),
+            label: 'Simple Silly Speech Sounds',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
