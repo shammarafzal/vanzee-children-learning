@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:vanzee/Screens/bottom_bar_screens/web_view.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../Constants/constant.dart';
+import '../../Settings/SizeConfig.dart';
 
 class SettingsPage extends StatefulWidget {
   @override
@@ -31,8 +34,9 @@ class _SettingsPageState extends State<SettingsPage> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
+    var shortestSide = MediaQuery.of(context).size.shortestSide;
     return Scaffold(
-      
         body: SingleChildScrollView(
           child: Padding(
       padding: const EdgeInsets.only(top: 24.0, left: 24.0, right: 24.0),
@@ -69,7 +73,13 @@ class _SettingsPageState extends State<SettingsPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: Icon(Icons.arrow_forward),
                   )),
-              onTap: () => {_aboutapp()},
+              onTap: ()  {
+                shortestSide > 600 ?
+                _aboutapp() :
+              Navigator.push(
+                context,
+              MaterialPageRoute(builder: (context) => WebViewScreen(link: about_book,)));
+              },
             ),
             Padding(padding: EdgeInsets.all(8.0)),
             ListTile(
@@ -96,7 +106,13 @@ class _SettingsPageState extends State<SettingsPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: Icon(Icons.arrow_forward),
                   )),
-              onTap: () => {_aboutbook()},
+              onTap: ()  {
+
+                shortestSide > 600 ?
+                _aboutbook() :  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WebViewScreen(link: about_talktales_url,)));
+              },
             ),
             Padding(padding: EdgeInsets.all(8.0)),
             ListTile(
@@ -123,7 +139,12 @@ class _SettingsPageState extends State<SettingsPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: Icon(Icons.arrow_forward),
                   )),
-              onTap: () => {_downloadwords()},
+              onTap: ()  {
+                shortestSide > 600 ?
+                _downloadwords() :   Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WebViewScreen(link: download_words_url,)));
+              },
             ),
           ],
       ),

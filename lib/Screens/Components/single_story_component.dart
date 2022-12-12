@@ -151,7 +151,7 @@ class _StoryComponentState extends State<StoryComponent> {
                     child:  Container(
                       margin: EdgeInsets.only(top:SizeConfig.screenHeight * 0.05 ),
                       height: SizeConfig.screenHeight * 0.33,
-                      width: SizeConfig.screenWidth * 0.28,
+                      width: shortestSide > 600 ? SizeConfig.screenWidth * 0.33 : SizeConfig.screenWidth * 0.25,
                       decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.fill,
