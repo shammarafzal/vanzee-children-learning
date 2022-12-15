@@ -6,6 +6,7 @@ import 'package:flutter_gif/flutter_gif.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../Constants/constant.dart';
+import '../bottom_bar_screens/web_view.dart';
 
 class StoryPage extends StatefulWidget {
   const StoryPage({Key? key, required this.opening_scene, required this.video_url,required this.onPress }) : super(key: key);
@@ -43,6 +44,7 @@ class _StoryPageState extends State<StoryPage>with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    var shortestSide = MediaQuery.of(context).size.shortestSide;
     return Scaffold(
       // appBar: AppBar(
       //   backgroundColor: const Color.fromRGBO(235, 159, 73, 1),
@@ -87,7 +89,12 @@ class _StoryPageState extends State<StoryPage>with TickerProviderStateMixin {
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.transparent),
                   child: InkWell(
-                    onTap: () => {_aboutapp()},
+                    onTap: ()  {
+                      shortestSide > 600 ?
+                      _aboutapp() :   Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => WebViewScreen(link: about_book,)));
+                    },
                   ),
                 ),
               ],

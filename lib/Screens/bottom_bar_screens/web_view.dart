@@ -24,7 +24,6 @@ class _WebViewScreenState extends State<WebViewScreen> {
       quarterTurns: 3,
       child: Scaffold(
         appBar: AppBar(
-
         ),
         body: WebView(
           initialUrl: widget.link,
