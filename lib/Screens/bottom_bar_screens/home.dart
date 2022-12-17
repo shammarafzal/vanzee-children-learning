@@ -66,6 +66,8 @@ class Home_State extends State<Home> {
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white,
+        selectedFontSize: 18,
+        unselectedFontSize: 18,
         iconSize: 25,
         items: const [
           BottomNavigationBarItem(
