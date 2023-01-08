@@ -2,7 +2,7 @@
     package="com.talktalesapps.talktales">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="Simple Sounds"
+        android:label="Talk Tales"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
