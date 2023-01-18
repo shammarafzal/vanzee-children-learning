@@ -1,8 +1,10 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:vanzee/Constants/constant.dart';
+import 'package:vanzee/Screens/auth/login.dart';
 import 'dart:async';
 import 'package:vanzee/Screens/bottom_bar_screens/home.dart';
+import 'package:vanzee/Screens/front_page.dart';
 
 import '../Settings/SizeConfig.dart';
 
@@ -43,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   route() {
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => Home()));
+        context, MaterialPageRoute(builder: (context) => Login()));
   }
 
   initScreen(BuildContext context) {

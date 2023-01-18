@@ -11,12 +11,34 @@ class WebViewScreen extends StatefulWidget {
 }
 
 class _WebViewScreenState extends State<WebViewScreen> {
+  late final WebViewController controller;
   @override
   void initState() {
     super.initState();
     // Enable virtual display.
-    if (Platform.isAndroid) WebView.platform = AndroidWebView();
+    // if (Platform.isAndroid) WebView.platform = AndroidWebView();
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(const Color(0x00000000))
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onProgress: (int progress) {
+            // Update loading bar.
+          },
+          onPageStarted: (String url) {},
+          onPageFinished: (String url) {},
+          onWebResourceError: (WebResourceError error) {},
+          onNavigationRequest: (NavigationRequest request) {
+            if (request.url.startsWith('https://www.youtube.com/')) {
+              return NavigationDecision.prevent;
+            }
+            return NavigationDecision.navigate;
+          },
+        ),
+      )
+      ..loadRequest(Uri.parse(widget.link));
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +47,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
       child: Scaffold(
         appBar: AppBar(
         ),
-        body: WebView(
-          initialUrl: widget.link,
-        ),
+        body: WebViewWidget(controller: controller),
       ),
     );
   }

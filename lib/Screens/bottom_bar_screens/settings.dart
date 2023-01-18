@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vanzee/Screens/bottom_bar_screens/web_view.dart';
-import 'package:webview_flutter/webview_flutter.dart';
-
 import '../../Constants/constant.dart';
 import '../../Settings/SizeConfig.dart';
 
