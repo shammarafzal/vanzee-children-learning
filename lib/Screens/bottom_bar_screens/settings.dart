@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -143,6 +144,36 @@ class _SettingsPageState extends State<SettingsPage> {
                 _downloadwords() :   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => WebViewScreen(link: download_words_url,)));
+              },
+            ),
+            Padding(padding: EdgeInsets.all(8.0)),
+            ListTile(
+              title: Text(
+                'Logout',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              leading: Container(
+                  width: 55,
+                  height: 55,
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(236, 235, 254, 1),
+                      borderRadius: BorderRadius.all(Radius.circular(25))),
+                  child: Icon(
+                    Icons.logout,
+                    size: 35,
+                    color: Color.fromRGBO(252, 109, 36, 1),
+                  )),
+              trailing: Container(
+                  decoration: BoxDecoration(
+                      color: Color.fromRGBO(246, 245, 248, 1),
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Icon(Icons.arrow_forward),
+                  )),
+              onTap: ()  async{
+                  await FirebaseAuth.instance.signOut();
+                  Navigator.of(context).pushReplacementNamed('/login');
               },
             ),
           ],

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../Constants/app_colors.dart';
 
@@ -18,10 +19,13 @@ class _LoginState extends State<Login> {
   final password = TextEditingController();
 
   Future signIn() async {
+    final SharedPreferences prefs =
+    await SharedPreferences.getInstance();
     try{
       await FirebaseAuth.instance.signInWithEmailAndPassword(email: email.text, password: password.text);
       await EasyLoading.showSuccess(
           "Signin Succeeded");
+      prefs.setBool('isLoggedIn', true);
       Navigator.of(context).pushReplacementNamed('/home');
     } on FirebaseAuthException catch(e){
       _handleSigninError(e);
@@ -135,22 +139,22 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 const SizedBox(height: 15),
-                // Align(
-                //   alignment: Alignment.centerRight,
-                //   child:  Padding(
-                //     padding: const EdgeInsets.only(right: 30),
-                //     child: GestureDetector(
-                //         onTap: () {
-                //           Navigator.of(context).pushReplacementNamed('/forgot_password');
-                //         },
-                //         child: const Text(
-                //           'Forgot Password?',
-                //           style: TextStyle(
-                //               color: forgotPassword, fontWeight: FontWeight.bold),
-                //           textAlign: TextAlign.center,
-                //         )),
-                //   ),
-                // ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child:  Padding(
+                    padding: const EdgeInsets.only(right: 30),
+                    child: GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushReplacementNamed('/forgot_password');
+                        },
+                        child: const Text(
+                          'Forgot Password?',
+                          style: TextStyle(
+                              color: forgotPassword, fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
+                        )),
+                  ),
+                ),
                 const SizedBox(height: 55),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

@@ -7,7 +7,8 @@ class Home extends StatefulWidget {
   State createState() => new Home_State();
 }
 
-class Home_State extends State<Home> {
+class Home_State extends State<Home> with WidgetsBindingObserver{
+
   get child => null;
   int _selectIndex = 0;
   late String _title;
@@ -37,8 +38,24 @@ class Home_State extends State<Home> {
   @override
   initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _title = 'Simple Silly Speech Sounds';
+
   }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+   super.dispose();
+  }
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state){
+    super.didChangeAppLifecycleState(state);
+    if(state == AppLifecycleState.inactive || state == AppLifecycleState.detached || state == AppLifecycleState.paused) {
+      setState(() {});
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {

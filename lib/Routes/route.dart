@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:vanzee/Screens/auth/forgot_password.dart';
 import 'package:vanzee/Screens/auth/login.dart';
 import 'package:vanzee/Screens/auth/register.dart';
 import 'package:vanzee/Screens/bottom_bar_screens/home.dart';
@@ -32,6 +33,10 @@ class Routes {
     GetPage(
       name: '/register',
       page: () => Register(),
+    ),
+    GetPage(
+      name: '/forgot_password',
+      page: () => ForgotPassword(),
     ),
   ];
 }
