@@ -8,7 +8,7 @@ const footerText = "A purchase will be applied to your account upon confirmation
 const appleApiKey = 'appl_nMECOaIhXKbhZusikBeSrcQbFCM';
 
 //TO DO: add the Google API key for your app from the RevenueCat dashboard: https://app.revenuecat.com
-const googleApiKey = 'googl_api_key';
+const googleApiKey = 'goog_rpDPLQVMucfwWpxjTWOpsNvAVvQ';
 
 //TO DO: add the Amazon API key for your app from the RevenueCat dashboard: https://app.revenuecat.com
 const amazonApiKey = 'amazon_api_key';
