@@ -8,7 +8,7 @@ class Home extends StatefulWidget {
 }
 
 class Home_State extends State<Home> with WidgetsBindingObserver{
-
+  bool _isPaused = false;
   get child => null;
   int _selectIndex = 0;
   late String _title;
@@ -42,6 +42,18 @@ class Home_State extends State<Home> with WidgetsBindingObserver{
     _title = 'Simple Silly Speech Sounds';
 
   }
+  _showLockScreen(){
+    Navigator.of(context).pushReplacementNamed('/home');
+  }
+  // void _showLockScreen() async {
+  //   await Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
+  //       WillPopScope(
+  //         child: ...,
+  //         onWillPop: () => Future.value(false), // prevents the system from dismissing this route
+  //       )));
+  //
+  //   _isPaused = false;
+  // }
 
   @override
   void dispose() {
@@ -53,6 +65,8 @@ class Home_State extends State<Home> with WidgetsBindingObserver{
     super.didChangeAppLifecycleState(state);
     if(state == AppLifecycleState.inactive || state == AppLifecycleState.detached || state == AppLifecycleState.paused) {
       setState(() {});
+      _isPaused = true;
+      _showLockScreen();
     }
   }
 
