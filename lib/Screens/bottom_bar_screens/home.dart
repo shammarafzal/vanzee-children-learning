@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:vanzee/Screens/bottom_bar_screens/settings.dart';
 import 'package:vanzee/Screens/bottom_bar_screens/story.dart';
 
@@ -43,7 +46,10 @@ class Home_State extends State<Home> with WidgetsBindingObserver{
 
   }
   _showLockScreen(){
-    Navigator.of(context).pushReplacementNamed('/home');
+    // Navigator.of(context).pushReplacementNamed('/home');
+    // SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+    exit(0);
+    // _isPaused = false;
   }
   // void _showLockScreen() async {
   //   await Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
