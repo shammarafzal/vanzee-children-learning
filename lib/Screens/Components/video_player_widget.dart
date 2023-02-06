@@ -17,24 +17,26 @@ class _VideoPlayerViewState extends State<VideoPlayerView> {
   @override
   void initState(){
     super.initState();
-    switch(widget.dataSourceType){
-      case DataSourceType.asset:
-        _videoPlayerController = VideoPlayerController.asset(widget.url, videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true))..initialize().then((_) => setState((){}));
-        break;
-      case DataSourceType.network:
-        _videoPlayerController = VideoPlayerController.asset(widget.url);
-        break;
-      case DataSourceType.file:
-        _videoPlayerController = VideoPlayerController.asset(widget.url);
-        break;
-      case DataSourceType.contentUri:
-        _videoPlayerController = VideoPlayerController.asset(widget.url);
-        break;
-    }
-    _chewieController = ChewieController(
-      videoPlayerController: _videoPlayerController,
-      aspectRatio: 16/9,
-    );
+    setState(() {
+      switch(widget.dataSourceType){
+        case DataSourceType.asset:
+          _videoPlayerController = VideoPlayerController.asset(widget.url, videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true))..initialize().then((_) => setState((){}));
+          break;
+        case DataSourceType.network:
+          _videoPlayerController = VideoPlayerController.asset(widget.url);
+          break;
+        case DataSourceType.file:
+          _videoPlayerController = VideoPlayerController.asset(widget.url);
+          break;
+        case DataSourceType.contentUri:
+          _videoPlayerController = VideoPlayerController.asset(widget.url);
+          break;
+      }
+      _chewieController = ChewieController(
+        videoPlayerController: _videoPlayerController,
+        aspectRatio: 16/9,
+      );
+    });
   }
 
   @override

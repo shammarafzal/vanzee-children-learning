@@ -46,10 +46,10 @@ class Home_State extends State<Home> with WidgetsBindingObserver{
 
   }
   _showLockScreen(){
-    // Navigator.of(context).pushReplacementNamed('/home');
+    Navigator.of(context).pushReplacementNamed('/home');
+    
     // SystemChannels.platform.invokeMethod('SystemNavigator.pop');
-    exit(0);
-    // _isPaused = false;
+    _isPaused = false;
   }
   // void _showLockScreen() async {
   //   await Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
@@ -92,7 +92,7 @@ class Home_State extends State<Home> with WidgetsBindingObserver{
       //     color: const Color.fromRGBO(235, 159, 73, 1),
       //   ),
       // ),
-      body: 
+      body:
       SafeArea(
         child: Center(
           child: _widgetOptions.elementAt(_selectIndex),
