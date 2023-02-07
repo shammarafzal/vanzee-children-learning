@@ -5,8 +5,9 @@ import 'package:video_player/video_player.dart';
 import 'video_player_widget.dart';
 
 class PlayVideo extends StatefulWidget {
-  const PlayVideo({Key? key, required this.video_url}) : super(key: key);
+  const PlayVideo({Key? key, required this.video_url, required this.vidKey}) : super(key: key);
   final video_url;
+  final vidKey;
   @override
   State<PlayVideo> createState() => _PlayVideoState();
 }
@@ -27,7 +28,7 @@ class _PlayVideoState extends State<PlayVideo> {
       body: Container(
         width:SizeConfig.screenWidth * 1,
         height: SizeConfig.screenHeight * 1,
-        child:VideoPlayerView(url: widget.video_url, dataSourceType: DataSourceType.asset, newKey: UniqueKey(),),
+        child:VideoPlayerView(url: widget.video_url, dataSourceType: DataSourceType.asset, newKey: widget.vidKey),
       )
     );
   }

@@ -137,7 +137,7 @@ class _StoryPageState extends State<StoryPage>with TickerProviderStateMixin {
               child: InkWell(
                 onTap: () {
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => PlayVideo(video_url: widget.video_url,)));
+                      MaterialPageRoute(builder: (context) => PlayVideo(video_url: widget.video_url, vidKey: UniqueKey(),)));
                 },
               ),
             )

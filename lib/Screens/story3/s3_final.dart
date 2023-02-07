@@ -334,7 +334,7 @@ class _SingleStoryComponentF3State extends State<SingleStoryComponentF3> {
                                       Navigator.of(context)
                                           .push(MaterialPageRoute(
                                               builder: (context) => PlayVideo(
-                                                    video_url: s3movie,
+                                                    video_url: s3movie, vidKey: UniqueKey(),
                                                   )));
                                     },
                                   ),

@@ -315,7 +315,7 @@ class _Single1FinalState extends State<Single1Final> {
                                   child: InkWell(
                                     onTap: () {
                                       Navigator.of(context).push(MaterialPageRoute(
-                                          builder: (context) => PlayVideo(video_url: s1Movie,)));
+                                          builder: (context) => PlayVideo(video_url: s1Movie, vidKey: UniqueKey(),)));
                                     },
                                   ),
                                 ),

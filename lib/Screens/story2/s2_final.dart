@@ -411,7 +411,7 @@ class _SingleStoryComponentF2State extends State<SingleStoryComponentF2> {
                                   child: InkWell(
                                     onTap: () {
                                       Navigator.of(context).push(MaterialPageRoute(
-                                          builder: (context) => PlayVideo(video_url: s2Movie,)));
+                                          builder: (context) => PlayVideo(video_url: s2Movie, vidKey: UniqueKey(),)));
                                     },
                                   ),
                                 ),

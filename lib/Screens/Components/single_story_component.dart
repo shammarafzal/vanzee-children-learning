@@ -18,6 +18,8 @@ class StoryComponent extends StatefulWidget {
     required this.vid2,
     required this.mp3,
     required this.img,
+    required this.vid1Key,
+    required this.vid2Key,
     this.storyNo = 1,
     this.isfirst = false
   }) : super(key: key);
@@ -27,6 +29,8 @@ class StoryComponent extends StatefulWidget {
   final vid2;
   final mp3;
   final img;
+  final vid1Key;
+  final vid2Key;
   final isfirst;
   final storyNo;
   @override
@@ -35,6 +39,8 @@ class StoryComponent extends StatefulWidget {
 
 class _StoryComponentState extends State<StoryComponent> {
   final shakeKey = GlobalKey<ShakeWidgetState>();
+  // final vid1Key = UniqueKey();
+  // final vid2Key = UniqueKey();
   AudioPlayer audioPlayer = AudioPlayer();
 
   @override
@@ -115,7 +121,7 @@ class _StoryComponentState extends State<StoryComponent> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.transparent),
-                    child: VideoPlayerView(url: widget.vid1, dataSourceType: DataSourceType.asset, newKey: UniqueKey(),),
+                    child: VideoPlayerView(url: widget.vid1, dataSourceType: DataSourceType.asset, newKey: widget.vid1Key,),
                   ),
                   Container(
                     height: SizeConfig.screenHeight * 0.1,
@@ -176,7 +182,7 @@ class _StoryComponentState extends State<StoryComponent> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.transparent),
-                    child: VideoPlayerView(url: widget.vid2, dataSourceType: DataSourceType.asset, newKey: UniqueKey(),),
+                    child: VideoPlayerView(url: widget.vid2, dataSourceType: DataSourceType.asset, newKey: widget.vid2Key,),
                   ),
 
 
@@ -192,6 +198,8 @@ class _StoryComponentState extends State<StoryComponent> {
                         color: Colors.transparent),
                     child: InkWell(
                       onTap: () {
+                        print(widget.vid1Key);
+                        print(widget.vid2Key);
                         widget.horizontalFlipPageTurnController.animToRightWidget();
                       },
                     ),
