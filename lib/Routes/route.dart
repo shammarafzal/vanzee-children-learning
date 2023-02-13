@@ -6,6 +6,7 @@ import 'package:vanzee/Screens/bottom_bar_screens/home.dart';
 import 'package:vanzee/Screens/front_page.dart';
 import 'package:vanzee/Screens/splash_screen.dart';
 
+import '../Screens/Components/new_video_screen.dart';
 import '../Screens/bottom_bar_screens/settings.dart';
 
 class Routes {
@@ -37,6 +38,9 @@ class Routes {
     GetPage(
       name: '/forgot_password',
       page: () => ForgotPassword(),
+    ),  GetPage(
+      name: '/intrro',
+      page: () => IntroVideo(),
     ),
   ];
 }

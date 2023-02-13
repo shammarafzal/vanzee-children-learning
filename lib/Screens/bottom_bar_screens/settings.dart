@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vanzee/Screens/bottom_bar_screens/web_view.dart';
 import '../../Constants/constant.dart';
@@ -173,6 +174,9 @@ class _SettingsPageState extends State<SettingsPage> {
                   )),
               onTap: ()  async{
                   await FirebaseAuth.instance.signOut();
+                  final SharedPreferences prefs =
+                  await SharedPreferences.getInstance();
+                  prefs.setBool('isLoggedIn', false);
                   Navigator.of(context).pushReplacementNamed('/login');
               },
             ),

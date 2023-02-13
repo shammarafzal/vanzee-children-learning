@@ -47,7 +47,6 @@ class Home_State extends State<Home> with WidgetsBindingObserver{
   }
   _showLockScreen(){
     Navigator.of(context).pushReplacementNamed('/home');
-    
     // SystemChannels.platform.invokeMethod('SystemNavigator.pop');
     _isPaused = false;
   }

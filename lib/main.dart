@@ -35,7 +35,7 @@ Future<void> main() async {
     GetMaterialApp(
         builder: EasyLoading.init(),
         debugShowCheckedModeBanner: false,
-        initialRoute: isLoggedIn ? '/home' : '/splash',
+        initialRoute: isLoggedIn ? '/splash' : '/splash',
         getPages: Routes.routes),
   );
   configLoading();
