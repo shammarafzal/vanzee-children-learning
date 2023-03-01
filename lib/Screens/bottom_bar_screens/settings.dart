@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:vanzee/Screens/bottom_bar_screens/about_app.dart';
+import 'package:vanzee/Screens/bottom_bar_screens/about_talktales.dart';
 import 'package:vanzee/Screens/bottom_bar_screens/web_view.dart';
 import '../../Constants/constant.dart';
 import '../../Settings/SizeConfig.dart';
@@ -75,11 +77,9 @@ class _SettingsPageState extends State<SettingsPage> {
                     child: Icon(Icons.arrow_forward),
                   )),
               onTap: ()  {
-                shortestSide > 600 ?
-                _aboutapp() :
-              Navigator.push(
-                context,
-              MaterialPageRoute(builder: (context) => WebViewScreen(link: about_book,)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AboutApp()));
               },
             ),
             Padding(padding: EdgeInsets.all(8.0)),
@@ -108,17 +108,19 @@ class _SettingsPageState extends State<SettingsPage> {
                     child: Icon(Icons.arrow_forward),
                   )),
               onTap: ()  {
-
-                shortestSide > 600 ?
-                _aboutbook() :  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => WebViewScreen(link: about_talktales_url,)));
+                Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => AboutTalkTales()));
+                // shortestSide > 600 ?
+                // _aboutbook() :  Navigator.push(
+                //     context,
+                //     MaterialPageRoute(builder: (context) => WebViewScreen(link: about_talktales_url,)));
               },
             ),
             Padding(padding: EdgeInsets.all(8.0)),
             ListTile(
               title: Text(
-                'Download Target Words',
+                'Download free practice pages at talktalesbooks.com',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               leading: Container(
@@ -140,12 +142,6 @@ class _SettingsPageState extends State<SettingsPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: Icon(Icons.arrow_forward),
                   )),
-              onTap: ()  {
-                shortestSide > 600 ?
-                _downloadwords() :   Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => WebViewScreen(link: download_words_url,)));
-              },
             ),
             Padding(padding: EdgeInsets.all(8.0)),
             ListTile(

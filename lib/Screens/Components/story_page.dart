@@ -6,6 +6,7 @@ import 'package:flutter_gif/flutter_gif.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../Constants/constant.dart';
+import '../bottom_bar_screens/about_app.dart';
 import '../bottom_bar_screens/web_view.dart';
 
 class StoryPage extends StatefulWidget {
@@ -90,10 +91,9 @@ class _StoryPageState extends State<StoryPage>with TickerProviderStateMixin {
                       color: Colors.transparent),
                   child: InkWell(
                     onTap: ()  {
-                      shortestSide > 600 ?
-                      _aboutapp() :   Navigator.push(
+                      Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => WebViewScreen(link: about_book,)));
+                          MaterialPageRoute(builder: (context) => AboutApp()));
                     },
                   ),
                 ),
