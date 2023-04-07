@@ -41,8 +41,15 @@ class AboutApp extends StatelessWidget {
             Text('4. Let the child press a target word often. Repetition is the key to learning.'
               , style: TextStyle(color: Color(0xff000000), fontWeight: FontWeight.normal, fontSize: 16),),
             SizedBox(height: 5,),
-            Text('5. Go to talktalesbooks.com to learn more and to download a free practice words worksheet.'
-              , style: TextStyle(color: Color(0xff000000), fontWeight: FontWeight.normal, fontSize: 16),),
+            Row(
+              children: [
+                Text('5. Go to talktalesbooks.com to learn more and to '
+                  , style: TextStyle(color: Color(0xff000000), fontWeight: FontWeight.normal, fontSize: 16),),
+                Text('download a free practice words worksheet.'
+                  , style: TextStyle(color: Color(0xff000000), fontWeight: FontWeight.normal, fontSize: 16, decoration: TextDecoration.underline),),
+              ],
+            ),
+
             SizedBox(height: 5,),
             Text('DO NOT make interaction with this app “work,” or the child will shut down. Let the child lead and have fun with the app. The child may need to hear the words multiple times before he/she makes a word attempt.'
               , style: TextStyle(color: Color(0xff000000), fontWeight: FontWeight.normal, fontSize: 16),),

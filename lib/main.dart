@@ -10,32 +10,33 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-var isLoggedIn;
+// var isLoggedIn;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  var prefs = await SharedPreferences.getInstance();
-  isLoggedIn = (prefs.getBool('isLoggedIn') == null)
-      ? false
-      : prefs.getBool('isLoggedIn');
-  if (Platform.isIOS || Platform.isMacOS) {
-    StoreConfig(
-      store: Store.appleStore,
-      apiKey: appleApiKey,
-    );
-  } else if (Platform.isAndroid) {
-    // Run the app passing --dart-define=AMAZON=true
-    const useAmazon = bool.fromEnvironment("amazon");
-    StoreConfig(
-      store: useAmazon ? Store.amazonAppstore : Store.googlePlay,
-      apiKey: useAmazon ? amazonApiKey : googleApiKey,
-    );
-  }
+  // await Firebase.initializeApp();
+  // var prefs = await SharedPreferences.getInstance();
+  // isLoggedIn = (prefs.getBool('isLoggedIn') == null)
+  //     ? false
+  //     : prefs.getBool('isLoggedIn');
+  // if (Platform.isIOS || Platform.isMacOS) {
+  //   StoreConfig(
+  //     store: Store.appleStore,
+  //     apiKey: appleApiKey,
+  //   );
+  // } else if (Platform.isAndroid) {
+  //   // Run the app passing --dart-define=AMAZON=true
+  //   const useAmazon = bool.fromEnvironment("amazon");
+  //   StoreConfig(
+  //     store: useAmazon ? Store.amazonAppstore : Store.googlePlay,
+  //     apiKey: useAmazon ? amazonApiKey : googleApiKey,
+  //   );
+  // }
   runApp(
     GetMaterialApp(
         builder: EasyLoading.init(),
         debugShowCheckedModeBanner: false,
-        initialRoute: isLoggedIn ? '/splash' : '/splash',
+        // initialRoute: isLoggedIn ? '/splash' : '/splash',
+        initialRoute: '/splash',
         getPages: Routes.routes),
   );
   configLoading();

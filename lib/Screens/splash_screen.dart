@@ -9,7 +9,7 @@ import 'package:vanzee/Screens/front_page.dart';
 
 import '../Settings/SizeConfig.dart';
 
-var isLoggedIn;
+// var isLoggedIn;
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -48,16 +48,17 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   getData() async {
-    var prefs = await SharedPreferences.getInstance();
-    isLoggedIn = (prefs.getBool('isLoggedIn') == null)
-        ? false
-        : prefs.getBool('isLoggedIn');
+    // var prefs = await SharedPreferences.getInstance();
+    // isLoggedIn = (prefs.getBool('isLoggedIn') == null)
+    //     ? false
+    //     : prefs.getBool('isLoggedIn');
     startTime();
   }
 
   route() {
-    print(isLoggedIn);
-    isLoggedIn ? Navigator.of(context).pushReplacementNamed('/home') : Navigator.of(context).pushReplacementNamed('/login');
+    Navigator.of(context).pushReplacementNamed('/home');
+    // print(isLoggedIn);
+    // isLoggedIn ? Navigator.of(context).pushReplacementNamed('/home') : Navigator.of(context).pushReplacementNamed('/login');
   }
 
   initScreen(BuildContext context) {

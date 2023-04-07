@@ -117,65 +117,64 @@ class _SettingsPageState extends State<SettingsPage> {
                 //     MaterialPageRoute(builder: (context) => WebViewScreen(link: about_talktales_url,)));
               },
             ),
+            // ListTile(
+            //   title: Text(
+            //     'Download free practice pages at talktalesbooks.com',
+            //     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            //   ),
+            //   leading: Container(
+            //       width: 55,
+            //       height: 55,
+            //       decoration: BoxDecoration(
+            //           color: Color.fromRGBO(236, 235, 254, 1),
+            //           borderRadius: BorderRadius.all(Radius.circular(25))),
+            //       child: Icon(
+            //         Icons.download,
+            //         size: 35,
+            //         color: Color.fromRGBO(87, 49, 250, 1),
+            //       )),
+            //   trailing: Container(
+            //       decoration: BoxDecoration(
+            //           color: Color.fromRGBO(246, 245, 248, 1),
+            //           borderRadius: BorderRadius.all(Radius.circular(10))),
+            //       child: Padding(
+            //         padding: const EdgeInsets.all(8.0),
+            //         child: Icon(Icons.arrow_forward),
+            //       )),
+            // ),
             Padding(padding: EdgeInsets.all(8.0)),
-            ListTile(
-              title: Text(
-                'Download free practice pages at talktalesbooks.com',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              leading: Container(
-                  width: 55,
-                  height: 55,
-                  decoration: BoxDecoration(
-                      color: Color.fromRGBO(236, 235, 254, 1),
-                      borderRadius: BorderRadius.all(Radius.circular(25))),
-                  child: Icon(
-                    Icons.download,
-                    size: 35,
-                    color: Color.fromRGBO(87, 49, 250, 1),
-                  )),
-              trailing: Container(
-                  decoration: BoxDecoration(
-                      color: Color.fromRGBO(246, 245, 248, 1),
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Icon(Icons.arrow_forward),
-                  )),
-            ),
-            Padding(padding: EdgeInsets.all(8.0)),
-            ListTile(
-              title: Text(
-                'Logout',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              leading: Container(
-                  width: 55,
-                  height: 55,
-                  decoration: BoxDecoration(
-                      color: Color.fromRGBO(236, 235, 254, 1),
-                      borderRadius: BorderRadius.all(Radius.circular(25))),
-                  child: Icon(
-                    Icons.logout,
-                    size: 35,
-                    color: Color.fromRGBO(252, 109, 36, 1),
-                  )),
-              trailing: Container(
-                  decoration: BoxDecoration(
-                      color: Color.fromRGBO(246, 245, 248, 1),
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Icon(Icons.arrow_forward),
-                  )),
-              onTap: ()  async{
-                  await FirebaseAuth.instance.signOut();
-                  final SharedPreferences prefs =
-                  await SharedPreferences.getInstance();
-                  prefs.setBool('isLoggedIn', false);
-                  Navigator.of(context).pushReplacementNamed('/login');
-              },
-            ),
+            // ListTile(
+            //   title: Text(
+            //     'Logout',
+            //     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            //   ),
+            //   leading: Container(
+            //       width: 55,
+            //       height: 55,
+            //       decoration: BoxDecoration(
+            //           color: Color.fromRGBO(236, 235, 254, 1),
+            //           borderRadius: BorderRadius.all(Radius.circular(25))),
+            //       child: Icon(
+            //         Icons.logout,
+            //         size: 35,
+            //         color: Color.fromRGBO(252, 109, 36, 1),
+            //       )),
+            //   trailing: Container(
+            //       decoration: BoxDecoration(
+            //           color: Color.fromRGBO(246, 245, 248, 1),
+            //           borderRadius: BorderRadius.all(Radius.circular(10))),
+            //       child: Padding(
+            //         padding: const EdgeInsets.all(8.0),
+            //         child: Icon(Icons.arrow_forward),
+            //       )),
+            //   onTap: ()  async{
+            //       await FirebaseAuth.instance.signOut();
+            //       final SharedPreferences prefs =
+            //       await SharedPreferences.getInstance();
+            //       prefs.setBool('isLoggedIn', false);
+            //       Navigator.of(context).pushReplacementNamed('/login');
+            //   },
+            // ),
           ],
       ),
     ),
