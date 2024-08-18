@@ -1,23 +1,14 @@
 import 'package:get/get.dart';
-import 'package:vanzee/Screens/auth/forgot_password.dart';
-import 'package:vanzee/Screens/auth/login.dart';
-import 'package:vanzee/Screens/auth/register.dart';
 import 'package:vanzee/Screens/bottom_bar_screens/home.dart';
-import 'package:vanzee/Screens/front_page.dart';
 import 'package:vanzee/Screens/splash_screen.dart';
-
-import '../Screens/Components/new_video_screen.dart';
+import 'package:vanzee/Screens/t.dart';
 import '../Screens/bottom_bar_screens/settings.dart';
 
 class Routes {
   static final routes = [
-    // GetPage(
-    //   name: '/front',
-    //   page: () => FrontPage(),
-    // ),
     GetPage(
       name: '/splash',
-      page: () => SplashScreen(),
+      page: () => TT(),
     ),
     GetPage(
       name: '/home',
@@ -26,21 +17,6 @@ class Routes {
     GetPage(
       name: '/settings',
       page: () => SettingsPage(),
-    ),
-    GetPage(
-      name: '/login',
-      page: () => Login(),
-    ),
-    GetPage(
-      name: '/register',
-      page: () => Register(),
-    ),
-    GetPage(
-      name: '/forgot_password',
-      page: () => ForgotPassword(),
-    ),  GetPage(
-      name: '/intrro',
-      page: () => IntroVideo(),
     ),
   ];
 }

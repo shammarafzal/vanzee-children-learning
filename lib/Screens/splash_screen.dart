@@ -1,15 +1,10 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vanzee/Constants/constant.dart';
-import 'package:vanzee/Screens/auth/login.dart';
 import 'dart:async';
-import 'package:vanzee/Screens/bottom_bar_screens/home.dart';
-import 'package:vanzee/Screens/front_page.dart';
-
 import '../Settings/SizeConfig.dart';
 
-// var isLoggedIn;
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -19,12 +14,9 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   final audioPlayer = AudioPlayer();
-
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    // startTime();
     getData();
     audioPlayer.play(AssetSource(talk_tales_mp3));
   }
@@ -48,17 +40,11 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   getData() async {
-    // var prefs = await SharedPreferences.getInstance();
-    // isLoggedIn = (prefs.getBool('isLoggedIn') == null)
-    //     ? false
-    //     : prefs.getBool('isLoggedIn');
     startTime();
   }
 
   route() {
     Navigator.of(context).pushReplacementNamed('/home');
-    // print(isLoggedIn);
-    // isLoggedIn ? Navigator.of(context).pushReplacementNamed('/home') : Navigator.of(context).pushReplacementNamed('/login');
   }
 
   initScreen(BuildContext context) {
